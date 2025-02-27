@@ -1,0 +1,72 @@
+[submodule "lisp-site/atom-one-dark-theme"]
+	path = lisp-site/atom-one-dark-theme
+	url = https://github.com/jonathanchu/atom-one-dark-theme.git
+[submodule "lisp-site/emacs-which-key"]
+	path = lisp-site/emacs-which-key
+	url = https://github.com/justbur/emacs-which-key.git
+[submodule "lisp-site/compat"]
+	path = lisp-site/compat
+	url = https://github.com/emacs-compat/compat.git
+[submodule "lisp-site/vertico"]
+	path = lisp-site/vertico
+	url = https://github.com/minad/vertico.git
+[submodule "lisp-site/corfu"]
+	path = lisp-site/corfu
+	url = https://github.com/minad/corfu.git
+[submodule "lisp-site/orderless"]
+	path = lisp-site/orderless
+	url = https://github.com/oantolin/orderless.git
+[submodule "lisp-site/dash.el"]
+	path = lisp-site/dash.el
+	url = https://github.com/magnars/dash.el.git
+[submodule "lisp-site/transient"]
+	path = lisp-site/transient
+	url = https://github.com/magit/transient.git
+[submodule "lisp-site/with-editor"]
+	path = lisp-site/with-editor
+	url = https://github.com/magit/with-editor.git
+[submodule "lisp-site/magit"]
+	path = lisp-site/magit
+	url = https://github.com/magit/magit.git
+[submodule "lisp-site/diff-hl"]
+	path = lisp-site/diff-hl
+	url = https://github.com/dgutov/diff-hl.git
+[submodule "lisp-site/inheritenv"]
+	path = lisp-site/inheritenv
+	url = https://github.com/purcell/inheritenv.git
+[submodule "lisp-site/emacs-language-id"]
+	path = lisp-site/emacs-language-id
+	url = https://github.com/lassik/emacs-language-id.git
+[submodule "lisp-site/emacs-format-all-the-code"]
+	path = lisp-site/emacs-format-all-the-code
+	url = https://github.com/lassik/emacs-format-all-the-code.git
+[submodule "lisp-site/nerd-icons.el"]
+	path = lisp-site/nerd-icons.el
+	url = https://github.com/rainstormstudio/nerd-icons.el.git
+[submodule "lisp-site/s.el"]
+	path = lisp-site/s.el
+	url = https://github.com/magnars/s.el.git
+[submodule "lisp-site/f.el"]
+	path = lisp-site/f.el
+	url = https://github.com/rejeep/f.el.git
+[submodule "lisp-site/shrink-path.el"]
+	path = lisp-site/shrink-path.el
+	url = https://github.com/zbelial/shrink-path.el.git
+[submodule "lisp-site/doom-modeline"]
+	path = lisp-site/doom-modeline
+	url = https://github.com/seagle0128/doom-modeline.git
+[submodule "lisp-site/llama"]
+	path = lisp-site/llama
+	url = https://github.com/tarsius/llama.git
+[submodule "lisp-site/ht.el"]
+	path = lisp-site/ht.el
+	url = https://github.com/Wilfred/ht.el.git
+[submodule "lisp-site/pfuture"]
+	path = lisp-site/pfuture
+	url = https://github.com/Alexander-Miller/pfuture.git
+[submodule "lisp-site/treemacs"]
+	path = lisp-site/treemacs
+	url = https://github.com/Alexander-Miller/treemacs.git
+[submodule "lisp-site/treemacs-nerd-icons"]
+	path = lisp-site/treemacs-nerd-icons
+	url = https://github.com/rainstormstudio/treemacs-nerd-icons.git
