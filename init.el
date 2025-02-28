@@ -2,10 +2,11 @@
 ;; Org babel
 (org-babel-do-load-languages
  'org-babel-load-languages
- '((latex . t)))
+ '((emacs-lisp . t)
+   (latex . t)))
 
 (defun my-org-confirm-babel-evaluate (lang body)
-  (not (member lang '("eshell" "latex"))))
+  (not (member lang '("emacs-lisp" "latex"))))
 (setq org-confirm-babel-evaluate 'my-org-confirm-babel-evaluate)
 
 (setq org-babel-default-header-args:latex '((:results . "graphics file")
