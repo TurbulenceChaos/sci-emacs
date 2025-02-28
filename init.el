@@ -1,13 +1,9 @@
 ;; ----------------------------- Configurations ----------------------------- ;;
-;; Org babel
+;; Org-mode
 (org-babel-do-load-languages
  'org-babel-load-languages
  '((emacs-lisp . t)
    (latex . t)))
-
-(defun my-org-confirm-babel-evaluate (lang body)
-  (not (member lang '("emacs-lisp" "latex"))))
-(setq org-confirm-babel-evaluate 'my-org-confirm-babel-evaluate)
 
 (setq org-babel-default-header-args:latex '((:results . "graphics file")
 					    (:imagemagick . "t")
@@ -16,6 +12,12 @@
 					    (:imoutoptions . "-quality 100 -alpha remove")
 					    (:noweb . "yes")
 					    (:eval . "never-export")))
+
+(defun my-org-confirm-babel-evaluate (lang body)
+  (not (member lang '("emacs-lisp" "latex"))))
+(setq org-confirm-babel-evaluate 'my-org-confirm-babel-evaluate)
+
+(setq org-id-locations-file "~/.emacs.d/.cache/")
 
 ;; File path completion: https://emacs.stackexchange.com/questions/79845/completion-at-point-functions-and-filesystem-path-completion
 (add-hook 'completion-at-point-functions #'comint-filename-completion)
