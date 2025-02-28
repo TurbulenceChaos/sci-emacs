@@ -76,3 +76,6 @@
 [submodule "lisp-site/hydra"]
 	path = lisp-site/hydra
 	url = https://github.com/abo-abo/hydra.git
+[submodule "lisp-site/auctex"]
+	path = lisp-site/auctex
+	url = https://github.com/emacsmirror/auctex.git

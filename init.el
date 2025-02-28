@@ -4,6 +4,10 @@
  'org-babel-load-languages
  '((latex . t)))
 
+(defun my-org-confirm-babel-evaluate (lang body)
+  (not (member lang '("eshell" "latex"))))
+(setq org-confirm-babel-evaluate 'my-org-confirm-babel-evaluate)
+
 (setq org-babel-default-header-args:latex '((:results . "graphics file")
 					    (:imagemagick . "t")
 					    (:fit . "yes")
@@ -16,10 +20,9 @@
 (add-hook 'completion-at-point-functions #'comint-filename-completion)
 
 ;; ---------------------------------- lisp ---------------------------------- ;;
-;; Comment divider
 (add-to-list 'load-path "~/.emacs.d/lisp")
+;; Comment divider
 (require 'comment-divider)
-
 ;; Org babel latex save both pdf and png
 (require 'org-babel-latex-save-pdf)
 
@@ -117,3 +120,10 @@
 (add-to-list 'load-path "~/.emacs.d/lisp-site/org-sliced-images")
 (require 'org-sliced-images)
 (org-sliced-images-mode)
+
+;; Auctex
+(add-to-list 'load-path "~/.emacs.d/lisp-site/auctex")
+(require 'font-latex)
+(require 'auctex)
+(require 'tex)
+(require 'latex)
