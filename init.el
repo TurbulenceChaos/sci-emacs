@@ -1,24 +1,28 @@
-;; ------------------------------- Functions -------------------------------- ;;
-;; Comment divider
-(defun comment-divider (text)
-  "Create a comment divider of exactly 80 characters based on TEXT.
-The format is: ;; --- <TEXT> --- ;;."
-  (interactive "sEnter text for divider: ")
-  (let* ((total-length 80) ; desired length
-         (comment-prefix ";; ") ; Comment prefix (start)
-         (comment-suffix " ;;") ; Comment suffix (end, includes leading space)
-         (prefix-length (length comment-prefix))
-         (suffix-length (length comment-suffix))
-         (text-with-spaces (concat " " text " ")) ; Add spaces around the input text
-         (text-length (length text-with-spaces))
-         (dash-length (- total-length prefix-length suffix-length text-length)) ; Remaining space for dashes
-         (half-dash-length (/ dash-length 2)) ; Divide remaining space equally
-         (divider (concat (make-string half-dash-length ?-)
-                          text-with-spaces
-                          (make-string (- dash-length half-dash-length) ?-))))
-    (insert comment-prefix divider comment-suffix)))
+;; ----------------------------- Configurations ----------------------------- ;;
+;; Org babel
+(org-babel-do-load-languages
+ 'org-babel-load-languages
+ '((latex . t)))
 
-;; -------------------------------- Packages -------------------------------- ;;
+(setq org-babel-default-header-args:latex '((:results . "graphics file")
+					    (:imagemagick . "t")
+					    (:fit . "yes")
+					    (:iminoptions . "-density 300 -units pixelsperinch")
+					    (:imoutoptions . "-quality 100 -alpha remove")
+					    (:noweb . "yes")
+					    (:eval . "never-export")))
+
+;; File path completion: https://emacs.stackexchange.com/questions/79845/completion-at-point-functions-and-filesystem-path-completion
+(add-hook 'completion-at-point-functions #'comint-filename-completion)
+
+;; ---------------------------------- lisp ---------------------------------- ;;
+;; Comment divider
+(add-to-list 'load-path "~/.emacs.d/lisp")
+(require 'comment-divider)
+;; Org babel latex save both pdf and png
+(require 'org-babel-latex-save-pdf)
+
+;; ------------------------------- lisp-site -------------------------------- ;;
 ;; Atom-one-dark theme
 (add-to-list 'load-path "~/.emacs.d/lisp-site/atom-one-dark-theme")
 (require 'atom-one-dark-theme)
@@ -39,7 +43,7 @@ The format is: ;; --- <TEXT> --- ;;."
 ;; Corfu
 (add-to-list 'load-path "~/.emacs.d/lisp-site/corfu")
 (require 'corfu)
-;; (setq corfu-auto t)
+(setq corfu-auto t)
 (global-corfu-mode)
 (add-to-list 'load-path "~/.emacs.d/lisp-site/corfu/extensions")
 (require 'corfu-popupinfo)
@@ -105,4 +109,7 @@ The format is: ;; --- <TEXT> --- ;;."
 (require 'treemacs-nerd-icons)
 (treemacs-load-theme "nerd-icons")
 
-;; To-do: file path completion
+;; Org-sliced-images
+(add-to-list 'load-path "~/.emacs.d/lisp-site/org-sliced-images")
+(require 'org-sliced-images)
+(org-sliced-images-mode)
