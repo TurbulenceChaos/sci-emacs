@@ -73,3 +73,6 @@
 [submodule "lisp-site/org-sliced-images"]
 	path = lisp-site/org-sliced-images
 	url = https://github.com/jcfk/org-sliced-images.git
+[submodule "lisp-site/hydra"]
+	path = lisp-site/hydra
+	url = https://github.com/abo-abo/hydra.git

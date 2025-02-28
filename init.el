@@ -19,6 +19,7 @@
 ;; Comment divider
 (add-to-list 'load-path "~/.emacs.d/lisp")
 (require 'comment-divider)
+
 ;; Org babel latex save both pdf and png
 (require 'org-babel-latex-save-pdf)
 
@@ -103,8 +104,11 @@
 (require 'ht)
 (add-to-list 'load-path "~/.emacs.d/lisp-site/pfuture")
 (require 'pfuture)
+(add-to-list 'load-path "~/.emacs.d/lisp-site/hydra")
+(require 'hydra)
 (add-to-list 'load-path "~/.emacs.d/lisp-site/treemacs/src/elisp")
 (require 'treemacs)
+(require 'treemacs-file-management)
 (add-to-list 'load-path "~/.emacs.d/lisp-site/treemacs-nerd-icons")
 (require 'treemacs-nerd-icons)
 (treemacs-load-theme "nerd-icons")
