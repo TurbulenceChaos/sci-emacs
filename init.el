@@ -16,6 +16,8 @@
 					    (:noweb . "yes")
 					    (:eval . "never-export")))
 
+(setf org-format-latex-header (concat "% xelatex\n" org-format-latex-header))
+
 (defun my-org-confirm-babel-evaluate (lang body)
   (not (member lang '("emacs-lisp" "latex"))))
 (setq org-confirm-babel-evaluate 'my-org-confirm-babel-evaluate)
@@ -59,7 +61,8 @@
 ;; Corfu
 (add-to-list 'load-path "~/.emacs.d/lisp-site/corfu")
 (require 'corfu)
-(setq corfu-auto t)
+(setq corfu-auto t
+      corfu-auto-prefix 1)
 (global-corfu-mode)
 (add-to-list 'load-path "~/.emacs.d/lisp-site/corfu/extensions")
 (require 'corfu-popupinfo)
