@@ -16,7 +16,6 @@
 					    (:noweb . "yes")
 					    (:eval . "never-export")))
 
-;; https://emacs-china.org/t/xelatex-org-babel-latex/17236/5
 (setf org-format-latex-header (concat "% xelatex\n" org-format-latex-header))
 (setq org-format-latex-options (plist-put org-format-latex-options :scale 3))
 (add-hook 'org-babel-after-execute-hook 'org-display-inline-images)
@@ -24,12 +23,6 @@
 (defun my-org-confirm-babel-evaluate (lang body)
   (not (member lang '("emacs-lisp" "latex"))))
 (setq org-confirm-babel-evaluate 'my-org-confirm-babel-evaluate)
-
-;; File path completion: https://emacs.stackexchange.com/questions/79845/completion-at-point-functions-and-filesystem-path-completion
-(add-hook 'completion-at-point-functions #'comint-filename-completion)
-
-;; Global prettify symbols mode
-(global-prettify-symbols-mode)
 
 ;; ---------------------------------- lisp ---------------------------------- ;;
 (add-to-list 'load-path "~/.emacs.d/lisp")
@@ -39,11 +32,6 @@
 (require 'org-babel-latex-save-pdf)
 
 ;; ------------------------------- lisp-site -------------------------------- ;;
-;; Atom-one-dark theme
-;; (add-to-list 'load-path "~/.emacs.d/lisp-site/atom-one-dark-theme")
-;; (require 'atom-one-dark-theme)
-;; (load-theme 'atom-one-dark t)
-
 ;; Which-key
 (add-to-list 'load-path "~/.emacs.d/lisp-site/emacs-which-key")
 (require 'which-key)
@@ -66,6 +54,11 @@
 (require 'corfu-popupinfo)
 (setq corfu-popupinfo-delay 0)
 (corfu-popupinfo-mode)
+(add-to-list 'load-path "~/.emacs.d/lisp-site/nerd-icons.el")
+(require 'nerd-icons)
+(add-to-list 'load-path "~/.emacs.d/lisp-site/nerd-icons-corfu")
+(require 'nerd-icons-corfu)
+(add-to-list 'corfu-margin-formatters #'nerd-icons-corfu-formatter)
 
 ;; Cape
 (add-to-list 'load-path "~/.emacs.d/lisp-site/cape")
@@ -119,8 +112,6 @@
 (require 'format-all)
 
 ;; Doom-modeline
-(add-to-list 'load-path "~/.emacs.d/lisp-site/nerd-icons.el")
-(require 'nerd-icons)
 (add-to-list 'load-path "~/.emacs.d/lisp-site/s.el")
 (require 's)
 (add-to-list 'load-path "~/.emacs.d/lisp-site/f.el")
@@ -161,3 +152,8 @@
 (add-to-list 'load-path "~/.emacs.d/lisp-site/smartparens/")
 (require 'smartparens-config)
 (smartparens-global-mode)
+
+;; Undo-fu-session
+(add-to-list 'load-path "~/.emacs.d/lisp-site/undo-fu-session")
+(require 'undo-fu-session)
+(undo-fu-session-global-mode)

@@ -94,3 +94,9 @@
 [submodule "lisp-site/cape"]
 	path = lisp-site/cape
 	url = https://github.com/minad/cape.git
+[submodule "lisp-site/undo-fu-session"]
+	path = lisp-site/undo-fu-session
+	url = https://github.com/emacsmirror/undo-fu-session.git
+[submodule "lisp-site/nerd-icons-corfu"]
+	path = lisp-site/nerd-icons-corfu
+	url = https://github.com/LuigiPiucco/nerd-icons-corfu.git
