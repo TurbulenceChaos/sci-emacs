@@ -1,0 +1,19 @@
+* PhD Emacs
+This repository contains my Emacs configuration tailored for academic research.
+
+** Installation 
+#+begin_src shell :noeval 
+  # Clone the repository to your Emacs directory
+  git clone git@github.com:TurbulenceChaos/PhD-Emacs.git ~/.emacs.d
+  cd ~/.emacs.d
+
+  # Initialize and update Git submodules recursively
+  git submodule update --init --recursive
+
+  # Build Org-mode from the lisp-site directory
+  cd ~/.emacs.d/lisp-site/org-mode
+  make
+ 
+  # Install ispell for spell-checking support
+  sudo apt install -y ispell
+#+end_src

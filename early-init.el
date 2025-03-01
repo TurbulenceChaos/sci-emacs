@@ -9,6 +9,7 @@
 
 ;; ----------------------------- Configuration ------------------------------ ;;
 (setq make-backup-files nil)
+(delete-selection-mode 1)
 (setq scroll-step            1
       scroll-conservatively  10000)
 
@@ -17,4 +18,3 @@
 
 ;; Global prettify symbols mode
 (global-prettify-symbols-mode)
-

@@ -3,6 +3,11 @@
 (add-to-list 'load-path "~/.emacs.d/lisp-site/org-mode/lisp")
 (require 'org)
 
+(add-hook 'org-mode-hook
+  	(lambda ()
+            (toggle-truncate-lines nil)
+  	  (toggle-word-wrap nil)))
+
 (org-babel-do-load-languages
  'org-babel-load-languages
  '((emacs-lisp . t)
