@@ -79,3 +79,18 @@
 [submodule "lisp-site/auctex"]
 	path = lisp-site/auctex
 	url = https://github.com/emacsmirror/auctex.git
+[submodule "lisp-site/smartparens"]
+	path = lisp-site/smartparens
+	url = https://github.com/Fuco1/smartparens.git
+[submodule "lisp-site/markdown-mode"]
+	path = lisp-site/markdown-mode
+	url = https://github.com/jrblevin/markdown-mode.git
+[submodule "lisp-site/yasnippet"]
+	path = lisp-site/yasnippet
+	url = https://github.com/joaotavora/yasnippet.git
+[submodule "lisp-site/lsp-bridge"]
+	path = lisp-site/lsp-bridge
+	url = https://github.com/manateelazycat/lsp-bridge.git
+[submodule "lisp-site/yasnippet-snippets"]
+	path = lisp-site/yasnippet-snippets
+	url = https://github.com/AndreaCrotti/yasnippet-snippets.git

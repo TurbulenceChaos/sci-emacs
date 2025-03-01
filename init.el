@@ -22,6 +22,9 @@
 ;; File path completion: https://emacs.stackexchange.com/questions/79845/completion-at-point-functions-and-filesystem-path-completion
 (add-hook 'completion-at-point-functions #'comint-filename-completion)
 
+;; Delete whitespace when saving files
+(add-hook 'write-file-hooks 'delete-trailing-whitespace)
+
 ;; ---------------------------------- lisp ---------------------------------- ;;
 (add-to-list 'load-path "~/.emacs.d/lisp")
 ;; Comment divider
@@ -48,14 +51,14 @@
 (vertico-mode)
 
 ;; Corfu
-(add-to-list 'load-path "~/.emacs.d/lisp-site/corfu")
-(require 'corfu)
-(setq corfu-auto t)
-(global-corfu-mode)
-(add-to-list 'load-path "~/.emacs.d/lisp-site/corfu/extensions")
-(require 'corfu-popupinfo)
-(setq corfu-popupinfo-delay 0)
-(corfu-popupinfo-mode)
+;; (add-to-list 'load-path "~/.emacs.d/lisp-site/corfu")
+;; (require 'corfu)
+;; (setq corfu-auto t)
+;; (global-corfu-mode)
+;; (add-to-list 'load-path "~/.emacs.d/lisp-site/corfu/extensions")
+;; (require 'corfu-popupinfo)
+;; (setq corfu-popupinfo-delay 0)
+;; (corfu-popupinfo-mode)
 
 ;; Orderless
 (add-to-list 'load-path "~/.emacs.d/lisp-site/orderless")
@@ -130,3 +133,22 @@
 (require 'auctex)
 (require 'tex)
 (require 'latex)
+
+;; Smartparens
+(add-to-list 'load-path "~/.emacs.d/lisp-site/smartparens/")
+(require 'smartparens-config)
+(smartparens-global-strict-mode)
+(smartparens-global-mode)
+
+;; Lsp-bridge
+(add-to-list 'load-path "~/.emacs.d/lisp-site/markdown-mode")
+(require 'markdown-mode)
+(add-to-list 'load-path "~/.emacs.d/lisp-site/yasnippet")
+(require 'yasnippet)
+(yas-global-mode 1)
+(add-to-list 'load-path "~/.emacs.d/lisp-site/yasnippet-snippets")
+(require 'yasnippet-snippets)
+(add-to-list 'load-path "~/.emacs.d/lisp-site/lsp-bridge")
+(require 'lsp-bridge)
+(setq lsp-bridge-enable-org-babel t)
+(global-lsp-bridge-mode)
