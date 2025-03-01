@@ -137,8 +137,8 @@
 ;; Smartparens
 (add-to-list 'load-path "~/.emacs.d/lisp-site/smartparens/")
 (require 'smartparens-config)
-(smartparens-global-strict-mode)
 (smartparens-global-mode)
+;;(smartparens-global-strict-mode)
 
 ;; Lsp-bridge
 (add-to-list 'load-path "~/.emacs.d/lisp-site/markdown-mode")
@@ -150,5 +150,5 @@
 (require 'yasnippet-snippets)
 (add-to-list 'load-path "~/.emacs.d/lisp-site/lsp-bridge")
 (require 'lsp-bridge)
-(setq lsp-bridge-enable-org-babel t)
 (global-lsp-bridge-mode)
+(setq lsp-bridge-enable-org-babel t)
