@@ -20,7 +20,7 @@
   (not (member lang '("emacs-lisp" "latex"))))
 (setq org-confirm-babel-evaluate 'my-org-confirm-babel-evaluate)
 
-(setq org-id-locations-file "~/.emacs.d/.cache/")
+(setq org-format-latex-options (plist-put org-format-latex-options :scale 3))
 
 ;; File path completion: https://emacs.stackexchange.com/questions/79845/completion-at-point-functions-and-filesystem-path-completion
 (add-hook 'completion-at-point-functions #'comint-filename-completion)
@@ -77,12 +77,6 @@
 (add-to-list 'completion-at-point-functions #'yasnippet-capf)
 (setopt corfu-on-exact-match 'show) ; https://github.com/elken/yasnippet-capf/issues/17
 
-;; Orderless
-(add-to-list 'load-path "~/.emacs.d/lisp-site/orderless")
-(require 'orderless)
-(setq completion-styles '(orderless basic)
-      completion-category-overrides '((file (styles basic partial-completion))))
-
 ;; Lsp-bridge
 ;; (add-to-list 'load-path "~/.emacs.d/lisp-site/markdown-mode")
 ;; (require 'markdown-mode)
@@ -90,6 +84,12 @@
 ;; (require 'lsp-bridge)
 ;; (global-lsp-bridge-mode)
 ;; (setq lsp-bridge-enable-org-babel t)
+
+;; Orderless
+(add-to-list 'load-path "~/.emacs.d/lisp-site/orderless")
+(require 'orderless)
+(setq completion-styles '(orderless basic)
+      completion-category-overrides '((file (styles basic partial-completion))))
 
 ;; Magit
 (add-to-list 'load-path "~/.emacs.d/lisp-site/dash.el")
