@@ -57,20 +57,39 @@
 (vertico-mode)
 
 ;; Corfu
-;; (add-to-list 'load-path "~/.emacs.d/lisp-site/corfu")
-;; (require 'corfu)
-;; (setq corfu-auto t)
-;; (global-corfu-mode)
-;; (add-to-list 'load-path "~/.emacs.d/lisp-site/corfu/extensions")
-;; (require 'corfu-popupinfo)
-;; (setq corfu-popupinfo-delay 0)
-;; (corfu-popupinfo-mode)
+(add-to-list 'load-path "~/.emacs.d/lisp-site/corfu")
+(require 'corfu)
+(setq corfu-auto t)
+(global-corfu-mode)
+(add-to-list 'load-path "~/.emacs.d/lisp-site/corfu/extensions")
+(require 'corfu-popupinfo)
+(setq corfu-popupinfo-delay 0)
+(corfu-popupinfo-mode)
+
+;; Yasnippet
+(add-to-list 'load-path "~/.emacs.d/lisp-site/yasnippet")
+(require 'yasnippet)
+(yas-global-mode 1)
+(add-to-list 'load-path "~/.emacs.d/lisp-site/yasnippet-snippets")
+(require 'yasnippet-snippets)
+(add-to-list 'load-path "~/.emacs.d/lisp-site/yasnippet-capf")
+(require 'yasnippet-capf)
+(add-to-list 'completion-at-point-functions #'yasnippet-capf)
+(setopt corfu-on-exact-match 'show) ; https://github.com/elken/yasnippet-capf/issues/17
 
 ;; Orderless
 (add-to-list 'load-path "~/.emacs.d/lisp-site/orderless")
 (require 'orderless)
 (setq completion-styles '(orderless basic)
       completion-category-overrides '((file (styles basic partial-completion))))
+
+;; Lsp-bridge
+;; (add-to-list 'load-path "~/.emacs.d/lisp-site/markdown-mode")
+;; (require 'markdown-mode)
+;; (add-to-list 'load-path "~/.emacs.d/lisp-site/lsp-bridge")
+;; (require 'lsp-bridge)
+;; (global-lsp-bridge-mode)
+;; (setq lsp-bridge-enable-org-babel t)
 
 ;; Magit
 (add-to-list 'load-path "~/.emacs.d/lisp-site/dash.el")
@@ -145,16 +164,3 @@
 (require 'smartparens-config)
 (smartparens-global-mode)
 ;;(smartparens-global-strict-mode)
-
-;; Lsp-bridge
-(add-to-list 'load-path "~/.emacs.d/lisp-site/markdown-mode")
-(require 'markdown-mode)
-(add-to-list 'load-path "~/.emacs.d/lisp-site/yasnippet")
-(require 'yasnippet)
-(yas-global-mode 1)
-(add-to-list 'load-path "~/.emacs.d/lisp-site/yasnippet-snippets")
-(require 'yasnippet-snippets)
-(add-to-list 'load-path "~/.emacs.d/lisp-site/lsp-bridge")
-(require 'lsp-bridge)
-(global-lsp-bridge-mode)
-(setq lsp-bridge-enable-org-babel t)
