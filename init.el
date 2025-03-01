@@ -16,19 +16,17 @@
 					    (:noweb . "yes")
 					    (:eval . "never-export")))
 
+;; https://emacs-china.org/t/xelatex-org-babel-latex/17236/5
 (setf org-format-latex-header (concat "% xelatex\n" org-format-latex-header))
+(setq org-format-latex-options (plist-put org-format-latex-options :scale 3))
+(add-hook 'org-babel-after-execute-hook 'org-display-inline-images)
 
 (defun my-org-confirm-babel-evaluate (lang body)
   (not (member lang '("emacs-lisp" "latex"))))
 (setq org-confirm-babel-evaluate 'my-org-confirm-babel-evaluate)
 
-(setq org-format-latex-options (plist-put org-format-latex-options :scale 3))
-
 ;; File path completion: https://emacs.stackexchange.com/questions/79845/completion-at-point-functions-and-filesystem-path-completion
 (add-hook 'completion-at-point-functions #'comint-filename-completion)
-
-;; Delete whitespace when saving files
-(add-hook 'write-file-hooks 'delete-trailing-whitespace)
 
 ;; Global prettify symbols mode
 (global-prettify-symbols-mode)
@@ -42,9 +40,9 @@
 
 ;; ------------------------------- lisp-site -------------------------------- ;;
 ;; Atom-one-dark theme
-(add-to-list 'load-path "~/.emacs.d/lisp-site/atom-one-dark-theme")
-(require 'atom-one-dark-theme)
-(load-theme 'atom-one-dark t)
+;; (add-to-list 'load-path "~/.emacs.d/lisp-site/atom-one-dark-theme")
+;; (require 'atom-one-dark-theme)
+;; (load-theme 'atom-one-dark t)
 
 ;; Which-key
 (add-to-list 'load-path "~/.emacs.d/lisp-site/emacs-which-key")
@@ -69,6 +67,11 @@
 (setq corfu-popupinfo-delay 0)
 (corfu-popupinfo-mode)
 
+;; Cape
+(add-to-list 'load-path "~/.emacs.d/lisp-site/cape")
+(require 'cape)
+(add-to-list 'completion-at-point-functions #'cape-dict) ; sudo apt install ispell
+
 ;; Yasnippet
 (add-to-list 'load-path "~/.emacs.d/lisp-site/yasnippet")
 (require 'yasnippet)
@@ -79,14 +82,6 @@
 (require 'yasnippet-capf)
 (add-to-list 'completion-at-point-functions #'yasnippet-capf)
 (setopt corfu-on-exact-match 'show) ; https://github.com/elken/yasnippet-capf/issues/17
-
-;; Lsp-bridge
-;; (add-to-list 'load-path "~/.emacs.d/lisp-site/markdown-mode")
-;; (require 'markdown-mode)
-;; (add-to-list 'load-path "~/.emacs.d/lisp-site/lsp-bridge")
-;; (require 'lsp-bridge)
-;; (global-lsp-bridge-mode)
-;; (setq lsp-bridge-enable-org-babel t)
 
 ;; Orderless
 (add-to-list 'load-path "~/.emacs.d/lisp-site/orderless")
@@ -166,4 +161,3 @@
 (add-to-list 'load-path "~/.emacs.d/lisp-site/smartparens/")
 (require 'smartparens-config)
 (smartparens-global-mode)
-;;(smartparens-global-strict-mode)

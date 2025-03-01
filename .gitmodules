@@ -1,6 +1,3 @@
-[submodule "lisp-site/atom-one-dark-theme"]
-	path = lisp-site/atom-one-dark-theme
-	url = https://github.com/jonathanchu/atom-one-dark-theme.git
 [submodule "lisp-site/emacs-which-key"]
 	path = lisp-site/emacs-which-key
 	url = https://github.com/justbur/emacs-which-key.git
@@ -82,15 +79,9 @@
 [submodule "lisp-site/smartparens"]
 	path = lisp-site/smartparens
 	url = https://github.com/Fuco1/smartparens.git
-[submodule "lisp-site/markdown-mode"]
-	path = lisp-site/markdown-mode
-	url = https://github.com/jrblevin/markdown-mode.git
 [submodule "lisp-site/yasnippet"]
 	path = lisp-site/yasnippet
 	url = https://github.com/joaotavora/yasnippet.git
-[submodule "lisp-site/lsp-bridge"]
-	path = lisp-site/lsp-bridge
-	url = https://github.com/manateelazycat/lsp-bridge.git
 [submodule "lisp-site/yasnippet-snippets"]
 	path = lisp-site/yasnippet-snippets
 	url = https://github.com/AndreaCrotti/yasnippet-snippets.git
@@ -100,3 +91,6 @@
 [submodule "lisp-site/yasnippet-capf"]
 	path = lisp-site/yasnippet-capf
 	url = https://github.com/elken/yasnippet-capf.git
+[submodule "lisp-site/cape"]
+	path = lisp-site/cape
+	url = https://github.com/minad/cape.git

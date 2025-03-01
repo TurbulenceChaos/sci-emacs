@@ -5,6 +5,7 @@
 (menu-bar-mode -1)
 (set-face-attribute 'default nil :height 240) ;Font size
 (global-display-line-numbers-mode)
+(load-theme 'leuven t)
 
 ;; ----------------------------- Configuration ------------------------------ ;;
 (setq make-backup-files nil)
