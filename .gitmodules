@@ -94,3 +94,6 @@
 [submodule "lisp-site/yasnippet-snippets"]
 	path = lisp-site/yasnippet-snippets
 	url = https://github.com/AndreaCrotti/yasnippet-snippets.git
+[submodule "lisp-site/org-mode"]
+	path = lisp-site/org-mode
+	url = https://github.com/bzg/org-mode.git

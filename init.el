@@ -1,5 +1,8 @@
 ;; ----------------------------- Configurations ----------------------------- ;;
 ;; Org-mode
+(add-to-list 'load-path "~/.emacs.d/lisp-site/org-mode/lisp")
+(require 'org)
+
 (org-babel-do-load-languages
  'org-babel-load-languages
  '((emacs-lisp . t)
@@ -24,6 +27,9 @@
 
 ;; Delete whitespace when saving files
 (add-hook 'write-file-hooks 'delete-trailing-whitespace)
+
+;; Global prettify symbols mode
+(global-prettify-symbols-mode)
 
 ;; ---------------------------------- lisp ---------------------------------- ;;
 (add-to-list 'load-path "~/.emacs.d/lisp")
