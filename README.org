@@ -4,7 +4,7 @@ This repository contains my Emacs configuration tailored for academic research.
 ** Installation 
 #+begin_src shell :noeval 
   # Clone the repository to your Emacs directory
-  git clone git@github.com:TurbulenceChaos/PhD-Emacs.git ~/.emacs.d
+  git clone git@github.com:TurbulenceChaos/SCI-Emacs.git ~/.emacs.d
   cd ~/.emacs.d
 
   # Initialize and update Git submodules recursively
