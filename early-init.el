@@ -9,9 +9,10 @@
 
 ;; ----------------------------- Configuration ------------------------------ ;;
 (setq make-backup-files nil)
-(delete-selection-mode 1)
+(setq ring-bell-function 'ignore)
 (setq scroll-step            1
       scroll-conservatively  10000)
+(delete-selection-mode 1)
 
 ;; File path completion: https://emacs.stackexchange.com/questions/79845/completion-at-point-functions-and-filesystem-path-completion
 (add-hook 'completion-at-point-functions #'comint-filename-completion)

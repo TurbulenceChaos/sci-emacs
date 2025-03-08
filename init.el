@@ -21,6 +21,7 @@
 					    (:noweb . "yes")
 					    (:eval . "never-export")))
 
+(add-to-list 'org-latex-packages-alist '("" "tikz" t))
 (setf org-format-latex-header (concat "% xelatex\n" org-format-latex-header))
 (setq org-format-latex-options (plist-put org-format-latex-options :scale 3))
 (add-hook 'org-babel-after-execute-hook 'org-display-inline-images)
@@ -37,6 +38,18 @@
 (require 'org-babel-latex-save-pdf)
 
 ;; ------------------------------- lisp-site -------------------------------- ;;
+;; Auctex
+(add-to-list 'load-path "~/.emacs.d/lisp-site/auctex")
+(require 'font-latex)
+(require 'auctex)
+(require 'tex)
+(require 'latex)
+
+;; Org-sliced-images
+(add-to-list 'load-path "~/.emacs.d/lisp-site/org-sliced-images")
+(require 'org-sliced-images)
+(org-sliced-images-mode)
+
 ;; Which-key
 (add-to-list 'load-path "~/.emacs.d/lisp-site/emacs-which-key")
 (require 'which-key)
@@ -84,7 +97,7 @@
 ;; Orderless
 (add-to-list 'load-path "~/.emacs.d/lisp-site/orderless")
 (require 'orderless)
-(setq completion-styles '(orderless basic)
+(setq completion-styles '(substring orderless basic)
       completion-category-overrides '((file (styles basic partial-completion))))
 
 ;; Magit
@@ -98,10 +111,6 @@
 (require 'llama)
 (add-to-list 'load-path "~/.emacs.d/lisp-site/magit/lisp")
 (require 'magit)
-(with-eval-after-load 'info
-  (info-initialize)
-  (add-to-list 'Info-directory-list
-               "~/.emacs.d/lisp-site/magit/Documentation/"))
 
 ;; Diff-hl
 (add-to-list 'load-path "~/.emacs.d/lisp-site/diff-hl")
@@ -141,18 +150,6 @@
 (require 'treemacs-nerd-icons)
 (treemacs-load-theme "nerd-icons")
 
-;; Org-sliced-images
-(add-to-list 'load-path "~/.emacs.d/lisp-site/org-sliced-images")
-(require 'org-sliced-images)
-(org-sliced-images-mode)
-
-;; Auctex
-(add-to-list 'load-path "~/.emacs.d/lisp-site/auctex")
-(require 'font-latex)
-(require 'auctex)
-(require 'tex)
-(require 'latex)
-
 ;; Smartparens
 (add-to-list 'load-path "~/.emacs.d/lisp-site/smartparens/")
 (require 'smartparens-config)
@@ -162,3 +159,4 @@
 (add-to-list 'load-path "~/.emacs.d/lisp-site/undo-fu-session")
 (require 'undo-fu-session)
 (undo-fu-session-global-mode)
+
