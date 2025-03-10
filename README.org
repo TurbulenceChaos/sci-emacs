@@ -1,10 +1,11 @@
-* PhD Emacs
-This repository contains my Emacs configuration tailored for academic research.
+* SCI Emacs
+** Introduction
+My Emacs configuration tailored for academic research
 
 ** Installation 
-#+begin_src shell :noeval 
-  # Clone the repository to your Emacs directory
-  git clone git@github.com:TurbulenceChaos/SCI-Emacs.git ~/.emacs.d
+#+begin_src bash :noeval 
+  # Clone this repository to your Emacs directory
+  git clone https://github.com/TurbulenceChaos/SCI-emacs.git ~/.emacs.d
   cd ~/.emacs.d
 
   # Initialize and update Git submodules recursively
@@ -13,7 +14,7 @@ This repository contains my Emacs configuration tailored for academic research.
   # Build Org-mode from the lisp-site directory
   cd ~/.emacs.d/lisp-site/org-mode
   make
- 
+
   # Install ispell for spell-checking support
   sudo apt install -y ispell
 #+end_src
