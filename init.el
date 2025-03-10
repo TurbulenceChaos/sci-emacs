@@ -46,3 +46,8 @@
 (add-to-list 'load-path "~/.emacs.d/lisp-site/diff-hl")
 (require 'diff-hl)
 (global-diff-hl-mode)
+
+;; Undo-fu-session
+(add-to-list 'load-path "~/.emacs.d/lisp-site/undo-fu-session")
+(require 'undo-fu-session)
+(undo-fu-session-global-mode)
