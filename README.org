@@ -1,10 +1,10 @@
 * SCI Emacs
 ** Introduction
-My Emacs configuration tailored for academic research
+This is my Emacs configuration, specifically tailored for academic research.
 
 ** Installation 
 #+begin_src bash :noeval
-  # Clone this repository to your Emacs directory
+  # Clone this repository into your Emacs directory
   git clone https://github.com/TurbulenceChaos/SCI-emacs.git ~/.emacs.d
   cd ~/.emacs.d
 
@@ -19,3 +19,27 @@ My Emacs configuration tailored for academic research
   # Install ispell for spell-checking support
   sudo apt install -y ispell
 #+end_src
+
+** Test Tikz
+Test Org Babel functionality in [[file:Test/Test-tikz.org]].
+
+[[file:Test/Test.png]]
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
