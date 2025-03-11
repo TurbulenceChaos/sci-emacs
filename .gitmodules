@@ -28,9 +28,6 @@
 [submodule "lisp-site/org-sliced-images"]
 	path = lisp-site/org-sliced-images
 	url = https://github.com/jcfk/org-sliced-images.git
-[submodule "lisp-site/org-mode"]
-	path = lisp-site/org-mode
-	url = https://github.com/bzg/org-mode.git
 [submodule "lisp-site/undo-fu-session"]
 	path = lisp-site/undo-fu-session
 	url = https://github.com/emacsmirror/undo-fu-session.git

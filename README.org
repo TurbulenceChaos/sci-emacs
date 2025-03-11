@@ -13,11 +13,6 @@ This is my Emacs configuration, specifically tailored for academic research.
 
   # Initialize and update Git submodules recursively
   git submodule update --init --recursive
-
-  # Build Org-mode from the lisp-site directory
-  cd ~/.emacs.d/lisp-site/org-mode
-  make
-  cd ~/.emacs.d
   
   # Install ispell for spell-checking support
   sudo apt install -y ispell

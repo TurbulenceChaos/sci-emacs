@@ -1,15 +1,12 @@
 ;;; Org-mode configuration
 
 ;; Org-mode
-(add-to-list 'load-path "~/.emacs.d/lisp-site/org-mode/lisp")
-(require 'org)
-
+(require 'ox-latex)
 (add-to-list 'org-latex-packages-alist '("" "tikz" t))
 (setf org-format-latex-header (concat "% xelatex\n" org-format-latex-header))
-
-(setq org-image-actual-width '(0.5))
 (setq org-format-latex-options (plist-put org-format-latex-options :scale 3))
 
+(setq org-image-actual-width '(0.5))
 (setq org-startup-with-inline-images t)
 (add-hook 'org-babel-after-execute-hook 'org-display-inline-images)
 
