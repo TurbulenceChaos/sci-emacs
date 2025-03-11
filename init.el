@@ -1,5 +1,7 @@
-;;; SCI emacs - Peng 2025
-;;; GitHub: https://github.com/TurbulenceChaos/SCI-emacs
+;;; SCI emacs
+;; Author: Turbulence <211110103110@stu.just.edu.cn>
+;; Homepage: https://github.com/TurbulenceChaos/SCI-emacs
+;; Package-Requires: (emacs "30.1")
 
 (add-to-list 'load-path "~/.emacs.d/lisp")
 

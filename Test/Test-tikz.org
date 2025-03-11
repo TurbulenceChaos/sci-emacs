@@ -1,5 +1,6 @@
 #+Title: Test tikz
-#+Author: Peng Peng
+#+Author: Turbulence
+#+Email: 211110103110@stu.just.edu.cn
 
 * Tikz styles
 #+name: Tikz-styles
