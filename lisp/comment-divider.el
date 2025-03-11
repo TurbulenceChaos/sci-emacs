@@ -1,4 +1,6 @@
-;; Comment divider
+;;; Create a comment divider of exactly 80 characters based on TEXT.
+;;; The format is: ;; --- <TEXT> --- ;;.
+
 (defun comment-divider (text)
   "Create a comment divider of exactly 80 characters based on TEXT.
 The format is: ;; --- <TEXT> --- ;;."

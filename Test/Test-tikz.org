@@ -1,0 +1,53 @@
+#+Title: Test tikz
+#+Author: Peng Peng
+
+* Tikz styles
+#+name: Tikz-styles
+#+begin_src latex :eval no
+  % Define color
+  \definecolor{water-blue}{HTML}{569AFF}
+  \definecolor{light-green}{HTML}{8CC361}
+  % Define tikzstyle
+  \tikzstyle{Water-blue}=[bottom color=water-blue,top color=white]
+#+end_src
+
+* Test tikz
+Type ~C-c C-c~ to evaluate [[Test-tikz]].
+
+#+name: Test-tikz
+#+begin_src latex :file Test-tikz.png
+  \usetikzlibrary{}
+  <<Tikz-styles>>  
+  \begin{tikzpicture}[scale=3]
+    \def\L{2cm}
+    \def\H{1/1.618*2cm}
+    \def\Arrow{0.6cm}
+    \draw[draw=blue,Water-blue,ultra thick](0,3/4*\H)cos(\L/2,\H/2)sin(\L,\H/4)--(\L,0)--(0,0)--cycle;
+    \draw[ultra thick](0,0)rectangle(\L,\H);
+    \draw[-stealth,line width=2mm,color=light-green](\L+\Arrow,\H/2)--node[above=4pt,black]{Excitation}++(-\Arrow,0);
+    \node at (\L/2,\H/4) {Water};
+    \draw[thick,dashed,draw=gray](0,\H/2)--++(\L,0);
+    \draw[-latex](\L/2,\H/2)node[below left]{$O$}--++(0.5,0)node[below]{$x$};
+    \draw[-latex](\L/2,\H/2)--++(45:0.3)node[above]{$y$};
+    \draw[-latex](\L/2,\H/2)--++(0,0.5)node[right]{$z$};
+  \end{tikzpicture}
+#+end_src
+
+#+RESULTS: Test-tikz
+[[file:Test-tikz.png]]
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+

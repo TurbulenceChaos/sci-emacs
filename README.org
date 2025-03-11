@@ -3,7 +3,7 @@
 My Emacs configuration tailored for academic research
 
 ** Installation 
-#+begin_src bash :noeval 
+#+begin_src bash :noeval
   # Clone this repository to your Emacs directory
   git clone https://github.com/TurbulenceChaos/SCI-emacs.git ~/.emacs.d
   cd ~/.emacs.d
@@ -14,7 +14,8 @@ My Emacs configuration tailored for academic research
   # Build Org-mode from the lisp-site directory
   cd ~/.emacs.d/lisp-site/org-mode
   make
-
+  cd ~/.emacs.d
+  
   # Install ispell for spell-checking support
   sudo apt install -y ispell
 #+end_src
