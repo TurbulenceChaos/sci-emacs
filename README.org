@@ -8,13 +8,41 @@ This is my Emacs configuration, specifically tailored for academic research.
 
 * Installation 
 #+begin_src bash :noeval
-  # Clone this repository into your Emacs directory
+  # Clone the SCI-emacs repository into the Emacs directory
   git clone https://github.com/TurbulenceChaos/SCI-emacs.git ~/.emacs.d
+
+  # Navigate to the Emacs directory
   cd ~/.emacs.d
 
   # Initialize and update Git submodules recursively
   git submodule update --init --recursive
-  
+
+  # Install eldev for emacs-jupyter
+  curl -fsSL https://raw.github.com/emacs-eldev/eldev/master/webinstall/eldev | sh
+
+  # Ensure eldev binaries are in the system PATH
+  export PATH="$HOME/.local/bin:$PATH"
+
+  # Build emacs-jupyter
+  cd ~/.emacs.d/lisp-site/jupyter
+  make
+
+  # Build magit
+  cd ~/.emacs.d/lisp-site/magit/lisp
+  make
+
+  # Return to the Emacs directory
+  cd ~/.emacs.d
+
+  # Byte compile Emacs Lisp directories excluding 'jupyter' and 'magit'
+  emacs --batch --eval "
+  (let ((excluded '(\"jupyter\" \"magit\"))
+        (base-dir \"~/.emacs.d/lisp-site/\"))
+    (dolist (dir (directory-files base-dir t \"^[^.].*\"))
+      (when (and (file-directory-p dir)
+                 (not (member (file-name-nondirectory dir) excluded)))
+        (byte-recompile-directory dir 0 t))))"
+
   # Install ispell for spell-checking support
   sudo apt install -y ispell
 #+end_src

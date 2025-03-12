@@ -67,9 +67,19 @@
 	     (org-sliced-images-display-inline-images)
 	     (save-buffer)))
 
+(defun replace-colon-brackets ()
+  "Replace ': [[' at the beginning of a line with '[[' in the current buffer."
+  (interactive)
+  (save-excursion
+    (goto-char (point-min))
+    (while (re-search-forward "^: \\[\\[" nil t)
+      (replace-match "[[" nil nil))))
+
 (add-hook 'org-babel-after-execute-hook
 	  '(lambda ()
-	     (org-sliced-images-remove-inline-images) (org-sliced-images-display-inline-images)))
+	     (replace-colon-brackets)
+	     (org-sliced-images-remove-inline-images)
+	     (org-sliced-images-display-inline-images)))
 
 (add-hook 'kill-buffer-hook
           (lambda ()
