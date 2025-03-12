@@ -8,6 +8,9 @@
 ;; Comment divider
 (require 'comment-divider)
 
+;; Emacs-jupyter
+(require 'emacs-jupyter-config)
+
 ;; Org-mode
 (require 'org-config)
 

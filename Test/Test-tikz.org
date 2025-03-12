@@ -1,8 +1,8 @@
-#+Title: Test tikz
+#+Title: Test
 #+Author: Turbulence
 #+Email: 211110103110@stu.just.edu.cn
 
-* Tikz styles
+* Test Tikz
 #+name: Tikz-styles
 #+begin_src latex :eval no
   % Define color
@@ -12,7 +12,6 @@
   \tikzstyle{Water-blue}=[bottom color=water-blue,top color=white]
 #+end_src
 
-* Test tikz
 Type ~C-c C-c~ to evaluate [[Test-tikz]].
 
 #+name: Test-tikz
@@ -51,4 +50,22 @@ Type ~C-c C-c~ to evaluate [[Test-tikz]].
  
  
  
+
+* Test Emacs-jupyter
+
+#+begin_src jupyter-Wolfram-Language
+  Integrate[Cos[x], x]
+#+end_src
+
+#+RESULTS: 
+#+begin_export html
+<div><img alt="Output" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAD4AAAAWCAIAAAAXXLhIAAAA0XpUWHRSYXcgcHJvZmlsZSB0eXBlIGV4aWYAAHjabU9bbgQxCPvPKXoEXoHkOJndrNQb9Pg1M7TVVGspYBxDQttfn6/2kRCmZj2GT3cCbNqUBTLowpWZ5hlP6K47vuuNvfQFqf9deDXwcdej/DL+DSKpl/IFcLVqqEEql87rqo/yyxrjPuhnjYLT79ff1qYh3p3DEE0owif4aKBI3oV6+Msf7jCyP4Xsgbw9Am0e6dCVjQnZcXfv5grhmStonq4LWRFZBa2MKhVDNCgH+DiVXOcbV9Fas11kRK4AAAAJcEhZcwAADsQAAA7EAZUrDhsAAAA8dEVYdFNvZnR3YXJlAENyZWF0ZWQgd2l0aCB0aGUgV29sZnJhbSBMYW5ndWFnZSA6IHd3dy53b2xmcmFtLmNvbVyipoUAAAAhdEVYdENyZWF0aW9uIFRpbWUAMjAyNTowMzoxMiAxMDowNDo0Mq5dp0EAAAMnSURBVFiF5ZZNSGpBFMfPvQzkDbE2LrLwwoUIQigpiugDKYgIW7Qp6NMWLUKhIPpCwSjJoIUQtKg2rYQocBtkUQZKEEVdxRZBXmgRQZrRJynT4r7ivvQ9RrFe8X6rmTNz5vxn5swHhTGGnwn9rwWkz/8hPRqNchyn0+k+TUxq/JIeDocHBwc5jmMYRqPROByOl5eXD12j0aggCH6//5scDwQAsVhMr9dfXFwMDQ3l5+fzPG+1WiORyNTUlLSrWq3meV4ul1MUlWqYk5OTpaUlAGhqatLr9Znxwhjv7OwAgMfjwW+EQqFIJIIzh8vlWltbS8/3/PzcbDYn2mkAoGkaAOLx+Pt8WJbNzc0Vy7Ozs5SEmpoa6cz9fj9FUY+PjzMzM2q1WqFQNDY2CoJAsqirq6sIof39fbF6d3fHsuzIyAjhntAAUFFRUVhY2NnZ6XQ6Y7HYhx49PT2+N5qbm5OOUl9ff3t76/F4tre3BUHo7+8nid3e3t7a2trX1/f8/AwAZrM5KyvrQ5b+DXHxQ6FQQ0MDALAs63A47u/vk+5db29vdXW11MLzPADMzc29WxYXFymKenp6IkmYq6srpVJptVoPDw8RQtKkJUoYUbHb7fZ6vVqtdnh4uKio6OjoiHT2ANIs4jgOY3x5eUniqFQqFxYW7HZ7V1fXwMBAbW0tedDf7vWqqiqXy3V8fCyTybq7u8lHkYIQAoDEu/VPtLS0KBSKYDA4OjqaUqAkT5JGo5mYmAgEAuFwOKWx0sNisahUqpKSEvIDKoIAwO12n56emkymd+vZ2RnDMNnZ2RmWmYDX652fn9/b22MYpry83Ol0dnR0EPoiANjd3bXZbOvr621tbXK53OfzLS8v2+12mUz2mbLh4eHBYDCYTKbKykoAmJycNBqNdXV1BQUFJO40AExPT29sbDAMY7FYjEbjwcHByspKqtuXBuPj4/F43GazidWxsbHi4mKDwYAJPxpJL8GM81mv6Q8FfVmkra2tm5sbrVZbVlZG6CIIwubm5vX1ddLWL5Ku0+nEw5eXl0fulZOTU1paCgAqlSqxlcLf4/OdBj84118BOML6ub6Dz5AAAAAASUVORK5CYII="></div>
+#+end_export
+
+
+#+begin_src jupyter-Wolfram-Language
+  Plot[{Sin[x], Cos[x]}, {x, -Pi, Pi}]
+#+end_src
+
+#+RESULTS: 
 

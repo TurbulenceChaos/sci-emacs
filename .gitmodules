@@ -31,3 +31,21 @@
 [submodule "lisp-site/undo-fu-session"]
 	path = lisp-site/undo-fu-session
 	url = https://github.com/emacsmirror/undo-fu-session.git
+[submodule "lisp-site/emacs-websocket"]
+	path = lisp-site/emacs-websocket
+	url = https://github.com/ahyatt/emacs-websocket.git
+[submodule "lisp-site/emacs-web-server"]
+	path = lisp-site/emacs-web-server
+	url = https://github.com/skeeto/emacs-web-server.git
+[submodule "lisp-site/emacs-zmq"]
+	path = lisp-site/emacs-zmq
+	url = https://github.com/nnicandro/emacs-zmq.git
+[submodule "lisp-site/jupyter"]
+	path = lisp-site/jupyter
+	url = https://github.com/emacs-jupyter/jupyter.git
+[submodule "lisp-site/markdown-mode"]
+	path = lisp-site/markdown-mode
+	url = https://github.com/jrblevin/markdown-mode.git
+[submodule "lisp-site/xah-wolfram-mode"]
+	path = lisp-site/xah-wolfram-mode
+	url = https://github.com/xahlee/xah-wolfram-mode.git

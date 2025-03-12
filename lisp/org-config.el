@@ -6,6 +6,8 @@
 (setf org-format-latex-header (concat "% xelatex\n" org-format-latex-header))
 (setq org-format-latex-options (plist-put org-format-latex-options :scale 3))
 
+(setq org-startup-numerated t)
+
 (setq org-image-actual-width '(0.5))
 (setq org-startup-with-inline-images t)
 (add-hook 'org-babel-after-execute-hook 'org-display-inline-images)
@@ -13,10 +15,12 @@
 (org-babel-do-load-languages
  'org-babel-load-languages
  '((emacs-lisp . t)
-   (latex . t)))
+   (latex . t)
+   (python . t)
+   (jupyter . t)))
 
 (defun my-org-confirm-babel-evaluate (lang body)
-  (not (member lang '("emacs-lisp" "latex"))))
+  (not (member lang '("emacs-lisp" "latex" "jupyter-python" "jupyter-Wolfram-Language"))))
 (setq org-confirm-babel-evaluate 'my-org-confirm-babel-evaluate)
 
 (setq org-babel-default-header-args:latex '((:results . "graphics file")
@@ -25,7 +29,20 @@
 					    (:iminoptions . "-density 600 -units pixelsperinch")
 					    (:imoutoptions . "-quality 100 -alpha remove")
 					    (:noweb . "yes")
+					    (:comments . "link")
 					    (:eval . "never-export")))
+
+(setq org-babel-default-header-args:jupyter-python '((:async . "yes")
+                                                     (:kernel . "python3")
+                                                     (:session . "jupyter-python")
+                                                     (:comments . "link")
+                                                     (:eval . "never-export")))
+
+(setq org-babel-default-header-args:jupyter-Wolfram-Language '((:async . "yes")
+							       (:kernel . "wolframlanguage14.1")
+							       (:session . "jupyter-wolfram-language")
+							       (:comments . "link")
+							       (:eval . "never-export")))
 
 ;; Displays org-mode inline images in a sliced manner
 (add-to-list 'load-path "~/.emacs.d/lisp-site/org-sliced-images")
