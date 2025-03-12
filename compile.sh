@@ -11,7 +11,7 @@ curl -fsSL https://raw.github.com/emacs-eldev/eldev/master/webinstall/eldev | sh
 # Ensure eldev binaries are in the system PATH
 export PATH="$HOME/.local/bin:$PATH"
 
-# Build emacs-jupyter
+# Directory of Emacs Lisp packages
 packages_dir=$HOME/.emacs.d/lisp-site
 
 # List of directories to build with make
@@ -27,8 +27,8 @@ make_dirs=(
     "llama"
 )
 
-for package_dir in "${make_dirs[@]}"; do
-    cd "$packages_dir/$package_dir"
+for make_dir in "${make_dirs[@]}"; do
+    cd "$packages_dir/$make_dir"
     make clean
     make
 done
@@ -42,9 +42,9 @@ elisp_files=(
     "xah-wolfram-mode/xah-wolfram-mode.el"
 )
 
-for file in "${elisp_files[@]}"; do
-    cd "$packages_dir/$(dirname "$file")"
-    emacs -batch -L . -f batch-byte-compile "$(basename "$file")"
+for elisp_file in "${elisp_files[@]}"; do
+    cd "$packages_dir/$(dirname "$elisp_file")"
+    emacs -batch -L . -f batch-byte-compile "$(basename "$elisp_file")"
 done
 
 # Return to the Emacs directory
