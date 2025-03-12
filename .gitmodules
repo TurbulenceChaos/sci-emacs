@@ -49,3 +49,6 @@
 [submodule "lisp-site/xah-wolfram-mode"]
 	path = lisp-site/xah-wolfram-mode
 	url = https://github.com/xahlee/xah-wolfram-mode.git
+[submodule "lisp-site/Wolfram-terminal-image"]
+	path = lisp-site/Wolfram-terminal-image
+	url = https://github.com/TurbulenceChaos/Wolfram-terminal-image.git

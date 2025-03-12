@@ -1,28 +1,8 @@
-#+Title: SCI Emacs
+#+Title: Test
 #+Author: Turbulence
 #+Email: 211110103110@stu.just.edu.cn
-#+PROPERTY: HEADER-ARGS+ :eval no
 
-* Introduction
-This is my Emacs configuration, specifically tailored for academic research.
-
-* Installation 
-#+begin_src bash :noeval
-  # Clone this repository into your Emacs directory
-  git clone https://github.com/TurbulenceChaos/SCI-emacs.git ~/.emacs.d
-  cd ~/.emacs.d
-
-  # Initialize and update Git submodules recursively
-  git submodule update --init --recursive
-  
-  # Install ispell for spell-checking support
-  sudo apt install -y ispell
-#+end_src
-
-* Test
-Test Org Babel functionality in [[file:Test/Test.org]].
-
-** Test Tikz
+* Test Tikz
 #+name: Tikz-styles
 #+begin_src latex :eval no
   % Define color
@@ -54,7 +34,7 @@ Type ~C-c C-c~ to evaluate [[Test-tikz]].
 #+end_src
 
 #+RESULTS: Test-tikz
-[[file:Test/Test-tikz.png]]
+[[file:Test-tikz.png]]
  
  
  
@@ -67,7 +47,7 @@ Type ~C-c C-c~ to evaluate [[Test-tikz]].
  
  
 
-** Test emacs-jupyter
+* Test Emacs-jupyter wolfram language
 #+begin_src jupyter-Wolfram-Language :results silent
   Get["~/.emacs.d/lisp-site/Wolfram-terminal-image/WolframTerminalImage.wl"]
 
@@ -94,13 +74,11 @@ Type ~C-c C-c~ to evaluate [[Test-tikz]].
 
 #+RESULTS:
 :results:
-[[file:Test/tmp/wolfram/wolfram-bb5f9b0d-5916-4ccc-a470-cb0ecf54dd70.png]]
+[[file:tmp/wolfram/wolfram-bb5f9b0d-5916-4ccc-a470-cb0ecf54dd70.png]]
  
-[[file:Test/tmp/wolfram/wolfram-89618318-6704-422e-b329-2b5f1de6e59b.png]]
+[[file:tmp/wolfram/wolfram-89618318-6704-422e-b329-2b5f1de6e59b.png]]
  
-[[file:Test/tmp/wolfram/wolfram-95a162a2-a1a4-4d56-950b-6e14205d6ca2.png]]
- 
- 
+[[file:tmp/wolfram/wolfram-95a162a2-a1a4-4d56-950b-6e14205d6ca2.png]]
  
  
  
@@ -114,4 +92,20 @@ Type ~C-c C-c~ to evaluate [[Test-tikz]].
  
  
  
-:end:
+ 
+ 
+:end:  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 

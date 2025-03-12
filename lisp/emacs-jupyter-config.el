@@ -15,8 +15,4 @@
 (add-to-list 'load-path "~/.emacs.d/lisp-site/jupyter")
 (require 'jupyter)
 
-(add-to-list 'load-path "~/.emacs.d/lisp-site/xah-wolfram-mode")
-(require 'xah-wolfram-mode)
-(defalias 'wolfram-language-mode 'xah-wolfram-mode)
-
 (provide 'emacs-jupyter-config)
