@@ -17,6 +17,7 @@
    (jupyter . t)))
 
 (setq org-babel-default-header-args:latex '((:results . "graphics file")
+					    (:results . "value drawer")				
 					    (:imagemagick . "t")
 					    (:fit . "yes")
 					    (:iminoptions . "-density 300 -units pixelsperinch")
