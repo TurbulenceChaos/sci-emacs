@@ -55,11 +55,20 @@
 (defalias 'org-toggle-inline-images 'org-sliced-images-toggle-inline-images)
 (defalias 'org-display-inline-images 'org-sliced-images-display-inline-images)
 
-(add-hook 'org-mode-hook 'org-sliced-images-display-inline-images)
+(add-hook 'org-mode-hook
+	  '(lambda ()
+	     (org-sliced-images-display-inline-images)
+	     (save-buffer)))
 
 (add-hook 'org-babel-after-execute-hook
 	  '(lambda ()
 	     (org-sliced-images-remove-inline-images) (org-sliced-images-display-inline-images)))
+
+(add-hook 'kill-buffer-hook
+          (lambda ()
+            (when (eq major-mode 'org-mode)
+              (org-sliced-images-remove-inline-images)
+	      (save-buffer))))
 
 
 (provide 'org-config)
