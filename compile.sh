@@ -3,7 +3,7 @@
 set -e # Exit immediately if a command exits with a non-zero status
 
 # Redirect all output to a log file
-exec >"$HOME/.emacs.d/compile.log" 2>&1
+# exec >"$HOME/.emacs.d/compile.log" 2>&1
 
 # Install eldev for emacs-jupyter
 curl -fsSL https://raw.github.com/emacs-eldev/eldev/master/webinstall/eldev | sh
