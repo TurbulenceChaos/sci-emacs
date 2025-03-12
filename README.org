@@ -11,11 +11,11 @@ This is my Emacs configuration, specifically tailored for academic research.
   # Clone the SCI-emacs repository into the Emacs directory
   git clone https://github.com/TurbulenceChaos/SCI-emacs.git ~/.emacs.d
   
-  # Initialize and update Git submodules recursively
-  git submodule update --init --recursive
-  
   # Navigate to the Emacs directory
   cd ~/.emacs.d
+
+  # Initialize and update Git submodules recursively
+  git submodule update --init --recursive
 
   # Compile Emacs Lisp packages
   bash compile.sh
