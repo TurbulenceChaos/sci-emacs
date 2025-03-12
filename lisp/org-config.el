@@ -33,12 +33,19 @@
 
 ;; Org babel Jupyter-Wolfram-Language
 (require 'wolfram-config)
-(setq org-babel-default-header-args:jupyter-Wolfram-Language '((:async . "yes")
-							       (:kernel . "wolframlanguage14.1")
-							       (:session . "jupyter-wolfram-language")
-							       (:results . "value drawer")
-							       (:comments . "link")
-							       (:eval . "never-export")))
+
+;; Define common default header arguments
+(setq my/org-babel-wolfram-headers
+      '((:async . "yes")
+        (:kernel . "wolframlanguage14.1")
+        (:session . "jupyter-wolfram-language")
+        (:results . "value drawer")
+        (:comments . "link")
+        (:eval . "never-export")))
+
+;; Apply the same headers to both languages
+(setq org-babel-default-header-args:jupyter-Wolfram-Language my/org-babel-wolfram-headers)
+(setq org-babel-default-header-args:wolfram my/org-babel-wolfram-headers)
 
 ;; Export both PDF and PNG files when executing an org-tikz block.
 (add-to-list 'load-path "~/.emacs.d/lisp")

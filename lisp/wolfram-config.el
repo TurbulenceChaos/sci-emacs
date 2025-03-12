@@ -2,6 +2,11 @@
 (require 'xah-wolfram-mode)
 
 (defalias 'wolfram-language-mode 'xah-wolfram-mode)
+(defalias 'wolfram-mode 'wolfram-language-mode)
+
+(defun org-babel-execute:wolfram (body params)
+  "Execute the given Wolfram block via `jupyter-Wolfram-Language`."
+  (org-babel-execute:jupyter-Wolfram-Language body params))
 
 (defun replace-colon-brackets ()
   "Replace ': [[' at the beginning of a line with '[[' in the current buffer."
