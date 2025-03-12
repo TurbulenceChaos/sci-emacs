@@ -85,8 +85,8 @@ Type ~C-c C-c~ to evaluate [[Test-tikz]].
 #+RESULTS:
 :results:
 
-[[file:Test/tmp/wolfram/wolfram-bb5f9b0d-5916-4ccc-a470-cb0ecf54dd70.png
-]]
+[[file:Test/tmp/wolfram/wolfram-bb5f9b0d-5916-4ccc-a470-cb0ecf54dd70.png]]
+
 [[file:Test/tmp/wolfram/wolfram-89618318-6704-422e-b329-2b5f1de6e59b.png]]
 
 [[file:Test/tmp/wolfram/wolfram-95a162a2-a1a4-4d56-950b-6e14205d6ca2.png]]
