@@ -76,8 +76,8 @@
   (interactive)
   (save-excursion
     (goto-char (point-min))
-    (while (re-search-forward "^: \\[\\[" nil t)
-      (replace-match "[[" nil nil))))
+    (while (re-search-forward "^: \\[\\[file:" nil t)
+      (replace-match "[[file:" nil nil))))
 
 (add-hook 'org-babel-after-execute-hook
 	  '(lambda ()

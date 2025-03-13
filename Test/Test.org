@@ -2,7 +2,7 @@
 #+Author: Turbulence
 #+Email: 211110103110@stu.just.edu.cn
 
-* Test Tikz
+* Test Org-babel-Tikz
 #+name: Tikz-styles
 #+begin_src latex :eval no
   % Define color
@@ -39,34 +39,47 @@ Type ~C-c C-c~ to evaluate [[Test-tikz]].
 :end:
 
 * Test Emacs-jupyter wolfram language
+#+name: Wolfram-terminal-image
 #+begin_src jupyter-Wolfram-Language :results silent
   Get["~/.emacs.d/lisp-site/Wolfram-terminal-image/WolframTerminalImage.wl"]
 
-  (* Enable or disable auto-deletion of Wolfram terminal images *)
+  (* Specify the terminal type for Wolfram terminal images (options: "vscode", "emacs") *)
 
-  wolframTerminalDeleteImage = "no";
+  wolframTerminalType = "emacs";
 
-  (* Resolution of Wolfram terminal images *)
+  (* Set the resolution (in DPI) for Wolfram terminal images *)
 
   wolframTerminalImageResolution = 150;
 
-  (* Emacs *)
-  wolframTerminalType = "emacs";
+  (* Enable ("yes") or disable ("no") automatic deletion of Wolfram terminal images *)
+
+  wolframTerminalDeleteImage = "no";
+
+  (* Enable ("yes") or disable ("no") playback of Wolfram terminal CDF files *)
+
+  wolframTerminalPlay = "no";
+
+  (* Specify the player application for Wolfram terminal CDF files *)
+
+  (* Options: "wolframplayer" for Linux or WSL2, "/path/to/wolframplayer.exe" for Windows or WSL2 *)
+
+  wolframplayer = "wolframplayer";
 #+end_src
 
-#+begin_src jupyter-Wolfram-Language
+#+name: Wolfram-test
+#+begin_src jupyter-Wolfram-Language :display text
   sol1 = DSolve[{D[y[x, t], t] + 2 D[y[x, t], x] == Sin[x], y[0, t] == 
-  Cos[t]}, y[x, t], {x, t}]
+    Cos[t]}, y[x, t], {x, t}]
 
   sol2 = sol1[[1, 1, 2]]
 
   Plot3D[sol2, {x, -10, 10}, {t, -5, 5}]
 #+end_src
 
-#+RESULTS:
+#+RESULTS: Wolfram-test
 :results:
-[[file:tmp/wolfram/wolfram-bb5f9b0d-5916-4ccc-a470-cb0ecf54dd70.png]]
-[[file:tmp/wolfram/wolfram-89618318-6704-422e-b329-2b5f1de6e59b.png]]
-[[file:tmp/wolfram/wolfram-95a162a2-a1a4-4d56-950b-6e14205d6ca2.png]]
-:end:  
- 
+[[file:tmp/wolfram/wolfram-d096bd35-a93a-40b1-862d-171a031486a6.png]]
+[[file:tmp/wolfram/wolfram-ceca9bd8-85a1-4518-9f49-fa9c7a66be53.png]]
+[[file:tmp/wolfram/wolfram-b46b1b0b-7fe8-454c-804b-ee6559d82176.png]]
+:end:
+

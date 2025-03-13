@@ -22,3 +22,6 @@
 
 ;; Undo history
 (require 'undo-config)
+
+;; Keycast
+(require 'record-config)
