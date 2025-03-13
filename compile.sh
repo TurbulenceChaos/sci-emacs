@@ -6,7 +6,9 @@ set -e # Exit immediately if a command exits with a non-zero status
 # exec >"$HOME/.emacs.d/compile.log" 2>&1
 
 # Install eldev for emacs-jupyter
-curl -fsSL https://raw.github.com/emacs-eldev/eldev/master/webinstall/eldev | sh
+if [ ! -f "$HOME/.local/bin/eldev" ]; then
+    curl -fsSL https://raw.github.com/emacs-eldev/eldev/master/webinstall/eldev | sh
+fi
 
 # Ensure eldev binaries are in the system PATH
 export PATH="$HOME/.local/bin:$PATH"

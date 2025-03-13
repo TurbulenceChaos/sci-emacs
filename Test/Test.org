@@ -34,7 +34,9 @@ Type ~C-c C-c~ to evaluate [[Test-tikz]].
 #+end_src
 
 #+RESULTS: Test-tikz
+:results:
 [[file:Test-tikz.png]]
+:end:
 
 * Test Emacs-jupyter wolfram language
 #+begin_src jupyter-Wolfram-Language :results silent
