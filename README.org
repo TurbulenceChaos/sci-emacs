@@ -59,8 +59,11 @@ Type ~C-c C-c~ to evaluate [[Test-tikz]].
 #+end_src
 
 #+RESULTS: Test-tikz
+:results:
 
 [[file:Test/Test-tikz.png]]  
+
+:end:
 
 ** Test emacs-jupyter
 #+begin_src wolfram :results silent

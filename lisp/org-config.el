@@ -4,6 +4,9 @@
 (setq org-startup-numerated t)
 
 (require 'ox-latex)
+(setq org-startup-with-latex-preview t)
+(setq org-preview-latex-image-directory "tmp/ltximg/")
+
 (add-to-list 'org-latex-packages-alist '("" "tikz" t))
 (setf org-format-latex-header (concat "% xelatex\n" org-format-latex-header))
 (setq org-format-latex-options (plist-put org-format-latex-options :scale 3))
