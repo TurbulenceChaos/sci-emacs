@@ -1,7 +1,6 @@
 #+Title: SCI Emacs
 #+Author: Turbulence
 #+Email: 211110103110@stu.just.edu.cn
-#+PROPERTY: HEADER-ARGS+ :eval no
 
 * Introduction
 This is my Emacs configuration, specifically tailored for academic research.
@@ -29,17 +28,8 @@ Test Org Babel functionality in [[file:Test/Test.org]].
 
 ** Test Org-babel-Tikz
 
-#+BEGIN_EXPORT html
-
-<img src="Test/Test-org-babel-tikz.gif" alt="TikZ Diagram" />
-
-#+END_EXPORT
+[[file:Test/Test-org-babel-tikz.gif]]
 
 ** Test Emacs-jupyter wolfram language
 
-#+BEGIN_EXPORT html
-
-<img src="file:Test/Test-emacs-jupyter-wolfram-language.gif" alt="Jupyter-Wolfram-Language" />
-
-#+END_EXPORT
-
+[[file:Test/Test-emacs-jupyter-wolfram-language.gif]]
