@@ -1,5 +1,5 @@
 #+Title: Test
-#+Author: Turbulence
+#+Author: Peng Peng
 #+Email: 211110103110@stu.just.edu.cn
 
 * Test Org-babel-Tikz

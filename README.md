@@ -1,6 +1,6 @@
 # SCI Emacs
 
-**Author:** Turbulence \
+**Author:** Peng Peng \
 **Email:** [211110103110@stu.just.edu.cn](mailto:211110103110@stu.just.edu.cn)
 
 ## Introduction
