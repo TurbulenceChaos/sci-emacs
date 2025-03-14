@@ -1,14 +1,16 @@
 # SCI Emacs
 
-**Author:** Peng Peng \
-**Email:** [211110103110@stu.just.edu.cn](mailto:211110103110@stu.just.edu.cn) \
-**GitHub:** [https://github.com/TurbulenceChaos](https://github.com/TurbulenceChaos) \
+**Author:** Peng Peng  \
+**Email:** [211110103110@stu.just.edu.cn](mailto:211110103110@stu.just.edu.cn)  \
+**GitHub:** [TurbulenceChaos](https://github.com/TurbulenceChaos) \
 **Package-Requires:** (emacs "30.1")
 
-## Introduction
+---
+
+## 1. Introduction
 This is my Emacs configuration, specifically tailored for academic research.
 
-## Installation
+## 2. Installation
 ```bash
 # Clone the SCI-emacs repository into the Emacs directory
 git clone https://github.com/TurbulenceChaos/SCI-emacs.git ~/.emacs.d
@@ -26,13 +28,14 @@ bash compile.sh
 sudo apt install -y ispell
 ```
 
-## Test
-Test Org Babel functionality in [Test/Test.org](Test/Test.org).
+## 3. Testing
+Verify Org Babel functionality by running the test script in [Test/Test.org](Test/Test.org).
 
-### Test Org-babel-Tikz
+### 3.1 Testing Org-babel-Tikz
 
 ![Test Org-babel-Tikz](Test/Test-org-babel-tikz.gif)
 
-### Test Emacs-jupyter wolfram language
+### 3.2 Testing Jupyter-Wolfram-Language
+You can find my Wolfram-Terminal-Image package on GitHub: [Wolfram-Terminal-Image](https://github.com/TurbulenceChaos/Wolfram-terminal-image). This package enhances the display of WolframScript graphics in terminal environments like VS Code and Emacs Org-mode.
 
 ![Test Emacs-jupyter wolfram language](Test/Test-emacs-jupyter-wolfram-language.gif)
