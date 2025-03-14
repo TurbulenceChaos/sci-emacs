@@ -67,7 +67,7 @@ Type ~C-c C-c~ to evaluate [[Test-tikz]].
 #+end_src
 
 #+name: Wolfram-test
-#+begin_src jupyter-Wolfram-Language :display text
+#+begin_src jupyter-Wolfram-Language
   sol1 = DSolve[{D[y[x, t], t] + 2 D[y[x, t], x] == Sin[x], y[0, t] == 
     Cos[t]}, y[x, t], {x, t}]
 
@@ -78,8 +78,7 @@ Type ~C-c C-c~ to evaluate [[Test-tikz]].
 
 #+RESULTS: Wolfram-test
 :results:
-[[file:tmp/wolfram/wolfram-d096bd35-a93a-40b1-862d-171a031486a6.png]]
-[[file:tmp/wolfram/wolfram-ceca9bd8-85a1-4518-9f49-fa9c7a66be53.png]]
-[[file:tmp/wolfram/wolfram-b46b1b0b-7fe8-454c-804b-ee6559d82176.png]]
+[[file:tmp/wolfram/wolfram-b14d4b57-d013-4247-97ee-8c253023d8ec.png]]
+[[file:tmp/wolfram/wolfram-54d262e6-b299-4fd1-90f6-98f860ec26dd.png]]
+[[file:tmp/wolfram/wolfram-7f1e8b3c-a32a-417e-96b7-35dfe3675c09.png]]
 :end:
-
