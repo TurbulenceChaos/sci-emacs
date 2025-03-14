@@ -1,7 +1,9 @@
 # SCI Emacs
 
 **Author:** Peng Peng \
-**Email:** [211110103110@stu.just.edu.cn](mailto:211110103110@stu.just.edu.cn)
+**Email:** [211110103110@stu.just.edu.cn](mailto:211110103110@stu.just.edu.cn) \
+**GitHub:** [https://github.com/TurbulenceChaos](https://github.com/TurbulenceChaos) \
+**Package-Requires:** (emacs "30.1")
 
 ## Introduction
 This is my Emacs configuration, specifically tailored for academic research.
