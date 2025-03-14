@@ -1,7 +1,7 @@
 # SCI Emacs
 
-**Author:** Turbulence 
-**Email:** 211110103110@stu.just.edu.cn  
+**Author:** Turbulence \
+**Email:** [211110103110@stu.just.edu.cn](mailto:211110103110@stu.just.edu.cn)
 
 ## Introduction
 This is my Emacs configuration, specifically tailored for academic research.
