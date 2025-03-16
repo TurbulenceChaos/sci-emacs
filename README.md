@@ -36,6 +36,6 @@ Verify Org Babel functionality by running the test script in [Test/Test.org](Tes
 ![Test Org-babel-Tikz](Test/Test-org-babel-tikz.gif)
 
 ### 3.2 Testing Jupyter-Wolfram-Language
-You can find my Wolfram-Terminal-Image package on GitHub: [Wolfram-Terminal-Image](https://github.com/TurbulenceChaos/Wolfram-terminal-image). This package enhances the display of WolframScript graphics in terminal environments like VS Code and Emacs Org-mode.
+You can find my [Wolfram-Terminal-Image](https://github.com/TurbulenceChaos/Wolfram-terminal-image) package on GitHub. This package enhances the display of WolframScript graphics in terminal environments like VS Code and Emacs Org-mode.
 
 ![Test Emacs-jupyter wolfram language](Test/Test-emacs-jupyter-wolfram-language.gif)
