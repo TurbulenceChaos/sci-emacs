@@ -1,5 +1,6 @@
 ;;; SCI emacs
-;; Author: Turbulence <211110103110@stu.just.edu.cn>
+;; Author: Peng Peng
+;; Email: 211110103110@stu.just.edu.cn
 ;; Homepage: https://github.com/TurbulenceChaos/SCI-emacs
 ;; Package-Requires: (emacs "30.1")
 
