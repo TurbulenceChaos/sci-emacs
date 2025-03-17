@@ -2,6 +2,11 @@
 
 ;; Org-mode
 (setq org-startup-numerated t)
+(add-hook 'org-mode-hook
+          (lambda ()
+            (setq-local completion-preview-commands
+                        '(org-self-insert-command
+                          completion-preview-complete))))
 
 (require 'ox-latex)
 (setq org-startup-with-latex-preview t)

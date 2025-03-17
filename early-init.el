@@ -20,3 +20,4 @@
 (which-key-mode)
 
 (add-hook 'completion-at-point-functions #'comint-filename-completion)
+(global-completion-preview-mode 1)
