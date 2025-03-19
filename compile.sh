@@ -27,7 +27,6 @@ make_dirs=(
     "with-editor/lisp"
     "dash.el"
     "llama"
-    "keycast"
 )
 
 for make_dir in "${make_dirs[@]}"; do
