@@ -16,13 +16,3 @@
 (delete-selection-mode 1)
 (setq scroll-step            1
       scroll-conservatively  10000)
-
-(which-key-mode)
-
-(add-hook 'completion-at-point-functions #'comint-filename-completion)
-(global-completion-preview-mode 1)
-(add-hook 'org-mode-hook
-          (lambda ()
-            (setq-local completion-preview-commands
-                        '(org-self-insert-command
-                          completion-preview-complete))))

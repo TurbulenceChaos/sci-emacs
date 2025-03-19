@@ -1,7 +1,4 @@
-;;; Org-mode configuration
-
-;; Org-mode
-(setq org-startup-numerated t)
+;;; Org-latex configuration
 
 (require 'ox-latex)
 (setq org-startup-with-latex-preview t)
@@ -15,14 +12,6 @@
 (add-to-list 'load-path "~/.emacs.d/lisp")
 (require 'org-tikz-export-pdf-and-png)
 
-(setq org-confirm-babel-evaluate nil)
-(org-babel-do-load-languages
- 'org-babel-load-languages
- '((emacs-lisp . t)
-   (latex . t)
-   (python . t)
-   (jupyter . t)))
-
 (setq org-babel-default-header-args:latex '((:results . "graphics file")
 					    (:results . "value drawer")				
 					    (:imagemagick . "t")
@@ -33,17 +22,4 @@
 					    (:comments . "link")
 					    (:eval . "never-export")))
 
-(setq org-babel-default-header-args:jupyter-python '((:async . "yes")
-                                                     (:kernel . "python3")
-                                                     (:session . "jupyter-python")
-                                                     (:comments . "link")
-                                                     (:eval . "never-export")))
-
-;; Org babel Jupyter-Wolfram-Language
-(require 'wolfram-config)
-
-;; Displays org-mode inline images in a sliced manner
-(require 'org-sliced-images-config)
-
-
-(provide 'org-config)
+(provide 'org-latex)

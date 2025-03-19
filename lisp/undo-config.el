@@ -5,4 +5,7 @@
 
 (undo-fu-session-global-mode)
 
+(add-to-list 'load-path "~/.emacs.d/lisp-site/vundo")
+(require 'vundo)
+
 (provide 'undo-config)

@@ -21,7 +21,6 @@ make_dirs=(
     "jupyter"
     "magit/lisp"
     "diff-hl"
-    "compat"
     "markdown-mode"
     "transient/lisp"
     "with-editor/lisp"
@@ -38,10 +37,10 @@ done
 # List of Emacs Lisp files to byte-compile
 elisp_files=(
     "undo-fu-session/undo-fu-session.el"
-    "vertico/vertico.el"
     "orderless/orderless.el"
     "org-sliced-images/org-sliced-images.el"
     "xah-wolfram-mode/xah-wolfram-mode.el"
+    "vundo/vundo.el"
 )
 
 for elisp_file in "${elisp_files[@]}"; do

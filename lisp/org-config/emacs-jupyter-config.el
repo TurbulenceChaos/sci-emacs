@@ -15,4 +15,13 @@
 (add-to-list 'load-path "~/.emacs.d/lisp-site/jupyter")
 (require 'jupyter)
 
+(setq org-babel-default-header-args:jupyter-python '((:async . "yes")
+                                                     (:kernel . "python3")
+                                                     (:session . "jupyter-python")
+                                                     (:comments . "link")
+                                                     (:eval . "never-export")))
+
+;; Org babel Jupyter-Wolfram-Language
+(require 'wolfram-config)
+
 (provide 'emacs-jupyter-config)
