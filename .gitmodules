@@ -43,6 +43,3 @@
 [submodule "lisp-site/Wolfram-terminal-image"]
 	path = lisp-site/Wolfram-terminal-image
 	url = https://github.com/TurbulenceChaos/Wolfram-terminal-image.git
-[submodule "lisp-site/keycast"]
-	path = lisp-site/keycast
-	url = https://github.com/tarsius/keycast.git
