@@ -1,7 +1,9 @@
 ;;; Completion configuration
 
+;; Which-key-mode
 (which-key-mode)
 
+;; Icomplete-mode
 (icomplete-vertical-mode)
 (setq icomplete-compute-delay 0)
 (setq icomplete-delay-completions-threshold 0)
@@ -9,8 +11,9 @@
 (setq icomplete-scroll t)
 (setq icomplete-show-matches-on-no-input t)
 (define-key icomplete-minibuffer-map (kbd "TAB") 'icomplete-force-complete)
-;;(define-key icomplete-minibuffer-map (kbd "RET") 'icomplete-force-complete-and-exit)
+(define-key icomplete-minibuffer-map (kbd "RET") 'icomplete-force-complete-and-exit)
 (define-key icomplete-minibuffer-map (kbd "SPC") #'self-insert-command)
+(define-key icomplete-minibuffer-map (kbd "C-j") 'minibuffer-complete-and-exit)
 
 ;; Orderless
 (add-to-list 'load-path "~/.emacs.d/lisp-site/orderless")
@@ -18,6 +21,7 @@
 (setq completion-styles '(substring orderless basic)
       completion-category-overrides '((file (styles basic partial-completion))))
 
+;; Completion-preview-mode
 (add-hook 'completion-at-point-functions #'comint-filename-completion)
 ;;(add-hook 'completion-at-point-functions #'ispell-completion-at-point)
 (global-completion-preview-mode 1)
