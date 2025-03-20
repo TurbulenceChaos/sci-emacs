@@ -10,10 +10,10 @@
 (setq icomplete-max-delay-chars 0)
 (setq icomplete-scroll t)
 (setq icomplete-show-matches-on-no-input t)
-(define-key icomplete-minibuffer-map (kbd "TAB") 'icomplete-force-complete)
-(define-key icomplete-minibuffer-map (kbd "RET") 'icomplete-force-complete-and-exit)
-(define-key icomplete-minibuffer-map (kbd "SPC") 'self-insert-command)
-(define-key icomplete-minibuffer-map (kbd "C-j") 'minibuffer-complete-and-exit)
+(define-key icomplete-vertical-mode-minibuffer-map (kbd "TAB") 'icomplete-force-complete)
+(define-key icomplete-vertical-mode-minibuffer-map (kbd "RET") 'icomplete-force-complete-and-exit)
+(define-key icomplete-vertical-mode-minibuffer-map (kbd "SPC") 'self-insert-command)
+(define-key icomplete-vertical-mode-minibuffer-map (kbd "C-j") 'minibuffer-complete-and-exit)
 
 ;; Orderless
 (add-to-list 'load-path "~/.emacs.d/lisp-site/orderless")
