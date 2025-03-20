@@ -13,7 +13,7 @@
 (define-key icomplete-vertical-mode-minibuffer-map (kbd "TAB") 'icomplete-force-complete)
 (define-key icomplete-vertical-mode-minibuffer-map (kbd "RET") 'icomplete-force-complete-and-exit)
 (define-key icomplete-vertical-mode-minibuffer-map (kbd "SPC") 'self-insert-command)
-(define-key icomplete-vertical-mode-minibuffer-map (kbd "C-j") 'minibuffer-complete-and-exit)
+(define-key icomplete-vertical-mode-minibuffer-map (kbd "C-j") 'exit-minibuffer)
 
 ;; Orderless
 (add-to-list 'load-path "~/.emacs.d/lisp-site/orderless")
