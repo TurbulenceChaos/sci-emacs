@@ -40,3 +40,6 @@
 [submodule "lisp-site/vundo"]
 	path = lisp-site/vundo
 	url = https://github.com/casouri/vundo.git
+[submodule "lisp-site/keycast"]
+	path = lisp-site/keycast
+	url = https://github.com/tarsius/keycast.git

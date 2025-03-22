@@ -22,3 +22,5 @@
 ;; Undo history
 (require 'undo-config)
 
+;; Record
+(require 'record-config)

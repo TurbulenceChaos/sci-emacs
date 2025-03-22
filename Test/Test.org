@@ -64,6 +64,8 @@ Type ~C-c C-c~ to evaluate [[Test-tikz]].
   (* Options: "wolframplayer" for Linux or WSL2, "/path/to/wolframplayer.exe" for Windows or WSL2 *)
 
   wolframplayer = "wolframplayer";
+
+  (* To restore `$Post` to its original state, simply execute "$Post=." *)
 #+end_src
 
 #+name: Wolfram-test
@@ -78,7 +80,13 @@ Type ~C-c C-c~ to evaluate [[Test-tikz]].
 
 #+RESULTS: Wolfram-test
 :results:
-[[file:tmp/wolfram/wolfram-b14d4b57-d013-4247-97ee-8c253023d8ec.png]]
-[[file:tmp/wolfram/wolfram-54d262e6-b299-4fd1-90f6-98f860ec26dd.png]]
-[[file:tmp/wolfram/wolfram-7f1e8b3c-a32a-417e-96b7-35dfe3675c09.png]]
+\begin{equation*}
+\left\{\left\{y(x,t)\to \frac{1}{2} \left(2 \cos
+    \left(t-\frac{x}{2}\right)-\cos (x)+1\right)\right\}\right\}
+\end{equation*}
+\begin{equation*}
+\frac{1}{2} \left(2 \cos \left(t-\frac{x}{2}\right)-\cos (x)+1\right)
+\end{equation*}
+[[file:tmp/wolfram/wolfram-73809d17-2b10-4770-8f1e-d82546b27ce3.png]]
 :end:
+
