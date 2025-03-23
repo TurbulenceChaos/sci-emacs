@@ -34,9 +34,7 @@ Type ~C-c C-c~ to evaluate [[Test-tikz]].
 #+end_src
 
 #+RESULTS: Test-tikz
-:results:
 [[file:Test-tikz.png]]
-:end:
 
 * Test Emacs-jupyter wolfram language
 #+name: Wolfram-terminal-image
@@ -71,11 +69,13 @@ Type ~C-c C-c~ to evaluate [[Test-tikz]].
 #+name: Wolfram-test
 #+begin_src jupyter-Wolfram-Language
   sol1 = DSolve[{D[y[x, t], t] + 2 D[y[x, t], x] == Sin[x], y[0, t] == 
-    Cos[t]}, y[x, t], {x, t}]
+     Cos[t]}, y[x, t], {x, t}]
 
   sol2 = sol1[[1, 1, 2]]
 
-  Plot3D[sol2, {x, -10, 10}, {t, -5, 5}]
+  Plot3D[sol2, {x, -10, 10}, {t, -5, 5}]  
+
+  MatrixForm[Array[Subscript[a, ##] &, {2, 2, 2}]]
 #+end_src
 
 #+RESULTS: Wolfram-test
@@ -87,6 +87,34 @@ Type ~C-c C-c~ to evaluate [[Test-tikz]].
 \begin{equation*}
 \frac{1}{2} \left(2 \cos \left(t-\frac{x}{2}\right)-\cos (x)+1\right)
 \end{equation*}
-[[file:tmp/wolfram/wolfram-73809d17-2b10-4770-8f1e-d82546b27ce3.png]]
+[[file:tmp/wolfram/wolfram-06edf7bf-079e-40b0-8707-5fabdcac4d6a.png]]
+\begin{equation*}
+\left(
+\begin{array}{cc}
+ \left(
+\begin{array}{c}
+ a_{1,1,1} \\
+ a_{1,1,2} \\
+\end{array}
+\right) & \left(
+\begin{array}{c}
+ a_{1,2,1} \\
+ a_{1,2,2} \\
+\end{array}
+\right) \\
+ \left(
+\begin{array}{c}
+ a_{2,1,1} \\
+ a_{2,1,2} \\
+\end{array}
+\right) & \left(
+\begin{array}{c}
+ a_{2,2,1} \\
+ a_{2,2,2} \\
+\end{array}
+\right) \\
+\end{array}
+\right)
+\end{equation*}
 :end:
 

@@ -10,14 +10,11 @@
 (defalias 'org-toggle-inline-images 'org-sliced-images-toggle-inline-images)
 (defalias 'org-display-inline-images 'org-sliced-images-display-inline-images)
 
-(add-hook 'org-mode-hook
-	  '(lambda ()
-	     (org-sliced-images-display-inline-images)
-	     (save-buffer)))
+(setq org-babel-min-lines-for-block-output 1000)
 
 (defun clean-wolfram-results ()
   "Clean up Wolfram Language results in org-mode.
-Handles line prefixes, unwanted whitespace in equations, and trailing backslashes."
+Removes unwanted formatting while preserving necessary LaTeX formatting."
   (interactive)
   (save-excursion
     (goto-char (point-min))
@@ -38,10 +35,10 @@ Handles line prefixes, unwanted whitespace in equations, and trailing backslashe
           (while (re-search-forward "^> " nil t)
             (replace-match "  " nil nil))
             
-          ;; Remove trailing backslashes at the end of lines
+          ;; Remove SINGLE backslashes at end of lines (not double backslashes)
           (goto-char (point-min))
-          (while (re-search-forward "\\\\\\s-*$" nil t)
-            (replace-match "" nil nil))
+          (while (re-search-forward "\\([^\\]\\)\\\\\\s-*$" nil t)
+            (replace-match "\\1" nil nil))
             
           ;; Remove blank lines
           (goto-char (point-min))
@@ -53,12 +50,30 @@ Handles line prefixes, unwanted whitespace in equations, and trailing backslashe
           (unless (looking-at "\n")
             (insert "\n")))))))
 
+(defun org-sliced-images-display-inline-images-setup ()
+  "Set up org-mode with both LaTeX previews and sliced images."
+  ;; First load images
+  (org-sliced-images-display-inline-images)
+  ;; Then process all LaTeX fragments
+  (org-latex-preview)
+  ;; Finally, find and fix any LaTeX fragments that follow file links
+  (org-with-point-at (point-min)
+    (while (re-search-forward "\\[\\[file:" nil t)
+      (let ((link-end (save-excursion (search-forward "]]" nil t))))
+        (when link-end
+          (goto-char link-end)
+          (org-next-visible-heading 1)
+          (org-latex-preview)))))
+  (save-buffer))
+
+(add-hook 'org-mode-hook 'org-sliced-images-display-inline-images-setup)
+
 (add-hook 'org-babel-after-execute-hook
           '(lambda ()
              (org-sliced-images-remove-inline-images)
              (clean-wolfram-results)
-             (call-interactively 'org-latex-preview)
-             (org-sliced-images-display-inline-images)))
+             (org-sliced-images-display-inline-images)
+             (org-latex-preview)))
 
 (add-hook 'kill-buffer-hook
           (lambda ()

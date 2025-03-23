@@ -12,7 +12,7 @@
       '((:async . "yes")
         (:kernel . "wolframlanguage14.1")
         (:session . "jupyter-wolfram-language")
-        (:results . "value drawer")
+        (:results . "raw drawer")
 	(:display . "text")
         (:comments . "link")
         (:eval . "never-export")))

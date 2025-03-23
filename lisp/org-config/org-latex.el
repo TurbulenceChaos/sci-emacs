@@ -13,7 +13,7 @@
 (require 'org-tikz-export-pdf-and-png)
 
 (setq org-babel-default-header-args:latex '((:results . "graphics file")
-					    (:results . "value drawer")				
+					    ;; (:results . "value drawer")				
 					    (:imagemagick . "t")
 					    (:fit . "yes")
 					    (:iminoptions . "-density 300 -units pixelsperinch")
