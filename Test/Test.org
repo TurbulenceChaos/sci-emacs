@@ -1,6 +1,7 @@
 #+Title: Test
 #+Author: Peng Peng
 #+Email: 211110103110@stu.just.edu.cn
+#+GitHub: https://github.com/TurbulenceChaos
 
 * Test Org-babel-Tikz
 #+name: Tikz-styles
@@ -37,7 +38,7 @@ Type ~C-c C-c~ to evaluate [[Test-tikz]].
 [[file:Test-tikz.png]]
 
 * Test Emacs-jupyter wolfram language
-#+name: Wolfram-terminal-image
+#+name: Import-Wolfram-terminal-image-package
 #+begin_src jupyter-Wolfram-Language :results silent
   Get["~/.emacs.d/lisp-site/Wolfram-terminal-image/WolframTerminalImage.wl"]
 
@@ -49,19 +50,15 @@ Type ~C-c C-c~ to evaluate [[Test-tikz]].
 
   wolframTerminalImageResolution = 150;
 
-  (* Enable ("yes") or disable ("no") automatic deletion of Wolfram terminal images *)
-
-  wolframTerminalDeleteImage = "no";
-
   (* Enable ("yes") or disable ("no") playback of Wolfram terminal CDF files *)
 
-  wolframTerminalPlay = "no";
+  wolframTerminalPlay = "yes";
 
   (* Specify the player application for Wolfram terminal CDF files *)
 
-  (* Options: "wolframplayer" for Linux or WSL2, "/path/to/wolframplayer.exe" for Windows or WSL2 *)
+  (* Options: "/path/to/wolframplayer" for Linux or WSL2, "/path/to/wolframplayer.exe" for Windows or WSL2 *)
 
-  wolframplayer = "wolframplayer";
+  wolframTerminalPlayer = "wolframplayer.exe";
 
   (* To restore `$Post` to its original state, simply execute "$Post=." *)
 #+end_src
@@ -80,14 +77,18 @@ Type ~C-c C-c~ to evaluate [[Test-tikz]].
 
 #+RESULTS: Wolfram-test
 :results:
+: Out[1]=
 \begin{equation*}
 \left\{\left\{y(x,t)\to \frac{1}{2} \left(2 \cos
     \left(t-\frac{x}{2}\right)-\cos (x)+1\right)\right\}\right\}
 \end{equation*}
+: Out[2]=
 \begin{equation*}
 \frac{1}{2} \left(2 \cos \left(t-\frac{x}{2}\right)-\cos (x)+1\right)
 \end{equation*}
-[[file:tmp/wolfram/wolfram-06edf7bf-079e-40b0-8707-5fabdcac4d6a.png]]
+: Out[3]=
+[[file:tmp/wolfram/wolfram-9a0c74f9-f4d9-4b0c-bffb-0a0087bb4bc9.png]]
+: Out[4]=
 \begin{equation*}
 \left(
 \begin{array}{cc}
@@ -117,4 +118,7 @@ Type ~C-c C-c~ to evaluate [[Test-tikz]].
 \right)
 \end{equation*}
 :end:
+
+
+
 

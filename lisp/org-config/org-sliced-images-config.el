@@ -14,7 +14,8 @@
 
 (defun clean-wolfram-results ()
   "Clean up Wolfram Language results in org-mode.
-Removes unwanted formatting while preserving necessary LaTeX formatting."
+Removes unwanted formatting while preserving necessary LaTeX formatting.
+Keeps ': ' prefix only for lines starting with 'Out['."
   (interactive)
   (save-excursion
     (goto-char (point-min))
@@ -25,10 +26,20 @@ Removes unwanted formatting while preserving necessary LaTeX formatting."
         (save-restriction
           (narrow-to-region start end)
           
-          ;; Remove ': ' at beginning of lines
+          ;; First mark 'Out[' lines to preserve them
+          (goto-char (point-min))
+          (while (re-search-forward "^: Out\\[" nil t)
+            (add-text-properties (line-beginning-position) (line-end-position)
+                                '(preserve-prefix t)))
+          
+          ;; Remove ': ' at beginning of lines except those marked
           (goto-char (point-min))
           (while (re-search-forward "^: " nil t)
-            (replace-match "" nil nil))
+            (unless (get-text-property (line-beginning-position) 'preserve-prefix)
+              (replace-match "" nil nil)))
+          
+          ;; Remove text properties we added
+          (remove-text-properties (point-min) (point-max) '(preserve-prefix nil))
           
           ;; Remove '> ' at beginning of lines 
           (goto-char (point-min))
@@ -50,23 +61,10 @@ Removes unwanted formatting while preserving necessary LaTeX formatting."
           (unless (looking-at "\n")
             (insert "\n")))))))
 
-(defun org-sliced-images-display-inline-images-setup ()
-  "Set up org-mode with both LaTeX previews and sliced images."
-  ;; First load images
-  (org-sliced-images-display-inline-images)
-  ;; Then process all LaTeX fragments
-  (org-latex-preview)
-  ;; Finally, find and fix any LaTeX fragments that follow file links
-  (org-with-point-at (point-min)
-    (while (re-search-forward "\\[\\[file:" nil t)
-      (let ((link-end (save-excursion (search-forward "]]" nil t))))
-        (when link-end
-          (goto-char link-end)
-          (org-next-visible-heading 1)
-          (org-latex-preview)))))
-  (save-buffer))
-
-(add-hook 'org-mode-hook 'org-sliced-images-display-inline-images-setup)
+(add-hook 'org-mode-hook
+	  '(lambda ()
+	     (org-sliced-images-display-inline-images)
+	     (save-buffer)))
 
 (add-hook 'org-babel-after-execute-hook
           '(lambda ()
