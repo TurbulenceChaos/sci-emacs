@@ -32,10 +32,14 @@ sudo apt install -y ispell
 Verify Org Babel functionality by running the test script in [Test/Test.org](Test/Test.org).
 
 ### 3.1 Testing Org-babel-Tikz
+Demo: [Test-org-babel-tikz.gif](Test/Test-org-babel-tikz.gif) 
 
 ![Test Org-babel-Tikz](Test/Test-org-babel-tikz.gif)
 
 ### 3.2 Testing Jupyter-Wolfram-Language
-You can find my [Wolfram-Terminal-Image](https://github.com/TurbulenceChaos/Wolfram-terminal-image) package on GitHub. This package enhances the display of WolframScript graphics in terminal environments like VS Code and Emacs Org-mode.
+You can find my [Wolfram-Terminal-Image](https://github.com/TurbulenceChaos/Wolfram-terminal-image) package on GitHub. 
+This package enhances the display of WolframScript graphics in terminal environments like VS Code and Emacs Org-mode.
+
+Demo: [Test-emacs-jupyter-wolfram-language.gif](Test/Test-emacs-jupyter-wolfram-language.gif)
 
 ![Test Emacs-jupyter wolfram language](Test/Test-emacs-jupyter-wolfram-language.gif)
