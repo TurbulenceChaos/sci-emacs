@@ -50,15 +50,19 @@ Type ~C-c C-c~ to evaluate [[Test-tikz]].
 
   wolframTerminalImageResolution = 150;
 
+  (* Specify the formula type for emacs (options: "latex", "image") *)
+
+  wolframTerminalFormulaType = "latex";
+
   (* Enable ("yes") or disable ("no") playback of Wolfram terminal CDF files *)
 
-  wolframTerminalPlay = "yes";
+  wolframTerminalPlay = "no";
 
   (* Specify the player application for Wolfram terminal CDF files *)
 
   (* Options: "/path/to/wolframplayer" for Linux or WSL2, "/path/to/wolframplayer.exe" for Windows or WSL2 *)
 
-  wolframTerminalPlayer = "wolframplayer.exe";
+  wolframTerminalPlayer = "wolframplayer";
 
   (* To restore `$Post` to its original state, simply execute "$Post=." *)
 #+end_src
@@ -87,7 +91,7 @@ Type ~C-c C-c~ to evaluate [[Test-tikz]].
 \frac{1}{2} \left(2 \cos \left(t-\frac{x}{2}\right)-\cos (x)+1\right)
 \end{equation*}
 : Out[3]=
-[[file:tmp/wolfram/wolfram-9a0c74f9-f4d9-4b0c-bffb-0a0087bb4bc9.png]]
+[[file:tmp/wolfram/wolfram-49aa3ece-44c3-4bae-93d7-a00e79837513.png]]
 : Out[4]=
 \begin{equation*}
 \left(
