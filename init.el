@@ -17,7 +17,7 @@ Skips directories containing 'test' in their path."
                      "\\.el$" 
                      nil 
                      (lambda (dir)
-                       (not (string-match-p (regexp-opt '("test")) dir)))))
+                       (not (string-match-p (regexp-opt '("test" "Test")) dir)))))
         (let* ((file-dir (file-name-directory file))
                (normalized-dir (file-name-as-directory 
                                 (expand-file-name file-dir))))
