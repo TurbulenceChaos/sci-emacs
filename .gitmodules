@@ -1,45 +1,45 @@
-[submodule "lisp-site/orderless"]
-	path = lisp-site/orderless
+[submodule "site-lisp/orderless"]
+	path = site-lisp/orderless
 	url = https://github.com/oantolin/orderless.git
-[submodule "lisp-site/dash.el"]
-	path = lisp-site/dash.el
+[submodule "site-lisp/dash.el"]
+	path = site-lisp/dash.el
 	url = https://github.com/magnars/dash.el.git
-[submodule "lisp-site/transient"]
-	path = lisp-site/transient
+[submodule "site-lisp/transient"]
+	path = site-lisp/transient
 	url = https://github.com/magit/transient.git
-[submodule "lisp-site/with-editor"]
-	path = lisp-site/with-editor
+[submodule "site-lisp/with-editor"]
+	path = site-lisp/with-editor
 	url = https://github.com/magit/with-editor.git
-[submodule "lisp-site/magit"]
-	path = lisp-site/magit
+[submodule "site-lisp/magit"]
+	path = site-lisp/magit
 	url = https://github.com/magit/magit.git
-[submodule "lisp-site/diff-hl"]
-	path = lisp-site/diff-hl
+[submodule "site-lisp/diff-hl"]
+	path = site-lisp/diff-hl
 	url = https://github.com/dgutov/diff-hl.git
-[submodule "lisp-site/llama"]
-	path = lisp-site/llama
+[submodule "site-lisp/llama"]
+	path = site-lisp/llama
 	url = https://github.com/tarsius/llama.git
-[submodule "lisp-site/org-sliced-images"]
-	path = lisp-site/org-sliced-images
+[submodule "site-lisp/org-sliced-images"]
+	path = site-lisp/org-sliced-images
 	url = https://github.com/jcfk/org-sliced-images.git
-[submodule "lisp-site/undo-fu-session"]
-	path = lisp-site/undo-fu-session
+[submodule "site-lisp/undo-fu-session"]
+	path = site-lisp/undo-fu-session
 	url = https://github.com/emacsmirror/undo-fu-session.git
-[submodule "lisp-site/jupyter"]
-	path = lisp-site/jupyter
+[submodule "site-lisp/jupyter"]
+	path = site-lisp/jupyter
 	url = https://github.com/emacs-jupyter/jupyter.git
-[submodule "lisp-site/markdown-mode"]
-	path = lisp-site/markdown-mode
+[submodule "site-lisp/markdown-mode"]
+	path = site-lisp/markdown-mode
 	url = https://github.com/jrblevin/markdown-mode.git
-[submodule "lisp-site/xah-wolfram-mode"]
-	path = lisp-site/xah-wolfram-mode
+[submodule "site-lisp/xah-wolfram-mode"]
+	path = site-lisp/xah-wolfram-mode
 	url = https://github.com/xahlee/xah-wolfram-mode.git
-[submodule "lisp-site/Wolfram-terminal-image"]
-	path = lisp-site/Wolfram-terminal-image
+[submodule "site-lisp/Wolfram-terminal-image"]
+	path = site-lisp/Wolfram-terminal-image
 	url = https://github.com/TurbulenceChaos/Wolfram-terminal-image.git
-[submodule "lisp-site/vundo"]
-	path = lisp-site/vundo
+[submodule "site-lisp/vundo"]
+	path = site-lisp/vundo
 	url = https://github.com/casouri/vundo.git
-[submodule "lisp-site/keycast"]
-	path = lisp-site/keycast
+[submodule "site-lisp/keycast"]
+	path = site-lisp/keycast
 	url = https://github.com/tarsius/keycast.git

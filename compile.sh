@@ -14,7 +14,7 @@ fi
 export PATH="$HOME/.local/bin:$PATH"
 
 # Directory of Emacs Lisp packages
-packages_dir=$HOME/.emacs.d/lisp-site
+packages_dir=$HOME/.emacs.d/site-lisp
 
 # List of directories to build with make
 make_dirs=(

@@ -1,6 +1,7 @@
-;;; Completion configuration
+;;; init-completion.el --- Completion config
+;;; Commentary:
+;;; Code:
 
-;; Which-key-mode
 (which-key-mode)
 
 ;; Icomplete-mode
@@ -15,8 +16,6 @@
 (define-key icomplete-vertical-mode-minibuffer-map (kbd "SPC") 'self-insert-command)
 (define-key icomplete-vertical-mode-minibuffer-map (kbd "C-j") 'exit-minibuffer)
 
-;; Orderless
-(add-to-list 'load-path "~/.emacs.d/lisp-site/orderless")
 (require 'orderless)
 (setq completion-styles '(substring orderless basic)
       completion-category-overrides '((file (styles basic partial-completion))))
@@ -34,4 +33,5 @@
 (define-key completion-preview-active-mode-map (kbd "M-p")  'completion-preview-prev-candidate)
 
 
-(provide 'completion-config)
+(provide 'init-completion)
+;;; init-completion.el ends here
