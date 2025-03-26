@@ -52,7 +52,7 @@ Type ~C-c C-c~ to evaluate [[Test-tikz]].
 
   (* Specify the formula type for emacs (options: "latex", "image") *)
 
-  wolframTerminalFormulaType = "image";
+  wolframTerminalFormulaType = "latex";
 
   (* Enable ("yes") or disable ("no") playback of Wolfram terminal CDF files *)
 
@@ -82,13 +82,45 @@ Type ~C-c C-c~ to evaluate [[Test-tikz]].
 #+RESULTS: Wolfram-test
 :results:
 : Out[1]=
-[[file:tmp/wolfram/wolfram-d5994854-db86-4e35-8197-193501f6d93e.png]]
+\begin{equation*}
+\left\{\left\{y(x,t)\to \frac{1}{2} \left(2 \cos
+    \left(t-\frac{x}{2}\right)-\cos (x)+1\right)\right\}\right\}
+\end{equation*}
 : Out[2]=
-[[file:tmp/wolfram/wolfram-68296aa0-89bf-4375-b952-cf291f21a1a5.png]]
+\begin{equation*}
+\frac{1}{2} \left(2 \cos \left(t-\frac{x}{2}\right)-\cos (x)+1\right)
+\end{equation*}
 : Out[3]=
-[[file:tmp/wolfram/wolfram-7c1e85e9-2fb5-4feb-9060-4dbe6fbbbbf9.png]]
+[[file:tmp/wolfram/wolfram-0173664d-99cc-416b-ac4c-3719a9aa1690.png]]
 : Out[4]=
-[[file:tmp/wolfram/wolfram-1988842d-fea2-4cf4-b56d-dc2705a93280.png]]
+\begin{equation*}
+\left(
+\begin{array}{cc}
+ \left(
+\begin{array}{c}
+ a_{1,1,1} \\
+ a_{1,1,2} \\
+\end{array}
+\right) & \left(
+\begin{array}{c}
+ a_{1,2,1} \\
+ a_{1,2,2} \\
+\end{array}
+\right) \\
+ \left(
+\begin{array}{c}
+ a_{2,1,1} \\
+ a_{2,1,2} \\
+\end{array}
+\right) & \left(
+\begin{array}{c}
+ a_{2,2,1} \\
+ a_{2,2,2} \\
+\end{array}
+\right) \\
+\end{array}
+\right)
+\end{equation*}
 :end:
 
 
