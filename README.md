@@ -2,7 +2,7 @@
 
 **Author:** Peng Peng  \
 **Email:** [211110103110@stu.just.edu.cn](mailto:211110103110@stu.just.edu.cn)  \
-**GitHub:** [TurbulenceChaos](https://github.com/TurbulenceChaos) \
+**GitHub:** [TurbulenceChaos/SCI-emacs](https://github.com/TurbulenceChaos/SCI-emacs) \
 **Package-Requires:** (emacs "30.1")
 
 ---
@@ -28,7 +28,7 @@ bash compile.sh
 sudo apt install -y ispell
 ```
 
-## 3. Testing
+## 3. Testing setup
 Verify Org Babel functionality by running the test script in [Test/Test.org](Test/Test.org).
 
 ### 3.1 Testing Org-babel-Tikz

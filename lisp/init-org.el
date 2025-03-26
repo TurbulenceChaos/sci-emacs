@@ -31,15 +31,6 @@
 
 (defalias 'wolfram-language-mode 'xah-wolfram-mode)
 
-(setq org-babel-wolfram-headers
-      '((:async . "yes")
-        (:kernel . "wolframlanguage14.1")
-        (:session . "jupyter-wolfram-language")
-        (:results . "value drawer")
-	      (:display . "text")
-        (:comments . "link")
-        (:eval . "never-export")))
-
 (setq org-babel-default-header-args:jupyter-Wolfram-Language '((:async . "yes")
                                                                (:kernel . "wolframlanguage14.1")
                                                                (:session . "jupyter-wolfram-language")

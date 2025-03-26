@@ -40,7 +40,7 @@ Type ~C-c C-c~ to evaluate [[Test-tikz]].
 * Test Emacs-jupyter wolfram language
 #+name: Import-Wolfram-terminal-image-package
 #+begin_src jupyter-Wolfram-Language :results silent
-  Get["~/.emacs.d/lisp-site/Wolfram-terminal-image/WolframTerminalImage.wl"]
+  Get["~/.emacs.d/site-lisp/Wolfram-terminal-image/WolframTerminalImage.wl"]
 
   (* Specify the terminal type for Wolfram terminal images (options: "vscode", "emacs") *)
 
@@ -52,7 +52,7 @@ Type ~C-c C-c~ to evaluate [[Test-tikz]].
 
   (* Specify the formula type for emacs (options: "latex", "image") *)
 
-  wolframTerminalFormulaType = "latex";
+  wolframTerminalFormulaType = "image";
 
   (* Enable ("yes") or disable ("no") playback of Wolfram terminal CDF files *)
 
@@ -82,45 +82,13 @@ Type ~C-c C-c~ to evaluate [[Test-tikz]].
 #+RESULTS: Wolfram-test
 :results:
 : Out[1]=
-\begin{equation*}
-\left\{\left\{y(x,t)\to \frac{1}{2} \left(2 \cos
-    \left(t-\frac{x}{2}\right)-\cos (x)+1\right)\right\}\right\}
-\end{equation*}
+[[file:tmp/wolfram/wolfram-d5994854-db86-4e35-8197-193501f6d93e.png]]
 : Out[2]=
-\begin{equation*}
-\frac{1}{2} \left(2 \cos \left(t-\frac{x}{2}\right)-\cos (x)+1\right)
-\end{equation*}
+[[file:tmp/wolfram/wolfram-68296aa0-89bf-4375-b952-cf291f21a1a5.png]]
 : Out[3]=
-[[file:tmp/wolfram/wolfram-49aa3ece-44c3-4bae-93d7-a00e79837513.png]]
+[[file:tmp/wolfram/wolfram-7c1e85e9-2fb5-4feb-9060-4dbe6fbbbbf9.png]]
 : Out[4]=
-\begin{equation*}
-\left(
-\begin{array}{cc}
- \left(
-\begin{array}{c}
- a_{1,1,1} \\
- a_{1,1,2} \\
-\end{array}
-\right) & \left(
-\begin{array}{c}
- a_{1,2,1} \\
- a_{1,2,2} \\
-\end{array}
-\right) \\
- \left(
-\begin{array}{c}
- a_{2,1,1} \\
- a_{2,1,2} \\
-\end{array}
-\right) & \left(
-\begin{array}{c}
- a_{2,2,1} \\
- a_{2,2,2} \\
-\end{array}
-\right) \\
-\end{array}
-\right)
-\end{equation*}
+[[file:tmp/wolfram/wolfram-1988842d-fea2-4cf4-b56d-dc2705a93280.png]]
 :end:
 
 
