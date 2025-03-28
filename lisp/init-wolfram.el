@@ -1,4 +1,3 @@
-
 ;;; init-wolfram.el --- Wolfram Mathematica config
 ;;; Commentary:
 ;;; Code:

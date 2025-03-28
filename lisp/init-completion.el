@@ -29,8 +29,8 @@
             (setq-local completion-preview-commands
                         '(org-self-insert-command
                           completion-preview-complete))))
-(define-key completion-preview-active-mode-map (kbd "M-n")  'completion-preview-next-candidate)
-(define-key completion-preview-active-mode-map (kbd "M-p")  'completion-preview-prev-candidate)
+(define-key completion-preview-active-mode-map (kbd "M-n") 'completion-preview-next-candidate)
+(define-key completion-preview-active-mode-map (kbd "M-p") 'completion-preview-prev-candidate)
 
 
 (provide 'init-completion)

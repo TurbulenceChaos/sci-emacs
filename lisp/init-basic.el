@@ -16,8 +16,10 @@
 (global-prettify-symbols-mode 1)    ;; Replace symbols like lambda → λ
 (setq prettify-symbols-unprettify-at-point t) ;; Show original symbol on hover
 (electric-pair-mode t)              ;; Auto-close brackets and quotes
+(show-paren-mode 1)                 ;; Highlight matching parentheses
 (delete-selection-mode t)           ;; Replace selection when typing
 (global-subword-mode 1)             ;; Navigate camelCase words easily
+(global-font-lock-mode 1)           ;; Enable syntax highlighting
 
 ;; Indentation settings
 (setq tab-width 4
@@ -32,11 +34,6 @@
 (setq scroll-step 1
       scroll-conservatively 10000)  ;; Smooth scrolling
 
-;; Highlight matching parentheses
-(show-paren-mode 1)
-
-;; Enable syntax highlighting
-(global-font-lock-mode 1)
 
 (provide 'init-basic)
 ;;; init-basic.el ends here.
