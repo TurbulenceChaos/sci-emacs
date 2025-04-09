@@ -51,6 +51,7 @@
       '((:async . "yes")                 ; Run asynchronously
         (:kernel . "python3")            ; Use Python 3 kernel
         (:session . "jupyter-python")    ; Session name
+        (:results . "value drawer")      ; Result display style
         (:comments . "link")             ; Handle comments
         (:eval . "never-export")))       ; Prevent code evaluation during export
 
