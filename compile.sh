@@ -26,6 +26,9 @@ make_dirs=(
 
 for make_dir in "${make_dirs[@]}"; do
     cd "$packages_dir/$make_dir"
+    if [[ "$make_dir" == "jupyter" ]]; then
+        rm -rf .eldev
+    fi
     make clean
     make
 done
