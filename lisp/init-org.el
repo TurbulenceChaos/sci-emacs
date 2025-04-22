@@ -9,6 +9,8 @@
 ;; Enable automatic numbering for org lists
 (setq org-startup-numerated t)
 
+(setq org-support-shift-select t)
+
 ;; LaTeX Configuration
 ;; Load LaTeX export functionality
 (require 'ox-latex)
