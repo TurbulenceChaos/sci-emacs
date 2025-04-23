@@ -6,6 +6,7 @@
 * Test Org-babel-Tikz
 #+name: Tikz-styles
 #+begin_src latex :eval no
+  \usetikzlibrary{}
   % Define color
   \definecolor{water-blue}{HTML}{569AFF}
   \definecolor{light-green}{HTML}{8CC361}
@@ -17,8 +18,7 @@ Type ~C-c C-c~ to evaluate [[Test-tikz]].
 
 #+name: Test-tikz
 #+begin_src latex :file Test-tikz.png
-  \usetikzlibrary{}
-  <<Tikz-styles>>  
+  <<Tikz-styles>>
   \begin{tikzpicture}[scale=3]
     \def\L{2cm}
     \def\H{1/1.618*2cm}
@@ -69,30 +69,30 @@ Type ~C-c C-c~ to evaluate [[Test-tikz]].
 
 #+name: Wolfram-test
 #+begin_src jupyter-Wolfram-Language
-  sol1 = DSolve[{D[y[x, t], t] + 2 D[y[x, t], x] == Sin[x], y[0, t] == 
+  sol1 = DSolve[{D[y[x, t], t] + 2 D[y[x, t], x] == Sin[x], y[0, t] ==
      Cos[t]}, y[x, t], {x, t}]
 
   sol2 = sol1[[1, 1, 2]]
 
-  Plot3D[sol2, {x, -10, 10}, {t, -5, 5}]  
+  Plot3D[sol2, {x, -10, 10}, {t, -5, 5}]
 
   MatrixForm[Array[Subscript[a, ##] &, {2, 2, 2}]]
 #+end_src
 
 #+RESULTS: Wolfram-test
 :results:
-: Out[1]=
+: Out[5]=
 \begin{equation*}
 \left\{\left\{y(x,t)\to \frac{1}{2} \left(2 \cos
     \left(t-\frac{x}{2}\right)-\cos (x)+1\right)\right\}\right\}
 \end{equation*}
-: Out[2]=
+: Out[6]=
 \begin{equation*}
 \frac{1}{2} \left(2 \cos \left(t-\frac{x}{2}\right)-\cos (x)+1\right)
 \end{equation*}
-: Out[3]=
-[[file:tmp/wolfram/wolfram-0173664d-99cc-416b-ac4c-3719a9aa1690.png]]
-: Out[4]=
+: Out[7]=
+[[file:tmp/wolfram/wolfram-63df9725-3d1c-491d-8843-c3c1618dbf9a.png]]
+: Out[8]=
 \begin{equation*}
 \left(
 \begin{array}{cc}
@@ -122,7 +122,3 @@ Type ~C-c C-c~ to evaluate [[Test-tikz]].
 \right)
 \end{equation*}
 :end:
-
-
-
-
