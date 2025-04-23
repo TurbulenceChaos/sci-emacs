@@ -7,6 +7,7 @@
 
 (add-to-list 'load-path (expand-file-name "lisp" user-emacs-directory))
 (require 'init-basic)
+(require 'init-evil)
 (require 'init-completion)
 (require 'init-magit)
 (require 'init-undo)
@@ -15,7 +16,6 @@
 (require 'init-wolfram)
 (require 'init-emacs-jupyter)
 (require 'init-org)
-
 
 (provide 'init)
 ;;; init.el ends here

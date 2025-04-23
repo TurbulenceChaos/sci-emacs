@@ -32,7 +32,7 @@
 ;; System behavior
 (setq ring-bell-function 'ignore)   ;; Disable bell sound
 (setq scroll-step 1
-      scroll-conservatively 10000)  ;; Smooth scrolling
+      scroll-conservatively 8)  ;; Smooth scrolling
 
 
 (provide 'init-basic)
