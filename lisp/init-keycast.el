@@ -2,7 +2,7 @@
 ;;; Commentary:
 ;;; Code:
 
-(require 'keycast)
+(package-install 'keycast)
 
 
 (provide 'init-keycast)

@@ -2,10 +2,17 @@
 ;;; Commentary:
 ;;; Code:
 
-(setq byte-compile-warnings nil)
-(setq native-comp-async-report-warnings-errors nil)
-
 (add-to-list 'default-frame-alist '(fullscreen . maximized))
+
+(setq custom-file (expand-file-name "custom.el" user-emacs-directory))
+
+(require 'package)
+(setq package-archives '(("melpa" . "https://melpa.org/packages/")
+			 ("gnu" . "https://elpa.gnu.org/packages/")
+                         ("nongnu" . "https://elpa.nongnu.org/nongnu/")))
+(package-initialize)
+(when (not package-archive-contents)
+  (package-refresh-contents))
 
 
 (provide 'early-init)

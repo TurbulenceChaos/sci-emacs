@@ -5,6 +5,8 @@
 
 ;;; Code:
 
+(package-install 'org)
+
 ;; Startup Behavior
 ;; Enable automatic numbering for org lists
 (setq org-startup-numerated t)
@@ -120,7 +122,7 @@ Keeps ': ' prefix only for lines starting with 'Out['."
 
 ;; Org-sliced-images Configuration
 ;; Load and configure org-sliced-images for better image handling
-(require 'org-sliced-images)
+(package-install 'org-sliced-images)
 
 ;; Round image heights for consistent display
 (setq org-sliced-images-round-image-height t)

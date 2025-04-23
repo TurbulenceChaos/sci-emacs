@@ -2,6 +2,7 @@
 ;;; Commentary:
 ;;; Code:
 
+(package-install 'which-key)
 (which-key-mode)
 
 ;; Icomplete-mode
@@ -16,7 +17,7 @@
 (define-key icomplete-vertical-mode-minibuffer-map (kbd "SPC") 'self-insert-command)
 (define-key icomplete-vertical-mode-minibuffer-map (kbd "C-j") 'exit-minibuffer)
 
-(require 'orderless)
+(package-install 'orderless)
 (setq completion-styles '(substring orderless basic)
       completion-category-overrides '((file (styles basic partial-completion))))
 

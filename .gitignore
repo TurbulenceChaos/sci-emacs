@@ -10,3 +10,6 @@
 /tramp
 /Test/tmp/
 *#*
+/custom.el
+/elpa/
+/abbrev_defs

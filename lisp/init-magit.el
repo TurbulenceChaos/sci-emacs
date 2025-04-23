@@ -2,12 +2,8 @@
 ;;; Commentary:
 ;;; Code:
 
-(require 'dash)
-(require 'transient)
-(require 'with-editor)
-(require 'llama)
-(require 'magit)
-(require 'diff-hl)
+(package-install 'magit)
+(package-install 'diff-hl)
 
 (global-diff-hl-mode)
 

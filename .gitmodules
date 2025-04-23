@@ -1,45 +1,6 @@
-[submodule "site-lisp/orderless"]
-	path = site-lisp/orderless
-	url = https://github.com/oantolin/orderless.git
-[submodule "site-lisp/dash.el"]
-	path = site-lisp/dash.el
-	url = https://github.com/magnars/dash.el.git
-[submodule "site-lisp/transient"]
-	path = site-lisp/transient
-	url = https://github.com/magit/transient.git
-[submodule "site-lisp/with-editor"]
-	path = site-lisp/with-editor
-	url = https://github.com/magit/with-editor.git
-[submodule "site-lisp/magit"]
-	path = site-lisp/magit
-	url = https://github.com/magit/magit.git
-[submodule "site-lisp/diff-hl"]
-	path = site-lisp/diff-hl
-	url = https://github.com/dgutov/diff-hl.git
-[submodule "site-lisp/llama"]
-	path = site-lisp/llama
-	url = https://github.com/tarsius/llama.git
-[submodule "site-lisp/org-sliced-images"]
-	path = site-lisp/org-sliced-images
-	url = https://github.com/jcfk/org-sliced-images.git
-[submodule "site-lisp/undo-fu-session"]
-	path = site-lisp/undo-fu-session
-	url = https://github.com/emacsmirror/undo-fu-session.git
-[submodule "site-lisp/jupyter"]
-	path = site-lisp/jupyter
-	url = https://github.com/emacs-jupyter/jupyter.git
-[submodule "site-lisp/markdown-mode"]
-	path = site-lisp/markdown-mode
-	url = https://github.com/jrblevin/markdown-mode.git
 [submodule "site-lisp/xah-wolfram-mode"]
 	path = site-lisp/xah-wolfram-mode
 	url = https://github.com/xahlee/xah-wolfram-mode.git
 [submodule "site-lisp/Wolfram-terminal-image"]
 	path = site-lisp/Wolfram-terminal-image
 	url = https://github.com/TurbulenceChaos/Wolfram-terminal-image.git
-[submodule "site-lisp/vundo"]
-	path = site-lisp/vundo
-	url = https://github.com/casouri/vundo.git
-[submodule "site-lisp/keycast"]
-	path = site-lisp/keycast
-	url = https://github.com/tarsius/keycast.git
