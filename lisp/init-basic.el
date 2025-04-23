@@ -33,7 +33,7 @@
 (setq ring-bell-function 'ignore)   ;; Disable bell sound
 (setq scroll-step 1
       scroll-conservatively 10000)  ;; Smooth scrolling
-
+(add-hook 'write-file-hooks 'delete-trailing-whitespace nil t)
 
 (provide 'init-basic)
 ;;; init-basic.el ends here.

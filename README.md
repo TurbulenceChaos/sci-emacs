@@ -3,8 +3,7 @@
 **Author:** Peng Peng  \
 **Email:** [211110103110@stu.just.edu.cn](mailto:211110103110@stu.just.edu.cn)  \
 **GitHub:** [TurbulenceChaos/SCI-emacs](https://github.com/TurbulenceChaos/SCI-emacs) \
-**Package-Requires:** (emacs "30.1")
-
+**Environment:** (emacs "30.1" in WSL2 Ubuntu 24.04)
 ---
 
 ## 1. Introduction
@@ -20,9 +19,6 @@ cd ~/.emacs.d
 
 # Initialize and update Git submodules recursively
 git submodule update --init --recursive
-
-# Compile Emacs Lisp packages
-bash compile.sh
 
 # Install ispell for spell-checking support
 sudo apt install -y ispell
