@@ -11,9 +11,9 @@
 (require 'init-magit)
 (require 'init-undo)
 (require 'init-keycast)
-(require 'init-emacs-jupyter)
-(require 'init-wolfram)
 (require 'init-latex)
+(require 'init-wolfram)
+(require 'init-emacs-jupyter)
 (require 'init-org)
 
 
