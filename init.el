@@ -15,9 +15,9 @@
 (require 'init-keycast)
 (require 'init-treemacs)
 (require 'init-window)
-(require 'init-latex)
 (require 'init-emacs-jupyter)
 (require 'init-wolfram)
+(require 'init-latex)
 (require 'init-org)
 
 
