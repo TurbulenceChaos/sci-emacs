@@ -11,6 +11,7 @@
 (require 'init-completion)
 (require 'init-magit)
 (require 'init-undo)
+(require 'init-modeline)
 (require 'init-keycast)
 (require 'init-latex)
 (require 'init-wolfram)

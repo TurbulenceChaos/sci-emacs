@@ -18,6 +18,8 @@
   (package-refresh-contents))
 ;; (setq package-install-upgrade-built-in t)
 
+(unless (member "Symbols Nerd Font Mono" (font-family-list))
+  (nerd-icons-install-fonts t))
 
 (provide 'early-init)
 ;;; early-init.el ends here
