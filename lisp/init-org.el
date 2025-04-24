@@ -5,6 +5,9 @@
 
 ;;; Code:
 
+(package-install 'org)
+(package-upgrade 'org)
+
 ;; Startup Behavior
 ;; Enable automatic numbering for org lists
 (setq org-startup-numerated t)
