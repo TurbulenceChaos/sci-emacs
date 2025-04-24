@@ -3,7 +3,7 @@
 #+Email: 211110103110@stu.just.edu.cn
 #+GitHub: https://github.com/TurbulenceChaos
 
-* Test Org-babel-Tikz
+* Test LaTeX Tikz
 #+name: Tikz-styles
 #+begin_src latex :eval no
 \usetikzlibrary{}
@@ -36,19 +36,8 @@ Type ~C-c C-c~ to evaluate [[Test-tikz]].
 
 #+RESULTS: Test-tikz
 [[file:Test-tikz.png]]
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
 
-* Test Emacs-jupyter wolfram language
+* Test Jupyter Wolfram Language
 #+name: Import-Wolfram-terminal-image-package
 #+begin_src jupyter-Wolfram-Language :results silent
 Get["https://raw.githubusercontent.com/TurbulenceChaos/Wolfram-terminal-image/refs/heads/main/WolframTerminalImage.wl"];
@@ -92,18 +81,18 @@ MatrixForm[Array[Subscript[a, ##] &, {2, 2, 2}]]
 
 #+RESULTS: Wolfram-test
 :results:
-: Out[5]=
+: Out[1]=
 \begin{equation*}
 \left\{\left\{y(x,t)\to \frac{1}{2} \left(2 \cos
-    \left(t-\frac{x}{2}\right)-\cos (x)+1\right)\right\}\right\}
+   \left(t-\frac{x}{2}\right)-\cos (x)+1\right)\right\}\right\}
 \end{equation*}
-: Out[6]=
+: Out[2]=
 \begin{equation*}
 \frac{1}{2} \left(2 \cos \left(t-\frac{x}{2}\right)-\cos (x)+1\right)
 \end{equation*}
-: Out[7]=
-[[file:tmp/wolfram/wolfram-63df9725-3d1c-491d-8843-c3c1618dbf9a.png]]
-: Out[8]=
+: Out[3]=
+[[file:tmp/wolfram/wolfram-c9cb1a05-e5ee-42fc-9d47-a7dc959121ea.png]]
+: Out[4]=
 \begin{equation*}
 \left(
 \begin{array}{cc}
