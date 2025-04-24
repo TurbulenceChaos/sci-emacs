@@ -19,8 +19,8 @@
 (global-set-key [remap evil-save-and-quit] 'save-and-kill-this-buffer)
 (global-set-key [remap evil-save-and-close] 'save-and-kill-this-buffer)
 (setq-default evil-escape-key-sequence "jk")
-(evil-define-key 'normal org-mode-map (kbd "<tab>") #'org-cycle)
 (define-key evil-normal-state-map (kbd "TAB") #'evil-jump-item)
+
 
 (provide 'init-evil)
 ;;; init-evil.el ends here
