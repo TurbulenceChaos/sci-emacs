@@ -5,11 +5,21 @@
 
 ;;; Code:
 
+;; Org-theme
 (package-install 'org)
+(package-install 'leuven-theme)
+(load-theme 'leuven :no-confirm)
+(package-install 'org-modern)
+(global-org-modern-mode)
 
 ;; Startup Behavior
 ;; Enable automatic numbering for org lists
 (setq org-startup-numerated t)
+
+(set-face-attribute 'org-block nil :foreground nil :inherit 'fixed-pitch :height 0.85)
+(setq org-src-fontify-natively t
+      org-src-tab-acts-natively t
+      org-edit-src-content-indentation 0)
 
 (setq org-support-shift-select t)
 
