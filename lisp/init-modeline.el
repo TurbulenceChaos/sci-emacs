@@ -3,6 +3,10 @@
 ;;; Code:
 
 (package-install 'doom-modeline)
+
+(unless (member "Symbols Nerd Font Mono" (font-family-list))
+  (nerd-icons-install-fonts t))
+
 (doom-modeline-mode 1)
 
 
