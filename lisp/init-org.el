@@ -7,8 +7,6 @@
 
 ;; Org-theme
 (package-install 'org)
-(package-install 'org-modern)
-(global-org-modern-mode)
 
 ;; Startup Behavior
 ;; Enable automatic numbering for org lists
@@ -22,6 +20,40 @@
 (with-eval-after-load 'org-faces
   (set-face-attribute 'org-block nil :foreground nil :inherit 'fixed-pitch :height 0.85))
 
+;; https://emacs.stackexchange.com/questions/46529/configuring-prettify-symbols-mode
+(defun org/configure-prettify-symbols-alist ()
+  "Set prettify symbols alist."
+  (setq prettify-symbols-alist
+	'(("lambda" . "λ") ("\\lambda" . "λ")
+          ("alpha" . "α") ("\\alpha" . "α")
+          ("beta" . "β") ("\\beta" . "β")
+          ("gamma" . "γ") ("\\gamma" . "γ")
+          ("Gamma" . "Γ") ("\\Gamma" . "Γ")
+          ("delta" . "δ") ("\\delta" . "δ")
+          ("Delta" . "Δ") ("\\Delta" . "Δ")
+          ("epsilon" . "ε") ("\\epsilon" . "ε")
+          ("zeta" . "ζ") ("\\zeta" . "ζ")
+          ("eta" . "η") ("\\eta" . "η")
+          ("theta" . "θ") ("\\theta" . "θ")
+	  ("mu" . "μ") ("\\mu" . "μ")
+          ("nu" . "ν") ("\\nu" . "ν")
+          ("pi" . "π") ("\\pi" . "π")
+          ("Pi" . "Π") ("\\Pi" . "Π")
+          ("phi" . "φ") ("\\phi" . "φ")
+          ("Phi" . "Φ") ("\\Phi" . "Φ")
+          ("sigma" . "σ") ("\\sigma" . "σ")
+          ("Sigma" . "Σ") ("\\Sigma" . "Σ")
+          ("tau" . "τ") ("\\tau" . "τ")
+          ("xi" . "ξ") ("\\xi" . "ξ")
+          ("psi" . "ψ") ("\\psi" . "ψ")
+          ("Psi" . "Ψ") ("\\Psi" . "Ψ")
+          ("omega" . "ω") ("\\omega" . "ω")
+          ("Omega" . "Ω") ("\\Omega" . "Ω")))
+  (prettify-symbols-mode 1))
+
+(add-hook 'org-mode-hook #'org/configure-prettify-symbols-alist)
+(add-hook 'org-mode-hook #'org-toggle-pretty-entities)
+
 ;; https://www.reddit.com/r/emacs/comments/i9pfld/disable_orgprettyentities_on_the_current_line/
 (defvar my/current-line '(0 . 0)
   "(start . end) of current line in current buffer")
@@ -33,7 +65,7 @@
   (let ((start (max (point) (car my/current-line)))
         (end (min limit (cdr my/current-line))))
     (when (< start end)
-      (remove-text-properties start end '(invisible t composition ""))
+      (remove-text-properties start end '(invisible t display "" composition ""))
       (goto-char limit)
       t)))
 
@@ -51,8 +83,11 @@
   (font-lock-add-keywords nil '((my/unhide-current-line)) t)
   (add-hook 'post-command-hook #'my/refontify-on-linemove nil t))
 
-(add-hook 'org-mode-hook #'org-toggle-pretty-entities)
 (add-hook 'org-mode-hook #'my/org-unhighlight)
+
+(package-install 'org-modern)
+(setq org-modern-table nil)
+(global-org-modern-mode)
 
 ;; LaTeX Configuration
 ;; Load LaTeX export functionality
