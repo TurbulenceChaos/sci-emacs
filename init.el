@@ -13,9 +13,11 @@
 (require 'init-undo)
 (require 'init-modeline)
 (require 'init-keycast)
+(require 'init-treemacs)
+(require 'init-window)
 (require 'init-latex)
-(require 'init-wolfram)
 (require 'init-emacs-jupyter)
+(require 'init-wolfram)
 (require 'init-org)
 
 
