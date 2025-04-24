@@ -13,13 +13,46 @@
 ;; Startup Behavior
 ;; Enable automatic numbering for org lists
 (setq org-startup-numerated t)
+(setq org-support-shift-select t)
 
-(set-face-attribute 'org-block nil :foreground nil :inherit 'fixed-pitch :height 0.85)
 (setq org-src-fontify-natively t
       org-src-tab-acts-natively t
       org-edit-src-content-indentation 0)
 
-(setq org-support-shift-select t)
+(with-eval-after-load 'org-faces
+  (set-face-attribute 'org-block nil :foreground nil :inherit 'fixed-pitch :height 0.85))
+
+;; https://www.reddit.com/r/emacs/comments/i9pfld/disable_orgprettyentities_on_the_current_line/
+(defvar my/current-line '(0 . 0)
+  "(start . end) of current line in current buffer")
+
+(make-variable-buffer-local 'my/current-line)
+
+(defun my/unhide-current-line (limit)
+  "Font-lock function"
+  (let ((start (max (point) (car my/current-line)))
+        (end (min limit (cdr my/current-line))))
+    (when (< start end)
+      (remove-text-properties start end '(invisible t composition ""))
+      (goto-char limit)
+      t)))
+
+(defun my/refontify-on-linemove ()
+  "Post-command-hook"
+  (let* ((start (line-beginning-position))
+         (end (line-beginning-position 2))
+         (needs-update (not (equal start (car my/current-line)))))
+    (setq my/current-line (cons start end))
+    (when needs-update
+      (font-lock-fontify-block 2))))
+
+(defun my/org-unhighlight ()
+  "Install"
+  (font-lock-add-keywords nil '((my/unhide-current-line)) t)
+  (add-hook 'post-command-hook #'my/refontify-on-linemove nil t))
+
+(add-hook 'org-mode-hook #'org-toggle-pretty-entities)
+(add-hook 'org-mode-hook #'my/org-unhighlight)
 
 ;; LaTeX Configuration
 ;; Load LaTeX export functionality
@@ -31,6 +64,9 @@
 (setq org-preview-latex-image-directory "tmp/ltximg/")  ; Directory for storing LaTeX preview images
 (add-to-list 'org-latex-packages-alist '("" "tikz" t))  ; Include TikZ package for LaTeX exports
 (setf org-format-latex-header (concat "% xelatex\n" org-format-latex-header))  ; Specify XeLaTeX as the default LaTeX engine
+
+(package-install 'org-fragtog)
+(add-hook 'org-mode-hook 'org-fragtog-mode)
 
 ;; Org-babel Configuration
 ;; Set minimum lines for block output (helps with large code blocks)
