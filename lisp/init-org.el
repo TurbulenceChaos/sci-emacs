@@ -6,7 +6,6 @@
 ;;; Code:
 
 (package-install 'org)
-(package-upgrade 'org)
 
 ;; Startup Behavior
 ;; Enable automatic numbering for org lists
@@ -75,51 +74,41 @@
         (:eval . "never-export")))       ; Prevent code evaluation during export
 
 ;; Custom function to clean Wolfram Language results
-(defun clean-wolfram-results ()
-  "Clean up Wolfram Language results in org-mode.
-Removes unwanted formatting while preserving necessary LaTeX formatting.
-Keeps ': ' prefix only for lines starting with 'Out['."
+(defun clean-jupyter-wolfram-language-results ()
+  "Clean up Wolfram Language results in org-mode."
   (interactive)
   (save-excursion
     (goto-char (point-min))
-    (while (search-forward ":results:" nil t)
-      (let ((start (point))
-            (end (progn (search-forward ":end:" nil t)
-                        (match-beginning 0))))
+    (while (search-forward "#+begin_src jupyter-Wolfram-Language" nil t)
+      (let ((start (search-forward ":results:" nil t))
+            (end   (search-forward ":end:" nil t)))
         (save-restriction
           (narrow-to-region start end)
 
-          ;; Preserve 'Out[' lines
-          (goto-char (point-min))
-          (while (re-search-forward "^: Out\\[" nil t)
-            (add-text-properties (line-beginning-position) (line-end-position)
-                                 '(preserve-prefix t)))
-
-          ;; Remove ': ' at line beginnings
+          ;; Remove ': ' at beginning
           (goto-char (point-min))
           (while (re-search-forward "^: " nil t)
-            (unless (get-text-property (line-beginning-position) 'preserve-prefix)
-              (replace-match "" nil nil)))
-
-          ;; Clean up additional formatting
-          (goto-char (point-min))
-          (while (re-search-forward "^> " nil t)
-            (replace-match "  " nil nil))
-
-          ;; Remove single backslashes at line ends
-          (goto-char (point-min))
-          (while (re-search-forward "\\([^\\]\\)\\\\\\s-*$" nil t)
-            (replace-match "\\1" nil nil))
+	    (replace-match "" nil nil))
 
           ;; Remove blank lines
           (goto-char (point-min))
           (while (re-search-forward "\n\\s-*\n" nil t)
             (replace-match "\n" nil nil))
-
-          ;; Ensure a newline after :results:
+          
+	  ;; Remove '>' at beginning
           (goto-char (point-min))
-          (unless (looking-at "\n")
-            (insert "\n")))))))
+          (while (re-search-forward "^> " nil t)
+            (replace-match " " nil nil))
+
+          ;; Remove '\' at end
+          (goto-char (point-min))
+          (while (re-search-forward "\\([^\\]\\)\\\\\\s-*$" nil t)
+            (replace-match "\\1" nil nil))
+
+	  ;; Change 'Out[]' to ': Out[]'
+	  (goto-char (point-min))
+          (while (re-search-forward "^Out" nil t)
+	    (replace-match ": Out" nil nil)))))))
 
 ;; Org-sliced-images Configuration
 ;; Load and configure org-sliced-images for better image handling
@@ -138,7 +127,7 @@ Keeps ': ' prefix only for lines starting with 'Out['."
 (add-hook 'org-babel-after-execute-hook
           (lambda ()
             (org-sliced-images-remove-inline-images)
-	    (clean-wolfram-results)
+	    (clean-jupyter-wolfram-language-results)
             (org-sliced-images-display-inline-images)
             (org-latex-preview)))
 
