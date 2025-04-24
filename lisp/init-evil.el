@@ -7,6 +7,7 @@
 (package-install 'evil-commentary)
 
 (evil-mode 1)
+(evil-set-undo-system 'undo-redo)
 (evil-commentary-mode)
 (evil-escape-mode)
 
