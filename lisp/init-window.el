@@ -7,8 +7,7 @@
 (global-set-key [remap other-window] #'switch-window)
 (global-set-key [remap other-window] #'ace-window)
 (custom-set-faces
-   '(aw-leading-char-face
-     ((t (:foreground "red" :weight normal :height 2.5)))))
+   '(aw-leading-char-face ((t (:foreground "red" :weight normal :height 2.5)))))
 
 
 (provide 'init-window)

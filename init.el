@@ -7,6 +7,7 @@
 
 (add-to-list 'load-path (expand-file-name "lisp" user-emacs-directory))
 (require 'init-basic)
+(require 'init-theme)
 (require 'init-evil)
 (require 'init-completion)
 (require 'init-magit)

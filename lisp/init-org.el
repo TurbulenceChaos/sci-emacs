@@ -7,8 +7,6 @@
 
 ;; Org-theme
 (package-install 'org)
-(package-install 'leuven-theme)
-(load-theme 'leuven :no-confirm)
 (package-install 'org-modern)
 (global-org-modern-mode)
 
