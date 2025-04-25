@@ -197,11 +197,23 @@
 (setq org-sliced-images-round-image-height t)
 (org-sliced-images-mode 1)
 
+(defalias 'org-remove-inline-images 'org-sliced-images-remove-inline-images)
+(defalias 'org-toggle-inline-images 'org-sliced-images-toggle-inline-images)
+(defalias 'org-display-inline-images 'org-sliced-images-display-inline-images)
+
+(add-to-list 'load-path (expand-file-name "site-lisp/org-imgtog" user-emacs-directory))
+(require 'org-imgtog)
+
+(advice-add 'org-imgtog--show-img :after #'save-buffer)
+(advice-add 'org-imgtog--hide-img-with-delay :after #'save-buffer)
+
 ;; Hooks for automatic image and buffer management
 (add-hook 'org-mode-hook
           (lambda ()
             (org-sliced-images-display-inline-images)
+	    (org-imgtog-mode)
             (save-buffer)))
+
 
 (add-hook 'org-babel-after-execute-hook
           (lambda ()
