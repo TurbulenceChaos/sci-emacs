@@ -18,6 +18,8 @@
 (global-set-key [remap evil-quit] 'kill-buffer-and-window)
 (global-set-key [remap evil-save-and-quit] 'save-and-kill-this-buffer)
 (global-set-key [remap evil-save-and-close] 'save-and-kill-this-buffer)
+(setq evil-escape-excluded-major-modes
+      '(treemacs-mode magit-status-mode))
 (setq-default evil-escape-key-sequence "jk")
 (setq-default evil-escape-delay 0.2)
 (define-key evil-normal-state-map (kbd "TAB") #'evil-jump-item)
