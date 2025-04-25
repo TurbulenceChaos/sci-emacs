@@ -58,13 +58,13 @@ wolframTerminalFormulaType = "latex";
 
 (* Enable ("yes") or disable ("no") playback of Wolfram terminal CDF files *)
 
-wolframTerminalPlay = "yes";
+wolframTerminalPlay = "no";
 
 (* Specify the player application for Wolfram terminal CDF files *)
 
 (* Options: "/path/to/wolframplayer" for Linux or WSL2, "/path/to/wolframplayer.exe" for Windows or WSL2 *)
 
-wolframTerminalPlayer = "wolframplayer.exe";
+wolframTerminalPlayer = "wolframplayer";
 
 (* To restore `$Post` to its original state, simply execute "$Post=." *)
 #+end_src
