@@ -19,6 +19,7 @@
 (global-set-key [remap evil-save-and-quit] 'save-and-kill-this-buffer)
 (global-set-key [remap evil-save-and-close] 'save-and-kill-this-buffer)
 (setq-default evil-escape-key-sequence "jk")
+(setq-default evil-escape-delay 0.2)
 (define-key evil-normal-state-map (kbd "TAB") #'evil-jump-item)
 (evil-define-key 'normal org-mode-map (kbd "C-j") 'electric-newline-and-maybe-indent)
 (evil-define-key 'normal org-mode-map (kbd "C-k") 'kill-line)

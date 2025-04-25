@@ -20,6 +20,11 @@
 (with-eval-after-load 'org-faces
   (set-face-attribute 'org-block nil :foreground nil :inherit 'fixed-pitch :height 0.85))
 
+(setq  org-src-block-faces '(("emacs-lisp" (:background "DarkSeaGreen1" :extend t))
+			     ;; ("sh" (:background "gray90" :extend t))
+			     ("jupyter-python" (:background "thistle1" :extend t))
+			     ("jupyter-Wolfram-Language" (:background "LightCyan1" :extend t))))
+
 ;; https://emacs.stackexchange.com/questions/46529/configuring-prettify-symbols-mode
 (defun org/configure-prettify-symbols-alist ()
   "Set prettify symbols alist."
