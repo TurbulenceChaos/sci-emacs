@@ -11,7 +11,7 @@
 (require 'jupyter)
 
 ;; https://github.com/emacs-jupyter/jupyter/pull/582
-(with-eval-after-load 'jupyter
+(with-eval-after-load 'jupyter-org-client
   (defun jupyter-org--set-src-block-cache ()
     "Set the src-block cache.
 If set successfully or if `point' is already inside the cached

@@ -20,7 +20,7 @@
       org-edit-src-content-indentation 0)
 
 (with-eval-after-load 'org-faces
-  (set-face-attribute 'org-block nil :foreground nil :inherit 'fixed-pitch :height 0.85))
+  (set-face-attribute 'org-block nil :inherit 'fixed-pitch :height 0.85))
 
 (setq  org-src-block-faces '(("emacs-lisp" (:background "DarkSeaGreen1" :extend t))
 			     ("jupyter-python" (:background "thistle1" :extend t))
