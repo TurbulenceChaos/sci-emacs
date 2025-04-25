@@ -232,15 +232,27 @@
 (add-to-list 'load-path (expand-file-name "site-lisp/org-imgtog" user-emacs-directory))
 (require 'org-imgtog)
 
-(advice-add 'org-imgtog--show-img :after #'save-buffer)
-(advice-add 'org-imgtog--hide-img-with-delay :after #'save-buffer)
+(advice-add 'org-imgtog--show-img :after
+            (lambda (&rest _)
+              (let ((inhibit-message t))
+                (save-buffer))))
+(advice-add 'org-imgtog--hide-img-with-delay :after
+            (lambda (&rest _)
+              (let ((inhibit-message t))
+                (save-buffer))))
 
 ;; Hooks for automatic image and buffer management
+(defun quiet-save-buffer ()
+  "Save current buffer without message."
+  (interactive)
+  (let ((inhibit-message t))
+    (save-buffer)))
+
 (add-hook 'org-mode-hook
           (lambda ()
             (org-sliced-images-display-inline-images)
 	    (org-imgtog-mode)
-            (save-buffer)))
+            (quiet-save-buffer)))
 
 (add-hook 'org-babel-after-execute-hook
           (lambda ()
@@ -253,7 +265,7 @@
           (lambda ()
             (when (eq major-mode 'org-mode)
               (org-sliced-images-remove-inline-images)
-              (save-buffer))))
+              (quiet-save-buffer))))
 
 
 (provide 'init-org)
