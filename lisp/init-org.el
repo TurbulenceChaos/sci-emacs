@@ -21,7 +21,6 @@
   (set-face-attribute 'org-block nil :foreground nil :inherit 'fixed-pitch :height 0.85))
 
 (setq  org-src-block-faces '(("emacs-lisp" (:background "DarkSeaGreen1" :extend t))
-			     ;; ("sh" (:background "gray90" :extend t))
 			     ("jupyter-python" (:background "thistle1" :extend t))
 			     ("jupyter-Wolfram-Language" (:background "LightCyan1" :extend t))))
 
@@ -61,7 +60,7 @@
 
 (package-install 'org-modern)
 (setq org-modern-table nil)
-(setq org-modern-block-fringe t)
+(setq org-modern-block-fringe nil)
 (global-org-modern-mode)
 
 (add-to-list 'load-path (expand-file-name "site-lisp/org-modern-indent" user-emacs-directory))
@@ -129,7 +128,7 @@
 (setf org-format-latex-header (concat "% xelatex\n" org-format-latex-header))  ; Specify XeLaTeX as the default LaTeX engine
 
 (package-install 'org-fragtog)
-(add-hook 'org-mode-hook 'org-fragtog-mode)
+;; (add-hook 'org-mode-hook 'org-fragtog-mode)
 
 ;; Org-babel Configuration
 ;; Set minimum lines for block output (helps with large code blocks)
@@ -219,19 +218,8 @@
 	    (replace-match ": Out" nil nil)))))))
 
 ;; Org-images Configuration
-(package-install 'org-sliced-images)
-
-;; Round image heights for consistent display
-(setq org-sliced-images-round-image-height t)
-(org-sliced-images-mode 1)
-
-(defalias 'org-remove-inline-images 'org-sliced-images-remove-inline-images)
-(defalias 'org-toggle-inline-images 'org-sliced-images-toggle-inline-images)
-(defalias 'org-display-inline-images 'org-sliced-images-display-inline-images)
-
 (add-to-list 'load-path (expand-file-name "site-lisp/org-imgtog" user-emacs-directory))
 (require 'org-imgtog)
-
 (advice-add 'org-imgtog--show-img :after
             (lambda (&rest _)
               (let ((inhibit-message t))
@@ -240,6 +228,14 @@
             (lambda (&rest _)
               (let ((inhibit-message t))
                 (save-buffer))))
+;; (add-hook 'org-mode-hook '#org-imgtog-mode)
+
+(package-install 'org-sliced-images)
+(setq org-sliced-images-round-image-height t)
+(org-sliced-images-mode 1)
+(defalias 'org-remove-inline-images 'org-sliced-images-remove-inline-images)
+(defalias 'org-toggle-inline-images 'org-sliced-images-toggle-inline-images)
+(defalias 'org-display-inline-images 'org-sliced-images-display-inline-images)
 
 ;; Hooks for automatic image and buffer management
 (defun quiet-save-buffer ()
@@ -251,7 +247,6 @@
 (add-hook 'org-mode-hook
           (lambda ()
             (org-sliced-images-display-inline-images)
-	    (org-imgtog-mode)
             (quiet-save-buffer)))
 
 (add-hook 'org-babel-after-execute-hook
