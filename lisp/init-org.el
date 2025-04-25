@@ -54,6 +54,15 @@
 (add-hook 'org-mode-hook #'org/configure-prettify-symbols-alist)
 (add-hook 'org-mode-hook #'org-toggle-pretty-entities)
 
+(package-install 'org-modern)
+(setq org-modern-table nil)
+(global-org-modern-mode)
+
+(add-to-list 'load-path (expand-file-name "site-lisp/org-modern-indent" user-emacs-directory))
+(require 'org-modern-indent)
+(custom-set-faces
+ '(org-modern-indent-bracket-line ((t (:inherit org-block-begin-line :underline nil :weight light)))))
+
 ;; https://www.reddit.com/r/emacs/comments/i9pfld/disable_orgprettyentities_on_the_current_line/
 (defvar my/current-line '(0 . 0)
   "(start . end) of current line in current buffer")
@@ -76,7 +85,11 @@
          (needs-update (not (equal start (car my/current-line)))))
     (setq my/current-line (cons start end))
     (when needs-update
-      (font-lock-fontify-block 2))))
+      (font-lock-fontify-block 2)
+      (if (org-in-src-block-p)
+	  (progn (org-modern-indent-init)
+		  (org-modern-indent-mode -1)) 
+	(org-modern-indent-init)))))
 
 (defun my/org-unhighlight ()
   "Install"
@@ -84,10 +97,6 @@
   (add-hook 'post-command-hook #'my/refontify-on-linemove nil t))
 
 (add-hook 'org-mode-hook #'my/org-unhighlight)
-
-(package-install 'org-modern)
-(setq org-modern-table nil)
-(global-org-modern-mode)
 
 ;; LaTeX Configuration
 ;; Load LaTeX export functionality
@@ -210,12 +219,16 @@
 ;; Hooks for automatic image and buffer management
 (add-hook 'org-mode-hook
           (lambda ()
+	    (org-modern-indent-init)
+	    (org-modern-indent-mode -1)
             (org-sliced-images-display-inline-images)
 	    (org-imgtog-mode)
             (save-buffer)))
 
 (add-hook 'org-babel-after-execute-hook
           (lambda ()
+	    (org-modern-indent-init)
+	    (org-modern-indent-mode -1)
             (org-sliced-images-remove-inline-images)
 	    (clean-jupyter-wolfram-language-results)
             (org-sliced-images-display-inline-images)

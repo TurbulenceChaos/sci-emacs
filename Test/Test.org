@@ -35,7 +35,20 @@ Type ~C-c C-c~ to evaluate [[Test-tikz]].
 #+end_src
 
 #+RESULTS: Test-tikz
+:results:
 [[file:Test-tikz.png]]
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+:end:
 
 * Test Jupyter Wolfram Language
 #+name: Import-Wolfram-terminal-image-package
@@ -91,7 +104,22 @@ MatrixForm[Array[Subscript[a, ##] &, {2, 2, 2}]]
 \frac{1}{2} \left(2 \cos \left(t-\frac{x}{2}\right)-\cos (x)+1\right)
 \end{equation*}
 : Out[3]=
-[[file:tmp/wolfram/wolfram-c9cb1a05-e5ee-42fc-9d47-a7dc959121ea.png]]
+[[file:tmp/wolfram/wolfram-96c8425b-8ca0-4699-b95f-3633a7899114.png]]
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
 : Out[4]=
 \begin{equation*}
 \left(
