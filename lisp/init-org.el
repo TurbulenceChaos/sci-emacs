@@ -6,7 +6,9 @@
 ;;; Code:
 
 ;; Org-theme
-(package-install 'org)
+(unless (package-installed-p 'org)
+  (package-install 'org))
+(require 'org)
 
 ;; Startup Behavior
 ;; Enable automatic numbering for org lists
@@ -58,13 +60,17 @@
 (add-hook 'org-mode-hook #'org/configure-prettify-symbols-alist)
 (add-hook 'org-mode-hook #'org-toggle-pretty-entities)
 
-(package-install 'org-modern)
+(unless (package-installed-p 'org-modern)
+  (package-install 'org-modern))
+(require 'org-modern)
+
 (setq org-modern-table nil)
 (setq org-modern-block-fringe nil)
 (global-org-modern-mode)
 
 (add-to-list 'load-path (expand-file-name "site-lisp/org-modern-indent" user-emacs-directory))
 (require 'org-modern-indent)
+
 (custom-set-faces
  '(org-modern-indent-bracket-line ((t (:inherit org-block-begin-line :underline nil :weight light)))))
 
@@ -127,7 +133,9 @@
 (add-to-list 'org-latex-packages-alist '("" "tikz" t))  ; Include TikZ package for LaTeX exports
 (setf org-format-latex-header (concat "% xelatex\n" org-format-latex-header))  ; Specify XeLaTeX as the default LaTeX engine
 
-(package-install 'org-fragtog)
+(unless (package-installed-p 'org-fragtog)
+  (package-install 'org-fragtog))
+(require 'org-fragtog)
 ;; (add-hook 'org-mode-hook 'org-fragtog-mode)
 
 ;; Org-babel Configuration
@@ -220,6 +228,7 @@
 ;; Org-images Configuration
 (add-to-list 'load-path (expand-file-name "site-lisp/org-imgtog" user-emacs-directory))
 (require 'org-imgtog)
+
 (advice-add 'org-imgtog--show-img :after
             (lambda (&rest _)
               (let ((inhibit-message t))
@@ -230,12 +239,15 @@
                 (save-buffer))))
 ;; (add-hook 'org-mode-hook '#org-imgtog-mode)
 
-(package-install 'org-sliced-images)
-(setq org-sliced-images-round-image-height t)
-(org-sliced-images-mode 1)
+(unless (package-installed-p 'org-sliced-images)
+  (package-install 'org-sliced-images))
+(require 'org-sliced-images)
+
 (defalias 'org-remove-inline-images 'org-sliced-images-remove-inline-images)
 (defalias 'org-toggle-inline-images 'org-sliced-images-toggle-inline-images)
 (defalias 'org-display-inline-images 'org-sliced-images-display-inline-images)
+(setq org-sliced-images-round-image-height t)
+(org-sliced-images-mode 1)
 
 ;; Hooks for automatic image and buffer management
 (defun quiet-save-buffer ()

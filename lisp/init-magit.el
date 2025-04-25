@@ -2,8 +2,13 @@
 ;;; Commentary:
 ;;; Code:
 
-(package-install 'magit)
-(package-install 'diff-hl)
+(unless (package-installed-p 'magit)
+  (package-install 'magit))
+(require 'magit)
+
+(unless (package-installed-p 'diff-hl)
+  (package-install 'diff-hl))
+(require 'diff-hl)
 
 (global-diff-hl-mode)
 

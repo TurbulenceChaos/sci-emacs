@@ -2,10 +2,14 @@
 ;;; Commentary:
 ;;; Code:
 
-(package-install 'undo-fu-session)
+(unless (package-installed-p 'undo-fu-session)
+  (package-install 'undo-fu-session))
+(require 'undo-fu-session)
+
 (undo-fu-session-global-mode)
 
 (package-install 'vundo)
+(require 'vundo)
 
 
 (provide 'init-undo)

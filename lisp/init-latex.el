@@ -2,9 +2,17 @@
 ;;; Commentary:
 ;;; Code:
 
-(package-install 'auctex)
-(package-install 'auctex-latexmk)
-(package-install 'pdf-tools)
+(unless (package-installed-p 'auctex)
+  (package-install 'auctex))
+(require 'auctex)
+
+(unless (package-installed-p 'auctex-latexmk)
+  (package-install 'auctex-latexmk))
+(require 'auctex-latexmk)
+
+(unless (package-installed-p 'pdf-tools)
+  (package-install 'pdf-tools))
+(require 'pdf-tools)
 
 (pdf-tools-install)
 
@@ -29,6 +37,7 @@
 (with-eval-after-load 'latex 
   (define-key LaTeX-mode-map 
               (kbd "C-c C-g") 'pdf-sync-forward-search))
+
 
 (provide 'init-latex)
 ;;; init-latex.el ends here

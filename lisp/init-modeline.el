@@ -2,7 +2,9 @@
 ;;; Commentary:
 ;;; Code:
 
-(package-install 'doom-modeline)
+(unless (package-installed-p 'doom-modeline)
+  (package-install 'doom-modeline))
+(require 'doom-modeline)
 
 (unless (member "Symbols Nerd Font Mono" (font-family-list))
   (nerd-icons-install-fonts t))

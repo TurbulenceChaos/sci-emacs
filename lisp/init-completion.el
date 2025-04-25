@@ -3,6 +3,8 @@
 ;;; Code:
 
 (package-install 'which-key)
+(require 'which-key)
+
 (which-key-mode)
 
 ;; Icomplete-mode
@@ -18,6 +20,8 @@
 (define-key icomplete-vertical-mode-minibuffer-map (kbd "C-j") 'exit-minibuffer)
 
 (package-install 'orderless)
+(require 'orderless)
+
 (setq completion-styles '(substring orderless basic)
       completion-category-overrides '((file (styles basic partial-completion))))
 
@@ -32,6 +36,7 @@
                           completion-preview-complete))))
 (define-key completion-preview-active-mode-map (kbd "M-n") 'completion-preview-next-candidate)
 (define-key completion-preview-active-mode-map (kbd "M-p") 'completion-preview-prev-candidate)
+(setq tab-always-indent 'complete)
 
 
 (provide 'init-completion)
