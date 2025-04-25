@@ -37,17 +37,6 @@ Type ~C-c C-c~ to evaluate [[Test-tikz]].
 #+RESULTS: Test-tikz
 :results:
 [[file:Test-tikz.png]]
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
 :end:
 
 * Test Jupyter Wolfram Language
@@ -69,13 +58,13 @@ wolframTerminalFormulaType = "latex";
 
 (* Enable ("yes") or disable ("no") playback of Wolfram terminal CDF files *)
 
-wolframTerminalPlay = "no";
+wolframTerminalPlay = "yes";
 
 (* Specify the player application for Wolfram terminal CDF files *)
 
 (* Options: "/path/to/wolframplayer" for Linux or WSL2, "/path/to/wolframplayer.exe" for Windows or WSL2 *)
 
-wolframTerminalPlayer = "wolframplayer";
+wolframTerminalPlayer = "wolframplayer.exe";
 
 (* To restore `$Post` to its original state, simply execute "$Post=." *)
 #+end_src
@@ -104,22 +93,7 @@ MatrixForm[Array[Subscript[a, ##] &, {2, 2, 2}]]
 \frac{1}{2} \left(2 \cos \left(t-\frac{x}{2}\right)-\cos (x)+1\right)
 \end{equation*}
 : Out[3]=
-[[file:tmp/wolfram/wolfram-96c8425b-8ca0-4699-b95f-3633a7899114.png]]
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
+[[file:tmp/wolfram/wolfram-794581a5-5742-46e2-889c-1ffddb4782ac.png]]
 : Out[4]=
 \begin{equation*}
 \left(

@@ -56,6 +56,7 @@
 
 (package-install 'org-modern)
 (setq org-modern-table nil)
+(setq org-modern-block-fringe t)
 (global-org-modern-mode)
 
 (add-to-list 'load-path (expand-file-name "site-lisp/org-modern-indent" user-emacs-directory))
@@ -86,10 +87,12 @@
     (setq my/current-line (cons start end))
     (when needs-update
       (font-lock-fontify-block 2)
-      (if (org-in-src-block-p)
-	  (progn (org-modern-indent-init)
-		  (org-modern-indent-mode -1)) 
-	(org-modern-indent-init)))))
+      (if org-modern-block-fringe
+	  (if (org-in-src-block-p)
+	      (progn
+		(org-modern-indent-init)
+		(org-modern-indent-mode -1))
+	    (org-modern-indent-init))))))
 
 (defun my/org-unhighlight ()
   "Install"
@@ -97,6 +100,13 @@
   (add-hook 'post-command-hook #'my/refontify-on-linemove nil t))
 
 (add-hook 'org-mode-hook #'my/org-unhighlight)
+
+(add-hook 'org-babel-after-execute-hook
+          (lambda ()
+	    (if org-modern-block-fringe
+		(progn
+		  (org-modern-indent-init)
+		  (org-modern-indent-mode -1)))))
 
 ;; LaTeX Configuration
 ;; Load LaTeX export functionality
@@ -219,16 +229,12 @@
 ;; Hooks for automatic image and buffer management
 (add-hook 'org-mode-hook
           (lambda ()
-	    (org-modern-indent-init)
-	    (org-modern-indent-mode -1)
             (org-sliced-images-display-inline-images)
 	    (org-imgtog-mode)
             (save-buffer)))
 
 (add-hook 'org-babel-after-execute-hook
           (lambda ()
-	    (org-modern-indent-init)
-	    (org-modern-indent-mode -1)
             (org-sliced-images-remove-inline-images)
 	    (clean-jupyter-wolfram-language-results)
             (org-sliced-images-display-inline-images)
