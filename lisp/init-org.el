@@ -101,6 +101,8 @@
 
 (add-hook 'org-mode-hook #'my/org-unhighlight)
 
+;; (advice-add 'org-babel-execute:jupyter-Wolfram-Language :before '(lambda (&rest _args) (org-modern-indent-mode -1)))
+
 (add-hook 'org-babel-after-execute-hook
           (lambda ()
 	    (if org-modern-block-fringe
