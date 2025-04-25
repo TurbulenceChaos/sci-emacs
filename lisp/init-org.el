@@ -121,6 +121,7 @@
 ;; Default header arguments for LaTeX code blocks
 (setq org-babel-default-header-args:latex 
       '((:results . "graphics file")     ; Output as graphics
+        (:results . "value drawer")      ; Result display style
         (:imagemagick . "t")             ; Use ImageMagick for processing
         (:fit . "yes")                   ; Fit image to content
         (:iminoptions . "-density 300 -units pixelsperinch")  ; High-resolution input
