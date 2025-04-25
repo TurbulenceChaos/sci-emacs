@@ -8,7 +8,8 @@
 
 (undo-fu-session-global-mode)
 
-(package-install 'vundo)
+(unless (package-installed-p 'vundo)
+  (package-install 'vundo))
 (require 'vundo)
 
 

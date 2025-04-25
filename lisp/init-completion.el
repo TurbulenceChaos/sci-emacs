@@ -2,7 +2,8 @@
 ;;; Commentary:
 ;;; Code:
 
-(package-install 'which-key)
+(unless (package-installed-p 'which-key)
+  (package-install 'which-key))
 (require 'which-key)
 
 (which-key-mode)
@@ -19,7 +20,8 @@
 (define-key icomplete-vertical-mode-minibuffer-map (kbd "SPC") 'self-insert-command)
 (define-key icomplete-vertical-mode-minibuffer-map (kbd "C-j") 'exit-minibuffer)
 
-(package-install 'orderless)
+(unless (package-installed-p 'orderless)
+  (package-install 'orderless))
 (require 'orderless)
 
 (setq completion-styles '(substring orderless basic)
