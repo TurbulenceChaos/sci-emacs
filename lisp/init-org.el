@@ -94,10 +94,11 @@
       (font-lock-fontify-block 2)
       (if org-modern-block-fringe
 	  (if (org-in-src-block-p)
-	      (progn
-		(org-modern-indent-init)
+	      (when (org-modern-indent-mode)
 		(org-modern-indent-mode -1))
-	    (org-modern-indent-init))))))
+	    (progn (org-modern-indent-init)
+		   (when (not (org-modern-indent-mode))
+		     (org-modern-indent-mode 1))))))))
 
 (defun my/org-unhighlight ()
   "Install"
@@ -113,7 +114,8 @@
 	    (if org-modern-block-fringe
 		(progn
 		  (org-modern-indent-init)
-		  (org-modern-indent-mode -1)))))
+		  (when (org-modern-indent-mode)
+		    (org-modern-indent-mode -1))))))
 
 ;; LaTeX Configuration
 ;; Load LaTeX export functionality
