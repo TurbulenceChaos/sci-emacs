@@ -189,8 +189,7 @@
           (while (re-search-forward "^Out" nil t)
 	    (replace-match ": Out" nil nil)))))))
 
-;; Org-sliced-images Configuration
-;; Load and configure org-sliced-images for better image handling
+;; Org-images Configuration
 (package-install 'org-sliced-images)
 
 ;; Round image heights for consistent display
@@ -213,7 +212,6 @@
             (org-sliced-images-display-inline-images)
 	    (org-imgtog-mode)
             (save-buffer)))
-
 
 (add-hook 'org-babel-after-execute-hook
           (lambda ()
