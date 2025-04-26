@@ -19,6 +19,8 @@
 (setq org-startup-with-latex-preview t)
 (setq org-preview-latex-image-directory "tmp/ltximg/")
 (setq org-format-latex-options (plist-put org-format-latex-options :scale 3))
+(with-eval-after-load 'org-faces
+  (set-face-attribute 'org-block nil :inherit 'fixed-pitch :height 0.85))
 
 ;; org-theme
 (unless (package-installed-p 'org-modern)
@@ -29,13 +31,11 @@
 (setq org-modern-block-fringe nil)
 (global-org-modern-mode)
 
-(with-eval-after-load 'org-faces
-  (set-face-attribute 'org-block nil :inherit 'fixed-pitch :height 0.85))
+;; org-babel
 (setq org-src-block-faces '(("emacs-lisp" (:background "gray90" :extend t))
 			    ("jupyter-python" (:background "thistle1" :extend t))
 			    ("jupyter-Wolfram-Language" (:background "LightCyan1" :extend t))))
 
-;; org-babel
 (org-babel-do-load-languages
  'org-babel-load-languages
  '((emacs-lisp . t)
@@ -43,7 +43,7 @@
    (python . t)
    (jupyter . t)))
 
-;; ;; latex-tikz
+;; latex-tikz
 (add-to-list 'org-latex-packages-alist '("" "tikz" t))
 (setq org-format-latex-header (concat "% xelatex\n" org-format-latex-header))
 (setq org-babel-default-header-args:latex 
