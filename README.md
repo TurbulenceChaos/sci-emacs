@@ -16,7 +16,7 @@
     - [3.2 Jupyter Wolfram Language](#32-jupyter-wolfram-language)
 
 ## 1. Introduction
-This is my personal emacs configuration, specifically aimed for academic research.
+This is my personal emacs configuration, specifically aimed at academic research.
 
 ## 2. Installation
 ```bash
@@ -28,7 +28,7 @@ cd ~/.emacs.d
 # Initialize and update git submodules recursively
 git submodule update --init --recursive
 
-# Install ispell for `spell-checking` support
+# Install `ispell` for `spell-checking` support
 sudo apt install ispell
 ```
 
@@ -46,3 +46,4 @@ You can find my [Wolfram-terminal-image](https://github.com/TurbulenceChaos/Wolf
 Demo: [Test-emacs-jupyter-wolfram-language.gif](Test/Test-emacs-jupyter-wolfram-language.gif)
 
 ![Test Emacs-jupyter wolfram language](Test/Test-emacs-jupyter-wolfram-language.gif)
+

@@ -32,7 +32,7 @@
 (global-org-modern-mode)
 
 ;; org-babel
-(setq org-src-block-faces '(("emacs-lisp" (:background "gray90" :extend t))
+(setq org-src-block-faces '(("emacs-lisp" (:background "#E5FFB8" :extend t)) ;; #EEE2FF, #E5FFB8, gray90
 			    ("jupyter-python" (:background "thistle1" :extend t))
 			    ("jupyter-Wolfram-Language" (:background "LightCyan1" :extend t))))
 
