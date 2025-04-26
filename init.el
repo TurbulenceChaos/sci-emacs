@@ -11,6 +11,7 @@
 (require 'init-dashboard)
 (require 'init-evil)
 (require 'init-completion)
+(require 'init-format)
 (require 'init-magit)
 (require 'init-undo)
 (require 'init-modeline)
