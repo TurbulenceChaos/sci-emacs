@@ -264,12 +264,12 @@
             (org-sliced-images-display-inline-images)
             (quiet-save-buffer)))
 
-;; (add-hook 'org-babel-after-execute-hook
-;;           (lambda ()
-;;             (org-sliced-images-remove-inline-images)
-;; 	    (clean-jupyter-wolfram-language-results)
-;;             (org-sliced-images-display-inline-images)
-;;             (org-latex-preview)))
+(add-hook 'org-babel-after-execute-hook
+          (lambda ()
+            (org-sliced-images-remove-inline-images)
+	    (clean-jupyter-wolfram-language-results)
+            (org-sliced-images-display-inline-images)
+            (org-latex-preview)))
 
 (add-hook 'kill-buffer-hook
           (lambda ()
