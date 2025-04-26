@@ -116,6 +116,7 @@
 		  (while (re-search-forward "^Out" nil t)
 		    (replace-match ": Out" nil nil)))))))))))
 
+;; org-sliced-images
 (unless (package-installed-p 'org-sliced-images)
   (package-install 'org-sliced-images))
 (require 'org-sliced-images)
@@ -125,6 +126,8 @@
 (defalias 'org-remove-inline-images 'org-sliced-images-remove-inline-images)
 (defalias 'org-toggle-inline-images 'org-sliced-images-toggle-inline-images)
 (defalias 'org-display-inline-images 'org-sliced-images-display-inline-images)
+
+(advice-add 'org-sliced-images-display-inline-images :before #'org-sliced-images-remove-inline-images)
 
 (defun quiet-save-buffer ()
   "Save current buffer without message."
@@ -137,18 +140,22 @@
             (org-sliced-images-display-inline-images)
             (quiet-save-buffer)))
 
-(add-hook 'org-babel-after-execute-hook
-          (lambda ()
-            (org-sliced-images-remove-inline-images)
-	    (clean-jupyter-wolfram-language-results)
-            (org-sliced-images-display-inline-images)
-            (org-latex-preview)))
-
 (add-hook 'kill-buffer-hook
           (lambda ()
             (when (eq major-mode 'org-mode)
               (org-sliced-images-remove-inline-images)
               (quiet-save-buffer))))
+
+;; Display org-babel images
+(defun org-babel-display-images ()
+  "Display org-sliced-images after executing org block."
+  (when (org-babel-where-is-src-block-result)
+    ;; (org-sliced-images-remove-inline-images)
+    (clean-jupyter-wolfram-language-results)
+    (org-sliced-images-display-inline-images)
+    (org-latex-preview)))
+
+(add-hook 'org-babel-after-execute-hook #'org-babel-display-images)
 
 
 (provide 'init-org)
