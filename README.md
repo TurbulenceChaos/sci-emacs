@@ -7,35 +7,33 @@
 
 ---
 
-## 1. Introduction
-This is my Emacs configuration, specifically tailored for academic research.
+## Introduction
+This is my personal emacs configuration, specifically aimed for academic research.
 
-## 2. Installation
+## Installation
 ```bash
-# Clone the Sci-Emacs repository into the Emacs directory
+# Clone the Sci-Emacs repository into the emacs directory
 git clone https://github.com/TurbulenceChaos/Sci-Emacs.git ~/.emacs.d
 
-# Navigate to the Emacs directory
 cd ~/.emacs.d
 
-# Initialize and update Git submodules recursively
+# Initialize and update git submodules recursively
 git submodule update --init --recursive
 
-# Install ispell for spell-checking support
-sudo apt install -y ispell
+# Install ispell for `spell-checking` support
+sudo apt install ispell
 ```
 
-## 3. Testing setup
-Verify Org Babel functionality by running the test script in [Test/Test.org](Test/Test.org).
+## Testing setup
+Verify setup in [Test/Test.org](Test/Test.org).
 
-### 3.1 Testing Org-babel-Tikz
+### Latex tikz
 Demo: [Test-org-babel-tikz.gif](Test/Test-org-babel-tikz.gif) 
 
 ![Test Org-babel-Tikz](Test/Test-org-babel-tikz.gif)
 
-### 3.2 Testing Jupyter-Wolfram-Language
-You can find my [Wolfram-terminal-image](https://github.com/TurbulenceChaos/Wolfram-terminal-image) package on GitHub. 
-This package enhances the display of WolframScript graphics in terminal environments like VS Code and Emacs Org-mode.
+### Jupyter wolfram language
+You can find my [Wolfram-terminal-image](https://github.com/TurbulenceChaos/Wolfram-terminal-image) package on GitHub, which allows wolfram images to be shown in the vscode terminal and emacs org-mode.
 
 Demo: [Test-emacs-jupyter-wolfram-language.gif](Test/Test-emacs-jupyter-wolfram-language.gif)
 
