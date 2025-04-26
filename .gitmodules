@@ -1,9 +1,3 @@
 [submodule "site-lisp/xah-wolfram-mode"]
 	path = site-lisp/xah-wolfram-mode
 	url = https://github.com/xahlee/xah-wolfram-mode.git
-[submodule "site-lisp/org-imgtog"]
-	path = site-lisp/org-imgtog
-	url = https://github.com/gaoDean/org-imgtog.git
-[submodule "site-lisp/org-modern-indent"]
-	path = site-lisp/org-modern-indent
-	url = https://github.com/jdtsmith/org-modern-indent.git
