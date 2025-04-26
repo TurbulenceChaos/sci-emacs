@@ -7,9 +7,14 @@
 (require 'leuven-theme)
 
 (load-theme 'leuven :no-confirm)
-(custom-set-faces
- '(line-number-current-line ((t (:inherit org-done :box nil :weight bold)))))
 
+(with-eval-after-load 'org
+  (custom-set-faces
+   `(line-number-current-line ((t (:inherit line-number
+                                  :foreground ,(face-attribute 'org-done :foreground nil t)
+                                  :background ,(face-attribute 'org-done :background nil t)
+                                  :box nil
+                                  :weight bold))))))
 
 (provide 'init-theme)
 ;;; init-theme.el ends here
