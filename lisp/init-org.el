@@ -122,7 +122,6 @@
 (require 'org-sliced-images)
 
 (setq org-sliced-images-round-image-height t)
-(org-sliced-images-mode 1)
 (defalias 'org-remove-inline-images 'org-sliced-images-remove-inline-images)
 (defalias 'org-toggle-inline-images 'org-sliced-images-toggle-inline-images)
 (defalias 'org-display-inline-images 'org-sliced-images-display-inline-images)
