@@ -6,11 +6,19 @@
 **Environment:** (emacs "30.1" in WSL2 Ubuntu 24.04)
 
 ---
+## Table of Contents
+- [Sci-Emacs](#sci-emacs)
+  - [Table of Contents](#table-of-contents)
+  - [1. Introduction](#1-introduction)
+  - [2. Installation](#2-installation)
+  - [3. Testing Setup](#3-testing-setup)
+    - [3.1 Latex Tikz](#31-latex-tikz)
+    - [3.2 Jupyter Wolfram Language](#32-jupyter-wolfram-language)
 
-## Introduction
+## 1. Introduction
 This is my personal emacs configuration, specifically aimed for academic research.
 
-## Installation
+## 2. Installation
 ```bash
 # Clone the Sci-Emacs repository into the emacs directory
 git clone https://github.com/TurbulenceChaos/Sci-Emacs.git ~/.emacs.d
@@ -24,15 +32,15 @@ git submodule update --init --recursive
 sudo apt install ispell
 ```
 
-## Testing setup
-Verify setup in [Test/Test.org](Test/Test.org).
+## 3. Testing Setup
+Verify setup in [Test.org](Test/Test.org).
 
-### Latex tikz
+### 3.1 Latex Tikz
 Demo: [Test-org-babel-tikz.gif](Test/Test-org-babel-tikz.gif) 
 
 ![Test Org-babel-Tikz](Test/Test-org-babel-tikz.gif)
 
-### Jupyter wolfram language
+### 3.2 Jupyter Wolfram Language
 You can find my [Wolfram-terminal-image](https://github.com/TurbulenceChaos/Wolfram-terminal-image) package on GitHub, which allows wolfram images to be shown in the vscode terminal and emacs org-mode.
 
 Demo: [Test-emacs-jupyter-wolfram-language.gif](Test/Test-emacs-jupyter-wolfram-language.gif)
