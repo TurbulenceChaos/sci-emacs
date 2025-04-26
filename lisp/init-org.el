@@ -122,11 +122,16 @@
 (require 'org-sliced-images)
 
 (setq org-sliced-images-round-image-height t)
+
+(defun my/org-sliced-images-display-inline-images ()
+  "Remove org-sliced-images before displaying it."
+  (interactive)
+  (org-sliced-images-remove-inline-images)
+  (org-sliced-images-display-inline-images))
+
 (defalias 'org-remove-inline-images 'org-sliced-images-remove-inline-images)
 (defalias 'org-toggle-inline-images 'org-sliced-images-toggle-inline-images)
-(defalias 'org-display-inline-images 'org-sliced-images-display-inline-images)
-
-(advice-add 'org-sliced-images-display-inline-images :before #'org-sliced-images-remove-inline-images)
+(defalias 'org-display-inline-images 'my/org-sliced-images-display-inline-images)
 
 (defun quiet-save-buffer ()
   "Save current buffer without message."
@@ -151,7 +156,7 @@
   (when (org-babel-where-is-src-block-result)
     ;; (org-sliced-images-remove-inline-images)
     (clean-jupyter-wolfram-language-results)
-    (org-sliced-images-display-inline-images)
+    (my/org-sliced-images-display-inline-images)
     (org-latex-preview)))
 
 (add-hook 'org-babel-after-execute-hook #'org-babel-display-images)
