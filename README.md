@@ -1,8 +1,8 @@
-# SCI Emacs
+# Sci-Emacs
 
 **Author:** Peng Peng  \
 **Email:** [211110103110@stu.just.edu.cn](mailto:211110103110@stu.just.edu.cn)  \
-**GitHub:** [TurbulenceChaos/SCI-emacs](https://github.com/TurbulenceChaos/SCI-emacs) \
+**GitHub:** [TurbulenceChaos/Sci-Emacs](https://github.com/TurbulenceChaos/Sci-Emacs) \
 **Environment:** (emacs "30.1" in WSL2 Ubuntu 24.04)
 
 ---
@@ -12,8 +12,8 @@ This is my Emacs configuration, specifically tailored for academic research.
 
 ## 2. Installation
 ```bash
-# Clone the SCI-emacs repository into the Emacs directory
-git clone https://github.com/TurbulenceChaos/SCI-emacs.git ~/.emacs.d
+# Clone the Sci-Emacs repository into the Emacs directory
+git clone https://github.com/TurbulenceChaos/Sci-Emacs.git ~/.emacs.d
 
 # Navigate to the Emacs directory
 cd ~/.emacs.d
