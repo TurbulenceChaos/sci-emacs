@@ -6,8 +6,8 @@
   (package-install 'dashboard))
 (require 'dashboard)
 
-(setq dashboard-banner-logo-title "https://github.com/TurbulenceChaos/Sci-Emacs")
-(setq dashboard-footer-messages '("Welcome to Sci-Emacs!"))
+(setq dashboard-banner-logo-title "Welcome to Sci-Emacs!")
+(setq dashboard-footer-messages '("https://github.com/TurbulenceChaos/Sci-Emacs"))
 (setq dashboard-items '((recents . 5)
                         (bookmarks . 5)
                         (projects . 5)))
