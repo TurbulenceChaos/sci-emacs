@@ -67,7 +67,9 @@
         (:eval . "never-export")))
 
 ;; jupyter-Wolfram-Language
-(defalias 'wolfram-language-mode 'xah-wolfram-mode)
+(with-eval-after-load 'xah-wolfram-mode
+  (defalias 'wolfram-language-mode 'xah-wolfram-mode))
+
 (setq org-babel-default-header-args:jupyter-Wolfram-Language
       '((:async . "yes")
         (:kernel . "wolframlanguage14.1")
@@ -117,48 +119,49 @@
 		    (replace-match ": Out" nil nil)))))))))))
 
 ;; org-sliced-images
-(use-package org-sliced-images
-  :defer t
-  :config
-  (setq org-sliced-images-round-image-height t)
+(unless (package-installed-p 'org-sliced-images)
+  (package-install 'org-sliced-images))
+(require 'org-sliced-images)
 
-  (defun my/org-sliced-images-display-inline-images ()
-    "Remove org-sliced-images before displaying it."
-    (interactive)
-    (org-sliced-images-remove-inline-images)
-    (org-sliced-images-display-inline-images))
+(setq org-sliced-images-round-image-height t)
 
-  (defalias 'org-remove-inline-images 'org-sliced-images-remove-inline-images)
-  (defalias 'org-toggle-inline-images 'org-sliced-images-toggle-inline-images)
-  (defalias 'org-display-inline-images 'my/org-sliced-images-display-inline-images)
+(defun my/org-sliced-images-display-inline-images ()
+  "Remove org-sliced-images before displaying it."
+  (interactive)
+  (org-sliced-images-remove-inline-images)
+  (org-sliced-images-display-inline-images))
 
-  (defun quiet-save-buffer ()
-    "Save current buffer without message."
-    (interactive)
-    (let ((inhibit-message t))
-      (save-buffer)))
+(defalias 'org-remove-inline-images 'org-sliced-images-remove-inline-images)
+(defalias 'org-toggle-inline-images 'org-sliced-images-toggle-inline-images)
+(defalias 'org-display-inline-images 'my/org-sliced-images-display-inline-images)
 
-  (add-hook 'org-mode-hook
-            (lambda ()
-              (org-sliced-images-display-inline-images)
-              (quiet-save-buffer)))
+(defun quiet-save-buffer ()
+  "Save current buffer without message."
+  (interactive)
+  (let ((inhibit-message t))
+    (save-buffer)))
 
-  (add-hook 'kill-buffer-hook
-            (lambda ()
-              (when (eq major-mode 'org-mode)
-		(org-sliced-images-remove-inline-images)
-		(quiet-save-buffer))))
+(add-hook 'org-mode-hook
+          (lambda ()
+            (org-sliced-images-display-inline-images)
+            (quiet-save-buffer)))
 
-  ;; Display org-babel images
-  (defun org-babel-display-images ()
-    "Display org-sliced-images after executing org block."
-    (when (org-babel-where-is-src-block-result)
-      ;; (org-sliced-images-remove-inline-images)
-      (clean-jupyter-wolfram-language-results)
-      (my/org-sliced-images-display-inline-images)
-      (org-latex-preview)))
+(add-hook 'kill-buffer-hook
+          (lambda ()
+            (when (eq major-mode 'org-mode)
+              (org-sliced-images-remove-inline-images)
+              (quiet-save-buffer))))
 
-  (add-hook 'org-babel-after-execute-hook #'org-babel-display-images))
+;; Display org-babel images
+(defun org-babel-display-images ()
+  "Display org-sliced-images after executing org block."
+  (when (org-babel-where-is-src-block-result)
+    ;; (org-sliced-images-remove-inline-images)
+    (clean-jupyter-wolfram-language-results)
+    (my/org-sliced-images-display-inline-images)
+    (org-latex-preview)))
+
+(add-hook 'org-babel-after-execute-hook #'org-babel-display-images)
 
 
 (provide 'init-org)
