@@ -12,8 +12,8 @@
       dashboard-icon-type 'nerd-icons
       dashboard-display-icons-p t
       dashboard-set-heading-icons t
-      dashboard-set-file-icons t)
-
+      dashboard-set-file-icons t
+      dashboard-projects-backend 'project-el)
 
 (unless (package-installed-p 'dashboard)
   (package-install 'dashboard))
