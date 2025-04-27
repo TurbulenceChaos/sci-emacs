@@ -2,16 +2,17 @@
 ;;; Commentary:
 ;;; Code:
 
-(use-package keycast
-  :defer t
-  :config
-  (define-minor-mode keycast-mode-line-mode
-    "Show current command and its key binding in the mode line (fix for use with doom-modeline)."
-    :global t
-    (if keycast-mode-line-mode
-	(add-hook 'pre-command-hook 'keycast--update t)
-      (remove-hook 'pre-command-hook 'keycast--update)))
-  (add-to-list 'global-mode-string '("" keycast-mode-line)))
+(unless (package-installed-p 'keycast)
+  (package-install 'keycast))
+(require 'keycast)
+
+(define-minor-mode keycast-mode-line-mode
+  "Show current command and its key binding in the mode line (fix for use with doom-modeline)."
+  :global t
+  (if keycast-mode-line-mode
+      (add-hook 'pre-command-hook 'keycast--update t)
+    (remove-hook 'pre-command-hook 'keycast--update)))
+(add-to-list 'global-mode-string '("" keycast-mode-line))
 
 
 (provide 'init-keycast)

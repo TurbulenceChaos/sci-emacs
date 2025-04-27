@@ -2,9 +2,9 @@
 ;;; Commentary:
 ;;; Code:
 
-(use-package xah-wolfram-mode
-  :defer t
-  :load-path (lambda () (expand-file-name "site-lisp/xah-wolfram-mode" user-emacs-directory)))
+(add-to-list 'load-path (expand-file-name "site-lisp/xah-wolfram-mode" user-emacs-directory))
+(require 'xah-wolfram-mode)
+
 
 (provide 'init-wolfram)
 ;;; init-wolfram.el ends here
