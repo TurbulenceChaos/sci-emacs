@@ -2,19 +2,16 @@
 ;;; Commentary:
 ;;; Code:
 
-(unless (package-installed-p 'treemacs)
-  (package-install 'treemacs))
-(require 'treemacs)
+(use-package treemacs
+  :defer t)
 
-(unless (package-installed-p 'treemacs-evil)
-  (package-install 'treemacs-evil))
-(require 'treemacs-evil)
+(use-package treemacs-evil
+  :defer t)
 
-(unless (package-installed-p 'treemacs-nerd-icons)
-  (package-install 'treemacs-nerd-icons))
-(require 'treemacs-nerd-icons)
-
-(treemacs-load-theme "nerd-icons")
+(use-package treemacs-nerd-icons
+  :defer t
+  :config
+  (treemacs-load-theme "nerd-icons"))
 
 
 (provide 'init-treemacs)

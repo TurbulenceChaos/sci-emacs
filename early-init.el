@@ -18,6 +18,11 @@
   (package-refresh-contents))
 ;; (setq package-install-upgrade-built-in t)
 
+(eval-when-compile
+  (require 'use-package))
+
+(setq use-package-always-ensure t)
+
 
 (provide 'early-init)
 ;;; early-init.el ends here

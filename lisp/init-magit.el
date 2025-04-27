@@ -2,15 +2,13 @@
 ;;; Commentary:
 ;;; Code:
 
-(unless (package-installed-p 'magit)
-  (package-install 'magit))
-(require 'magit)
+(use-package magit
+  :defer t)
 
-(unless (package-installed-p 'diff-hl)
-  (package-install 'diff-hl))
-(require 'diff-hl)
-
-(global-diff-hl-mode)
+(use-package diff-hl
+  :defer t
+  :config
+  (global-diff-hl-mode))
 
 
 (provide 'init-magit)
