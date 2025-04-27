@@ -1,5 +1,5 @@
 ;;; init.el --- Load the full configuration
-;; SCI-emacs
+;; Sci-Emacs
 ;; Author: Peng Peng
 ;; Email:  211110103110@stu.just.edu.cn
 ;; GitHub: https://github.com/TurbulenceChaos/Sci-Emacs
