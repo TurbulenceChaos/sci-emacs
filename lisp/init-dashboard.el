@@ -9,17 +9,18 @@
 (setq dashboard-banner-logo-title "Welcome to Sci-Emacs!"
       dashboard-footer-messages '("https://github.com/TurbulenceChaos/Sci-Emacs")
       dashboard-center-content t
-      dashboard-icon-type 'nerd-icons
       dashboard-display-icons-p t
+      dashboard-icon-type 'nerd-icons
       dashboard-set-heading-icons t
       dashboard-set-file-icons t
-      dashboard-modify-heading-icons '((recents . "nf-oct-file")
-				       (bookmarks . "nf-oct-book")
-				       (projects . "nf-oct-rocket"))
       dashboard-items '((recents . 5)
 			(bookmarks . 5)
 			(projects . 5)))
 (dashboard-setup-startup-hook)
+
+(setq dashboard-footer-icon (nerd-icons-octicon "nf-oct-mark_github"
+						:height 1.1
+                                                :face 'font-lock-keyword-face))
 
 
 (provide 'init-dashboard)

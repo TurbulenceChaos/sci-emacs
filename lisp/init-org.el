@@ -9,7 +9,9 @@
   (package-install 'org))
 ;; (require 'org)
 
+
 ;; org-basic
+
 (setq org-startup-numerated t
       org-support-shift-select t
       org-confirm-babel-evaluate nil
@@ -74,7 +76,8 @@
         (:eval . "never-export")))
 
 ;; jupyter-Wolfram-Language
-(defalias 'wolfram-language-mode 'xah-wolfram-mode)
+(with-eval-after-load 'org
+  (defalias 'wolfram-language-mode 'xah-wolfram-mode))
 
 (setq org-babel-default-header-args:jupyter-Wolfram-Language
       '((:async . "yes")
