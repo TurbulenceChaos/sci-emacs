@@ -4,7 +4,7 @@
 
 (unless (package-installed-p 'keycast)
   (package-install 'keycast))
-(require 'keycast)
+;; (require 'keycast)
 
 (define-minor-mode keycast-mode-line-mode
   "Show current command and its key binding in the mode line (fix for use with doom-modeline)."

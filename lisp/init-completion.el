@@ -4,7 +4,7 @@
 
 (unless (package-installed-p 'which-key)
   (package-install 'which-key))
-(require 'which-key)
+;; (require 'which-key)
 
 (which-key-mode)
 
@@ -22,7 +22,7 @@
 
 (unless (package-installed-p 'orderless)
   (package-install 'orderless))
-(require 'orderless)
+;; (require 'orderless)
 
 (setq completion-styles '(substring orderless basic)
       completion-category-overrides '((file (styles basic partial-completion))))

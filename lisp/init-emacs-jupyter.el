@@ -4,11 +4,11 @@
 
 (unless (package-installed-p 'markdown-mode)
   (package-install 'markdown-mode))
-(require 'markdown-mode)
+;; (require 'markdown-mode)
 
 (unless (package-installed-p 'jupyter)
   (package-install 'jupyter))
-(require 'jupyter)
+;; (require 'jupyter)
 
 ;; https://github.com/emacs-jupyter/jupyter/pull/582
 (with-eval-after-load 'jupyter-org-client

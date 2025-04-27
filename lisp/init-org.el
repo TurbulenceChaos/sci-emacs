@@ -7,25 +7,32 @@
 
 (unless (package-installed-p 'org)
   (package-install 'org))
-(require 'org)
-(require 'ox-latex)
+;; (require 'org)
 
 ;; org-basic
-(setq org-startup-numerated t)
-(setq org-support-shift-select t)
-(setq org-confirm-babel-evaluate nil)
-(setq org-edit-src-content-indentation 0)
-(setq org-babel-min-lines-for-block-output 1000)
-(setq org-startup-with-latex-preview t)
-(setq org-preview-latex-image-directory "tmp/ltximg/")
+(setq org-startup-numerated t
+      org-support-shift-select t
+      org-confirm-babel-evaluate nil
+      org-edit-src-content-indentation 0
+      org-babel-min-lines-for-block-output 1000
+      org-startup-with-latex-preview t
+      org-preview-latex-image-directory "tmp/ltximg/")
+(require 'ox-latex)
 (setq org-format-latex-options (plist-put org-format-latex-options :scale 3))
 (with-eval-after-load 'org-faces
   (set-face-attribute 'org-block nil :inherit 'fixed-pitch :height 0.85))
+(with-eval-after-load 'org
+  (custom-set-faces
+   `(line-number-current-line ((t (:inherit line-number
+					    :foreground ,(face-attribute 'org-done :foreground nil t)
+					    :background ,(face-attribute 'org-done :background nil t)
+					    :box nil
+					    :weight bold))))))
 
 ;; org-theme
 (unless (package-installed-p 'org-modern)
   (package-install 'org-modern))
-(require 'org-modern)
+;; (require 'org-modern)
 
 (setq org-modern-table nil)
 (setq org-modern-block-fringe nil)
@@ -67,8 +74,7 @@
         (:eval . "never-export")))
 
 ;; jupyter-Wolfram-Language
-(with-eval-after-load 'xah-wolfram-mode
-  (defalias 'wolfram-language-mode 'xah-wolfram-mode))
+(defalias 'wolfram-language-mode 'xah-wolfram-mode)
 
 (setq org-babel-default-header-args:jupyter-Wolfram-Language
       '((:async . "yes")
@@ -121,7 +127,7 @@
 ;; org-sliced-images
 (unless (package-installed-p 'org-sliced-images)
   (package-install 'org-sliced-images))
-(require 'org-sliced-images)
+;; (require 'org-sliced-images)
 
 (setq org-sliced-images-round-image-height t)
 
