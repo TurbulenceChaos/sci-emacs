@@ -6,6 +6,7 @@
   (package-install 'dashboard))
 ;; (require 'dashboard)
 
+(setq dashboard-startup-banner (expand-file-name "Sci-Emacs.png" user-emacs-directory))
 (setq dashboard-banner-logo-title "Welcome to Sci-Emacs!"
       dashboard-footer-messages '("https://github.com/TurbulenceChaos/Sci-Emacs")
       dashboard-center-content t
@@ -16,6 +17,7 @@
       dashboard-items '((recents . 5)
 			(bookmarks . 5)
 			(projects . 5)))
+
 (dashboard-setup-startup-hook)
 
 (setq dashboard-footer-icon (nerd-icons-octicon "nf-oct-mark_github"
