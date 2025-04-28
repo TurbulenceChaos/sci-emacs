@@ -1,6 +1,6 @@
 # -*- mode: snippet -*-
-# name:import-wolfram-terminal-image-package 
-# key:<jwp 
+# name:import-wolfram-terminal-image-package
+# key:<jwp
 # --
 #+name: Import-wolfram-terminal-image-package
 #+begin_src jupyter-Wolfram-Language :results silent

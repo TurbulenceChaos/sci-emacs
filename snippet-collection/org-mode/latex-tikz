@@ -1,0 +1,8 @@
+# -*- mode: snippet -*-
+# name:latex-tikz
+# key:<tikz
+# --
+#+name: $1
+#+begin_src latex :file $1.png
+$0
+#+end_src
