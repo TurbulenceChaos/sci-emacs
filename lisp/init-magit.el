@@ -11,8 +11,7 @@
 ;; (require 'diff-hl)
 
 ;; global-diff-hl-mode is already been autoloaded, and executing this function will load the diff-hl file
-(with-eval-after-load 'diff-hl
-  (global-diff-hl-mode))
+(global-diff-hl-mode)
 
 
 (provide 'init-magit)

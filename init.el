@@ -10,6 +10,7 @@
 (require 'init-theme)
 (require 'init-evil)
 (require 'init-completion)
+(require 'init-snippet)
 (require 'init-format)
 (require 'init-magit)
 (require 'init-undo)
