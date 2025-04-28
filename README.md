@@ -25,9 +25,6 @@ git clone https://github.com/TurbulenceChaos/Sci-Emacs.git ~/.emacs.d
 
 cd ~/.emacs.d
 
-# Initialize and update git submodules recursively
-git submodule update --init --recursive
-
 # Install `ispell` for `spell-checking` support
 sudo apt install ispell
 ```
