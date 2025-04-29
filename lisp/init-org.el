@@ -132,7 +132,9 @@
 (setq wolfram-terminal-formula-type=latex t)
 
 ;; minimum number of lines for block output
-(setq org-babel-min-lines-for-block-output 1000)
+(if wolfram-terminal-formula-type=latex
+    (setq org-babel-min-lines-for-block-output 1000)
+  (setq org-babel-min-lines-for-block-output 20))
 
 
 (provide 'init-org)
