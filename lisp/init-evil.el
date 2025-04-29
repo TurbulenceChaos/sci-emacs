@@ -37,7 +37,7 @@
   (package-install 'evil-escape))
 (require 'evil-escape)
 
-(setq evil-escape-excluded-major-modes'(treemacs-mode magit-status-mode magit-revision-mode)
+(setq evil-escape-excluded-major-modes'(treemacs-mode magit-status-mode magit-revision-mode magit-diff-mode)
       evil-escape-key-sequence "jk"
       evil-escape-delay 0.2)
 (push 'visual evil-escape-excluded-states)
