@@ -121,7 +121,6 @@
         (:eval . "never-export")))
 
 ;; wolfram-terminal-image for processing jupyter-wolfram-language results
-
 (unless (package-installed-p 'wolfram-terminal-image)
   (package-vc-install
    '(wolfram-terminal-image :url "https://github.com/TurbulenceChaos/Wolfram-terminal-image.git"
@@ -131,6 +130,10 @@
 ;; t (default) for converting wolfram formula to latex;
 ;; otherwise nil for converting wolfram formula to image
 (setq wolfram-terminal-formula-type=latex t)
+
+;; minimum number of lines for block output
+(setq org-babel-min-lines-for-block-output 1000)
+
 
 (provide 'init-org)
 ;;; init-org.el ends here
