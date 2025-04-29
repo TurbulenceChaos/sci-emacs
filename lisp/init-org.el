@@ -107,7 +107,7 @@ when set to nil, wolfram-terminal-formula-type='image'."
 	    (while (re-search-forward "^: " nil t)
 	      (replace-match "" nil nil))
 
-	    ;; Change 'Out[]' to ': Out[]'
+	    ;; Change 'Out[number]' to ': Out[number]'
 	    (goto-char (point-min))
 	    (while (re-search-forward "^Out\\[\\([0-9]+\\)\\]" nil t)
 	      (replace-match ": Out[\\1]" nil nil))
