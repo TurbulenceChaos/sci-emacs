@@ -42,7 +42,9 @@ Type ~C-c C-c~ to evaluate [[Test-tikz]].
 * Test Jupyter Wolfram Language
 #+name: Import-Wolfram-terminal-image-package
 #+begin_src jupyter-Wolfram-Language :results silent
-Get["https://raw.githubusercontent.com/TurbulenceChaos/Wolfram-terminal-image/refs/heads/main/WolframTerminalImage.wl"];
+(* Get["https://raw.githubusercontent.com/TurbulenceChaos/Wolfram-terminal-image/refs/heads/main/WolframTerminalImage.wl"]; *)
+
+Get["~/.emacs.d/elpa/wolfram-terminal-image/WolframTerminalImage.wl"];
 
 (* Specify the terminal type for Wolfram terminal images (options: "vscode", "emacs") *)
 
@@ -93,7 +95,7 @@ MatrixForm[Array[Subscript[a, ##] &, {2, 2, 2}]]
 \frac{1}{2} \left(2 \cos \left(t-\frac{x}{2}\right)-\cos (x)+1\right)
 \end{equation*}
 : Out[3]=
-[[file:tmp/wolfram/wolfram-794581a5-5742-46e2-889c-1ffddb4782ac.png]]
+[[file:tmp/wolfram/wolfram-878d2e06-051b-48d1-bdae-8ea004b3361a.png]]
 : Out[4]=
 \begin{equation*}
 \left(
