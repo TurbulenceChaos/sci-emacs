@@ -12,6 +12,7 @@
 (global-set-key [remap evil-save-and-quit] 'save-and-kill-this-buffer)
 (global-set-key [remap evil-save-and-close] 'save-and-kill-this-buffer)
 (define-key evil-normal-state-map (kbd "TAB") #'evil-jump-item)
+(define-key evil-normal-state-map (kbd "g b") #'apheleia-format-buffer)
 (evil-define-key 'normal org-mode-map (kbd "C-j") 'electric-newline-and-maybe-indent)
 (evil-define-key 'normal org-mode-map (kbd "C-k") 'kill-line)
 (evil-set-undo-system 'undo-redo)
