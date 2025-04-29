@@ -40,7 +40,7 @@
 
 ;; org-sliced-images
 (unless (package-installed-p 'org-sliced-images)
-  (package-install 'org-sliced-images))
+  (package-vc-install "https://github.com/TurbulenceChaos/org-sliced-images.git"))
 ;; (require 'org-sliced-images)
 
 (setq org-sliced-images-round-image-height t)
@@ -69,8 +69,8 @@
 (add-hook 'kill-buffer-hook
           (lambda ()
             (when (eq major-mode 'org-mode)
-              (org-sliced-images-remove-inline-images)
-              (quiet-save-buffer))))
+	      (org-sliced-images-remove-inline-images)
+	      (quiet-save-buffer))))
 
 ;; org-babel
 (setq org-src-block-faces '(("emacs-lisp" (:background "#E5FFB8" :extend t)) ;; #EEE2FF, #E5FFB8, gray90
@@ -121,12 +121,16 @@
         (:eval . "never-export")))
 
 ;; wolfram-terminal-image for processing jupyter-wolfram-language results
+
 (unless (package-installed-p 'wolfram-terminal-image)
   (package-vc-install
    '(wolfram-terminal-image :url "https://github.com/TurbulenceChaos/Wolfram-terminal-image.git"
-			    :branch "emacs-package")))
+			    :branch "main")))
 ;; (require 'wolfram-terminal-image)
 
+;; t (default) for converting wolfram formula to latex;
+;; otherwise nil for converting wolfram formula to image
+(setq wolfram-terminal-formula-type=latex t)
 
 (provide 'init-org)
 ;;; init-org.el ends here

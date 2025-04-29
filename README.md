@@ -20,12 +20,12 @@ This is my personal emacs configuration, specifically aimed at academic research
 
 ## 2. Installation
 ```bash
-# Clone the Sci-Emacs repository into the emacs directory
+# Clone Sci-Emacs repository into your emacs config directory
 git clone https://github.com/TurbulenceChaos/Sci-Emacs.git ~/.emacs.d
 
 cd ~/.emacs.d
 
-# Install `ispell` for `spell-checking` support
+# Install `ispell` for spell checking support (`flyspell-mode`)
 sudo apt install ispell
 ```
 
