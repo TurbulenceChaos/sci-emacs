@@ -21,8 +21,8 @@
 (require 'init-window)
 (require 'init-emacs-jupyter)
 (require 'init-wolfram)
-(require 'init-latex)
 (require 'init-org)
+(require 'init-latex)
 
 
 (provide 'init)
