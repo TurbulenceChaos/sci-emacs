@@ -32,7 +32,7 @@ sudo apt install ispell
 ## 3. Testing Setup
 Verify setup in [Test.org](Test/Test.org).
 
-### 3.1 Latex Tikz
+### 3.1 LaTeX Tikz
 Demo: [Test-org-babel-tikz.gif](Test/Test-org-babel-tikz.gif) 
 
 ![Test Org-babel-Tikz](Test/Test-org-babel-tikz.gif)
