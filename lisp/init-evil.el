@@ -17,6 +17,16 @@
 (evil-set-undo-system 'undo-redo)
 (evil-mode 1)
 
+;; https://emacs.stackexchange.com/a/37680/47151
+(defun my-delete-backward-word ()
+  (interactive "*")
+  (let ((mark-even-if-inactive t))
+    (push-mark nil t)
+    (backward-word)
+    (delete-region (point) (mark))))
+
+(keymap-global-set "C-<backspace>" 'my-delete-backward-word)
+
 (unless (package-installed-p 'evil-commentary)
   (package-install 'evil-commentary))
 (require 'evil-commentary)
