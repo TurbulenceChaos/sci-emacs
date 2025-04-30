@@ -46,7 +46,7 @@
   (prettify-symbols-mode))
 
 (add-hook 'org-mode-hook #'my/prettify-symbols-setup)
-(add-hook 'org-mode-hook (lambda () (setq-local prettify-symbols-unprettify-at-point nil)))
+;; (add-hook 'org-mode-hook (lambda () (setq-local prettify-symbols-unprettify-at-point nil)))
 
 ;; org-sliced-images
 (unless (package-installed-p 'org-sliced-images)
