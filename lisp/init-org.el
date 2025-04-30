@@ -46,7 +46,7 @@
   (prettify-symbols-mode))
 
 (add-hook 'org-mode-hook #'my/prettify-symbols-setup)
-;; (add-hook 'org-mode-hook (lambda () (setq-local prettify-symbols-unprettify-at-point nil)))
+(add-hook 'org-mode-hook (lambda () (setq-local prettify-symbols-unprettify-at-point t)))
 
 ;; org-sliced-images
 (unless (package-installed-p 'org-sliced-images)
@@ -139,11 +139,9 @@
 
 ;; t (default) for converting wolfram formula to latex;
 ;; otherwise nil for converting wolfram formula to image
-(setq wolfram-terminal-formula-type=latex t)
-
-;; minimum number of lines for block output
-(if wolfram-terminal-formula-type=latex
-    (setq org-babel-min-lines-for-block-output 1000)
+(if (setq wolfram-terminal-formula-type=latex t)
+    ;; minimum number of lines for block output
+    (setq org-babel-min-lines-for-block-output 100)
   (setq org-babel-min-lines-for-block-output 20))
 
 
