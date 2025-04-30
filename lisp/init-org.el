@@ -35,8 +35,18 @@
 ;; (require 'org-modern)
 
 (setq org-modern-table nil)
+(setq org-modern-block-name nil)
 (setq org-modern-block-fringe nil)
 (global-org-modern-mode)
+
+(defun my/prettify-symbols-setup ()
+  ;; org-babel
+  (push '("#+begin_src" . ?≫) prettify-symbols-alist) ; ▷ ≫
+  (push '("#+end_src" . ?□) prettify-symbols-alist)
+  (prettify-symbols-mode))
+
+(add-hook 'org-mode-hook #'my/prettify-symbols-setup)
+(add-hook 'org-mode-hook (lambda () (setq-local prettify-symbols-unprettify-at-point nil)))
 
 ;; org-sliced-images
 (unless (package-installed-p 'org-sliced-images)
