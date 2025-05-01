@@ -8,6 +8,11 @@
 
 (which-key-mode)
 
+(unless (package-installed-p 'nerd-icons-completion)
+  (package-install 'nerd-icons-completion))
+
+(nerd-icons-completion-mode)
+
 ;; Icomplete-mode
 (setq icomplete-compute-delay 0
       icomplete-delay-completions-threshold 0
