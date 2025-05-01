@@ -50,7 +50,8 @@
 
 ;; org-sliced-images
 (unless (package-installed-p 'org-sliced-images)
-  (package-vc-install "https://github.com/TurbulenceChaos/org-sliced-images.git"))
+  (let ((package-check-signature nil))
+    (package-vc-install "https://github.com/TurbulenceChaos/org-sliced-images.git")))
 ;; (require 'org-sliced-images)
 
 (setq org-sliced-images-round-image-height t)
@@ -132,9 +133,10 @@
 
 ;; wolfram-terminal-image for processing jupyter-wolfram-language results
 (unless (package-installed-p 'wolfram-terminal-image)
-  (package-vc-install
-   '(wolfram-terminal-image :url "https://github.com/TurbulenceChaos/Wolfram-terminal-image.git"
-			    :branch "main")))
+  (let ((package-check-signature nil))
+    (package-vc-install
+     '(wolfram-terminal-image :url "https://github.com/TurbulenceChaos/Wolfram-terminal-image.git"
+			      :branch "main"))))
 ;; (require 'wolfram-terminal-image)
 
 ;; t (default) for converting wolfram formula to latex;
