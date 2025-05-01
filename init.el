@@ -18,6 +18,7 @@
 (require 'init-keycast)
 (require 'init-treemacs)
 (require 'init-dashboard)
+(require 'init-dired)
 (require 'init-window)
 (require 'init-emacs-jupyter)
 (require 'init-wolfram)
