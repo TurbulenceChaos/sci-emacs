@@ -14,7 +14,7 @@
       TeX-source-correlate-method 'synctex
       TeX-source-correlate-start-server nil
       TeX-electric-sub-and-superscript t
-      TeX-save-query nil))
+      TeX-save-query nil)
 
 (unless (package-installed-p 'auctex-latexmk)
   (package-install 'auctex-latexmk))
