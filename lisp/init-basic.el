@@ -31,9 +31,13 @@
 
 ;; System behavior
 (setq ring-bell-function 'ignore)   ;; Disable bell sound
-(setq scroll-step 1
-      scroll-conservatively 8)  ;; Smooth scrolling
 
+(setq hscroll-margin 2
+      hscroll-step 1
+      scroll-conservatively 10
+      scroll-margin 0
+      scroll-preserve-screen-position t
+      auto-window-vscroll nil)
 
 (provide 'init-basic)
 ;;; init-basic.el ends here.

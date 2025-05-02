@@ -6,16 +6,6 @@
   (package-install 'auctex))
 ;; (require 'auctex)
 
-(unless (package-installed-p 'auctex-latexmk)
-  (package-install 'auctex-latexmk))
-;; (require 'auctex-latexmk)
-
-(unless (package-installed-p 'pdf-tools)
-  (package-install 'pdf-tools))
-;; (require 'pdf-tools)
-
-(pdf-tools-install)
-
 (setq TeX-parse-self t
       TeX-auto-save t
       TeX-auto-local ".auctex-auto"
@@ -24,8 +14,19 @@
       TeX-source-correlate-method 'synctex
       TeX-source-correlate-start-server nil
       TeX-electric-sub-and-superscript t
-      TeX-save-query nil
-      TeX-view-program-selection '((output-pdf "PDF Tools")))
+      TeX-save-query nil))
+
+(unless (package-installed-p 'auctex-latexmk)
+  (package-install 'auctex-latexmk))
+;; (require 'auctex-latexmk)
+
+;; (unless (package-installed-p 'pdf-tools)
+;;   (package-install 'pdf-tools))
+;; ;; (require 'pdf-tools)
+
+;; (pdf-tools-install)
+
+;; (setq TeX-view-program-selection '((output-pdf "PDF Tools")))
 
 (add-hook 'pdf-view-mode-hook (lambda () (display-line-numbers-mode -1)))
 
