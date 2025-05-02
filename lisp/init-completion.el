@@ -19,6 +19,7 @@
       icomplete-max-delay-chars 0
       icomplete-scroll t
       icomplete-show-matches-on-no-input t)
+(add-to-list 'completion-styles-alist 'initials)
 (icomplete-vertical-mode)
 (define-key icomplete-vertical-mode-minibuffer-map (kbd "TAB") 'icomplete-force-complete)
 (define-key icomplete-vertical-mode-minibuffer-map (kbd "RET") 'icomplete-force-complete-and-exit)
