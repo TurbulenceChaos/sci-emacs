@@ -56,7 +56,7 @@ wolframTerminalImageResolution = 150;
 
 (* Specify the formula type for emacs (options: "latex", "image") *)
 
-wolframTerminalFormulaType = "latex";
+wolframTerminalFormulaType = "image";
 
 (* Enable ("yes") or disable ("no") playback of Wolfram terminal CDF files *)
 
@@ -95,7 +95,7 @@ MatrixForm[Array[Subscript[a, ##] &, {2, 2, 2}]]
 \frac{1}{2} \left(2 \cos \left(t-\frac{x}{2}\right)-\cos (x)+1\right)
 \end{equation*}
 : Out[3]=
-[[file:tmp/wolfram/wolfram-878d2e06-051b-48d1-bdae-8ea004b3361a.png]]
+[[file:tmp/wolfram/wolfram-a5e54477-c2f1-4919-8dcc-15cab20769ff.png]]
 : Out[4]=
 \begin{equation*}
 \left(

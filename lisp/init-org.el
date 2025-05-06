@@ -16,6 +16,7 @@
       org-edit-src-content-indentation 0
       org-babel-min-lines-for-block-output 1000
       org-startup-with-latex-preview t
+      org-hide-emphasis-markers t
       org-preview-latex-image-directory "tmp/ltximg/")
 (require 'ox-latex)
 (setq org-format-latex-options (plist-put org-format-latex-options :scale 3))
@@ -141,7 +142,7 @@
 
 ;; t (default) for converting wolfram formula to latex;
 ;; otherwise nil for converting wolfram formula to image
-(if (setq wolfram-terminal-formula-type=latex t)
+(if (setq wolfram-terminal-formula-type=latex nil)
     ;; minimum number of lines for block output
     (setq org-babel-min-lines-for-block-output 100)
   (setq org-babel-min-lines-for-block-output 20))
