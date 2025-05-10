@@ -20,13 +20,13 @@
   (package-install 'auctex-latexmk))
 ;; (require 'auctex-latexmk)
 
-;; (unless (package-installed-p 'pdf-tools)
-;;   (package-install 'pdf-tools))
-;; ;; (require 'pdf-tools)
+(unless (package-installed-p 'pdf-tools)
+  (package-install 'pdf-tools))
+;; (require 'pdf-tools)
 
-;; (pdf-tools-install)
+(pdf-tools-install)
 
-;; (setq TeX-view-program-selection '((output-pdf "PDF Tools")))
+(setq TeX-view-program-selection '((output-pdf "PDF Tools")))
 
 (add-hook 'pdf-view-mode-hook (lambda () (display-line-numbers-mode -1)))
 
