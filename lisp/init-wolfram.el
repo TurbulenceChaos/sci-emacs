@@ -7,5 +7,6 @@
 
 (setq save-abbrevs nil)
 
+
 (provide 'init-wolfram)
 ;;; init-wolfram.el ends here
