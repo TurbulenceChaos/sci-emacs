@@ -36,6 +36,7 @@
 (setq org-format-latex-header (concat "% xelatex\n" org-format-latex-header))
 (setq org-babel-default-header-args:latex 
       '((:results . "graphics file")
+        (:results . "value drawer")
         (:imagemagick . "t")
         (:fit . "yes")
         (:iminoptions . "-density 300 -units pixelsperinch")
@@ -84,6 +85,7 @@
               (org-remove-inline-images)
               (let ((inhibit-message t))
                 (save-buffer)))))
+
 
 (provide 'init-org)
 ;;; init-org.el ends here
