@@ -13,11 +13,24 @@
 (with-eval-after-load 'org
   (setq org-format-latex-options (plist-put org-format-latex-options :scale 2.5)))
 
+(unless (package-installed-p 'org-modern)
+  (package-install 'org-modern))
+
+(setq org-modern-table nil
+      org-modern-block-fringe nil)
+(global-org-modern-mode)
+
 (org-babel-do-load-languages
  'org-babel-load-languages
  '((emacs-lisp . t)
    (latex . t)
+   (python . t)
    (jupyter . t)))
+
+(setq org-src-block-faces '(("emacs-lisp" (:background "#FFFFE0" :extend t))
+			    ("latex" (:background "#E5FFB8" :extend t))
+			    ("jupyter-python" (:background "thistle1" :extend t))
+			    ("jupyter-Wolfram-Language" (:background "LightCyan1" :extend t))))
 
 (add-to-list 'org-latex-packages-alist '("" "tikz" t))
 (setq org-format-latex-header (concat "% xelatex\n" org-format-latex-header))
