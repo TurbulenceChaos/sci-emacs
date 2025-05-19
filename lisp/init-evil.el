@@ -11,6 +11,7 @@
 (unless (package-installed-p 'evil-org)
   (package-install 'evil-org))
 
+(add-hook 'org-mode-hook 'evil-org-mode)
 
 (provide 'init-evil)
 ;;; init-evil.el ends here

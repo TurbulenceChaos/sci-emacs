@@ -8,6 +8,7 @@
 (unless (package-installed-p 'undo-fu-session)
   (package-install 'undo-fu-session))
 
+(setq undo-fu-session-compression nil)
 (undo-fu-session-global-mode)
 
 (unless (package-installed-p 'vundo)
