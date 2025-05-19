@@ -2,6 +2,9 @@
 ;;; Commentary:
 ;;; Code:
 
+(unless (package-installed-p 'undo-fu)
+  (package-install 'undo-fu))
+
 (unless (package-installed-p 'undo-fu-session)
   (package-install 'undo-fu-session))
 
