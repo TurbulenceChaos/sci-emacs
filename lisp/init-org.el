@@ -69,6 +69,21 @@
     (setq org-babel-min-lines-for-block-output 100)
   (setq org-babel-min-lines-for-block-output 20))
 
+(unless (package-installed-p 'org-sliced-images)
+  (package-vc-install "https://github.com/TurbulenceChaos/org-sliced-images.git"))
+
+(setq org-sliced-images-consume-dummies t
+      org-sliced-images-round-image-height t)
+
+(org-sliced-images-mode 1)
+
+(add-hook 'kill-buffer-hook
+          (lambda ()
+            (when (eq major-mode 'org-mode)
+	      (when (not (buffer-modified-p))
+                (org-remove-inline-images)
+		(let ((inhibit-message t))
+		  (save-buffer))))))
 
 (provide 'init-org)
 ;;; init-org.el ends here
