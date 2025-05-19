@@ -7,10 +7,8 @@
 #+name: Tikz-styles
 #+begin_src latex :eval no
 \usetikzlibrary{}
-% Define color
 \definecolor{water-blue}{HTML}{569AFF}
 \definecolor{light-green}{HTML}{8CC361}
-% Define tikzstyle
 \tikzstyle{Water-blue}=[bottom color=water-blue,top color=white]
 #+end_src
 
@@ -35,15 +33,11 @@ Type ~C-c C-c~ to evaluate [[Test-tikz]].
 #+end_src
 
 #+RESULTS: Test-tikz
-:results:
 [[file:Test-tikz.png]]
-:end:
 
 * Test Jupyter Wolfram Language
 #+name: Import-Wolfram-terminal-image-package
 #+begin_src jupyter-Wolfram-Language :results silent
-(* Get["https://raw.githubusercontent.com/TurbulenceChaos/Wolfram-terminal-image/refs/heads/main/WolframTerminalImage.wl"]; *)
-
 Get["~/.emacs.d/elpa/wolfram-terminal-image/WolframTerminalImage.wl"];
 
 (* Specify the terminal type for Wolfram terminal images (options: "vscode", "emacs") *)
@@ -86,43 +80,11 @@ MatrixForm[Array[Subscript[a, ##] &, {2, 2, 2}]]
 #+RESULTS: Wolfram-test
 :results:
 : Out[1]=
-\begin{equation*}
-\left\{\left\{y(x,t)\to \frac{1}{2} \left(2 \cos
-   \left(t-\frac{x}{2}\right)-\cos (x)+1\right)\right\}\right\}
-\end{equation*}
+[[file:tmp/wolfram/wolfram-9fb02918-422e-4da6-9489-3d5c130b5abb.png]]
 : Out[2]=
-\begin{equation*}
-\frac{1}{2} \left(2 \cos \left(t-\frac{x}{2}\right)-\cos (x)+1\right)
-\end{equation*}
+[[file:tmp/wolfram/wolfram-e577c54c-721d-44eb-aee4-01a588060b50.png]]
 : Out[3]=
-[[file:tmp/wolfram/wolfram-a5e54477-c2f1-4919-8dcc-15cab20769ff.png]]
+[[file:tmp/wolfram/wolfram-1adbdb5b-b302-473f-85e0-1ab8b1359ccf.png]]
 : Out[4]=
-\begin{equation*}
-\left(
-\begin{array}{cc}
- \left(
-\begin{array}{c}
- a_{1,1,1} \\
- a_{1,1,2} \\
-\end{array}
-\right) & \left(
-\begin{array}{c}
- a_{1,2,1} \\
- a_{1,2,2} \\
-\end{array}
-\right) \\
- \left(
-\begin{array}{c}
- a_{2,1,1} \\
- a_{2,1,2} \\
-\end{array}
-\right) & \left(
-\begin{array}{c}
- a_{2,2,1} \\
- a_{2,2,2} \\
-\end{array}
-\right) \\
-\end{array}
-\right)
-\end{equation*}
+[[file:tmp/wolfram/wolfram-f1dfadb0-36f8-43b0-998a-7f64189a48b4.png]]
 :end:
