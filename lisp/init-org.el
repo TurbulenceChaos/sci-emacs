@@ -43,7 +43,8 @@
         (:imoutoptions . "-quality 100 -alpha remove")
         (:noweb . "yes")
         (:comments . "link")
-        (:eval . "never-export")))
+        (:eval . "never-export")
+        (:exports . "both")))
 
 (setq org-babel-default-header-args:jupyter-python
       '((:async . "yes")
@@ -51,7 +52,8 @@
         (:session . "jupyter-python")
         (:results . "value drawer")
         (:comments . "link")
-        (:eval . "never-export")))
+        (:eval . "never-export")
+        (:exports . "both")))
 
 (defalias 'wolfram-language-mode 'xah-wolfram-mode)
 (setq org-babel-default-header-args:jupyter-Wolfram-Language
@@ -61,7 +63,8 @@
         (:results . "value drawer")
         (:display . "text")
         (:comments . "link")
-        (:eval . "never-export")))
+        (:eval . "never-export")
+        (:exports . "both")))
 
 (unless (package-installed-p 'Wolfram-terminal-image)
   (package-vc-install "https://github.com/TurbulenceChaos/Wolfram-terminal-image.git"))
@@ -78,13 +81,20 @@
 
 (org-sliced-images-mode 1)
 
+(defun remove-sliced-images ()
+  (when (buffer-modified-p)
+    (revert-buffer nil t t))
+  (org-remove-inline-images))
+
 (add-hook 'kill-buffer-hook
-          (lambda ()
-            (when (eq major-mode 'org-mode)
-	      (revert-buffer nil t t)
-              (org-remove-inline-images)
-              (let ((inhibit-message t))
-                (save-buffer)))))
+	  (lambda ()
+	    (when (eq major-mode 'org-mode)
+	      (if (bound-and-true-p org-export-current-backend)
+		  (lambda (backend) (remove-sliced-images))
+		(progn
+		  (remove-sliced-images)
+		  (let ((inhibit-message t))
+                    (save-buffer)))))))
 
 
 (provide 'init-org)
