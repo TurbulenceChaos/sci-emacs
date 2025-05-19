@@ -6,7 +6,8 @@
   (package-install 'evil))
 
 (with-eval-after-load 'evil
-  (evil-set-undo-system 'undo-redo))
+  (evil-set-undo-system 'undo-redo)
+  (add-to-list 'evil-emacs-state-modes 'image-mode))
 
 (unless (package-installed-p 'evil-org)
   (package-install 'evil-org))

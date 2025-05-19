@@ -80,10 +80,10 @@
 (add-hook 'kill-buffer-hook
           (lambda ()
             (when (eq major-mode 'org-mode)
-	      (when (not (buffer-modified-p))
-                (org-remove-inline-images)
-		(let ((inhibit-message t))
-		  (save-buffer))))))
+	      (revert-buffer nil t t)
+              (org-remove-inline-images)
+              (let ((inhibit-message t))
+                (save-buffer)))))
 
 (provide 'init-org)
 ;;; init-org.el ends here
