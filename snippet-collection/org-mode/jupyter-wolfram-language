@@ -1,8 +1,0 @@
-# -*- mode: snippet -*-
-# name:jupyter-wolfram-language
-# key:<jw
-# --
-#+name: $1
-#+begin_src jupyter-Wolfram-Language
-$0
-#+end_src
