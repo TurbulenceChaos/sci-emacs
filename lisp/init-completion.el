@@ -23,6 +23,11 @@
       completion-category-overrides '((file (styles basic partial-completion))))
 
 (global-completion-preview-mode 1)
+(add-hook 'org-mode-hook
+	  (lambda ()
+	    (setq-local completion-preview-commands
+			'(org-self-insert-command
+			  completion-preview-complete))))
 (add-hook 'completion-at-point-functions #'comint-filename-completion)
 (define-key completion-preview-active-mode-map (kbd "M-n") 'completion-preview-next-candidate)
 (define-key completion-preview-active-mode-map (kbd "M-p") 'completion-preview-prev-candidate)

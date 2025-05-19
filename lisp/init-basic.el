@@ -4,7 +4,8 @@
 
 (set-face-attribute 'default nil :height 240)
 (global-hl-line-mode t)
-(global-display-line-numbers-mode)
+(add-hook 'prog-mode-hook #'display-line-numbers-mode)
+(add-hook 'org-src-mode-hook #'display-line-numbers-mode)
 (global-prettify-symbols-mode 1)
 (setq prettify-symbols-unprettify-at-point t)
 (electric-pair-mode t)
