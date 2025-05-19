@@ -48,7 +48,7 @@
         (:comments . "link")
         (:eval . "never-export")))
 
-(unless (package-installed-p 'wolfram-terminal-image)
+(unless (package-installed-p 'Wolfram-terminal-image)
   (package-vc-install "https://github.com/TurbulenceChaos/Wolfram-terminal-image.git"))
 
 (if (setq wolfram-terminal-formula-type=latex nil)
