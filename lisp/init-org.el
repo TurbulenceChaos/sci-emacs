@@ -7,6 +7,7 @@
       org-confirm-babel-evaluate nil
       org-edit-src-content-indentation 0
       org-startup-with-latex-preview t
+      org-startup-with-inline-images t
       org-preview-latex-image-directory "tmp/ltximg/")
 
 (with-eval-after-load 'org
