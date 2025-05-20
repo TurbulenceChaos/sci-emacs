@@ -55,7 +55,10 @@
         (:eval . "never-export")
         (:exports . "both")))
 
-(defalias 'wolfram-language-mode 'xah-wolfram-mode)
+(if (setq wolfram-terminal-formula-type=latex t)
+    (setq org-babel-min-lines-for-block-output 100)
+  (setq org-babel-min-lines-for-block-output 20))
+
 (setq org-babel-default-header-args:jupyter-Wolfram-Language
       '((:async . "yes")
         (:kernel . "wolframlanguage14.1")
@@ -65,13 +68,6 @@
         (:comments . "link")
         (:eval . "never-export")
         (:exports . "both")))
-
-(unless (package-installed-p 'Wolfram-terminal-image)
-  (package-vc-install "https://github.com/TurbulenceChaos/Wolfram-terminal-image.git"))
-
-(if (setq wolfram-terminal-formula-type=latex nil)
-    (setq org-babel-min-lines-for-block-output 100)
-  (setq org-babel-min-lines-for-block-output 20))
 
 (unless (package-installed-p 'org-sliced-images)
   (package-vc-install "https://github.com/TurbulenceChaos/org-sliced-images.git"))
