@@ -70,7 +70,8 @@
         (:exports . "both")))
 
 (unless (package-installed-p 'org-sliced-images)
-  (package-vc-install "https://github.com/TurbulenceChaos/org-sliced-images.git"))
+  (let ((package-check-signature nil))
+    (package-vc-install "https://github.com/TurbulenceChaos/org-sliced-images.git")))
 
 (setq org-sliced-images-consume-dummies t
       org-sliced-images-round-image-height t)

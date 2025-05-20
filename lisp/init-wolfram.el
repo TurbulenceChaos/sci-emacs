@@ -13,7 +13,7 @@
 
 (with-eval-after-load 'eglot
   (add-to-list 'eglot-server-programs
- 	       `(xah-wolfram-mode . ("/usr/local/Wolfram/WolframEngine/14.1/Executables/WolframKernel" "-noinit" "-noprompt" "-nopaclet" "-noicon" "-nostartuppaclets" "-run" "Needs[\"LSPServer`\"]; LSPServer`StartServer[]"))))
+ 	       `(sci-wolfram-mode . ("/usr/local/Wolfram/WolframEngine/14.1/Executables/WolframKernel" "-noinit" "-noprompt" "-nopaclet" "-noicon" "-nostartuppaclets" "-run" "Needs[\"LSPServer`\"]; LSPServer`StartServer[]"))))
 
 
 (provide 'init-wolfram)
