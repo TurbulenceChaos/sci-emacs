@@ -1,4 +1,4 @@
-#+Title: Test
+#+Title: Sci-Emacs Test
 #+Author: Peng Peng
 #+Email: 211110103110@stu.just.edu.cn
 #+GitHub: https://github.com/TurbulenceChaos
@@ -39,8 +39,8 @@ Type ~C-c C-c~ to evaluate [[Test-tikz]].
 
 * Test Jupyter Wolfram Language
 #+name: Import-Wolfram-terminal-image-package
-#+begin_src jupyter-Wolfram-Language :results silent
-Get["~/.emacs.d/elpa/Wolfram-terminal-image/WolframTerminalImage.wl"];
+#+begin_src jupyter-Wolfram-Language :results output silent
+Get["~/.emacs.d/elpa/Wolfram-terminal-image/sci-wolfram-image.wl"];
 
 (* Specify the terminal type for Wolfram terminal images (options: "vscode", "emacs") *)
 
@@ -80,11 +80,11 @@ Plot3D[sol2, {x, -10, 10}, {t, -5, 5}]
 #+RESULTS: Wolfram-test
 :results:
 : Out[1]=
-[[file:tmp/wolfram/wolfram-27b09acb-649e-4797-9bcc-35baf8a5788f.png]]
+[[file:tmp/wolfram/wolfram-d3eff48b-c01f-427c-b027-39f52810a2a3.png]]
 : Out[2]=
-[[file:tmp/wolfram/wolfram-5dbabd5f-138d-4772-8038-466d5a5df88c.png]]
+[[file:tmp/wolfram/wolfram-774f7cd2-4f96-4c30-9a0f-d0f09327ff54.png]]
 : Out[3]=
-[[file:tmp/wolfram/wolfram-75b70fe5-3dfe-4afd-a54c-1057334e482f.png]]
+[[file:tmp/wolfram/wolfram-2dc06b82-3cb2-45e7-913d-8cfd57a33ae6.png]]
 :end:
 
 * Test Jupyter Python
@@ -99,6 +99,6 @@ plt.plot(x, y)
 
 #+RESULTS:
 :results:
-| <matplotlib.lines.Line2D | at | 0x755e63ad07d0> |
+| <matplotlib.lines.Line2D | at | 0x7776f9604ce0> |
 [[file:./.ob-jupyter/013803fd59e17d59903c3de9dc0a51ec2828bd13.png]]
 :end:

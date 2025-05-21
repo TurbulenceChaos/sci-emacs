@@ -3,17 +3,15 @@
 ;;; Code:
 
 (unless (package-installed-p 'Wolfram-terminal-image)
-  (let ((package-check-signature nil))
-    (package-vc-install
-     '(Wolfram-terminal-image :url "https://github.com/TurbulenceChaos/Wolfram-terminal-image.git"
-			      :branch "sci-wolfram"))))
+  (package-vc-install
+   '(Wolfram-terminal-image :url "https://github.com/TurbulenceChaos/Wolfram-terminal-image.git"
+			    :branch "sci-wolfram")))
 
-(setq sci-wolfram-play nil)
-(setq sci-wolfram-player "wolframplayer.exe")
-
-(with-eval-after-load 'eglot
-  (add-to-list 'eglot-server-programs
- 	       `(sci-wolfram-mode . ("/usr/local/Wolfram/WolframEngine/14.1/Executables/WolframKernel" "-noinit" "-noprompt" "-nopaclet" "-noicon" "-nostartuppaclets" "-run" "Needs[\"LSPServer`\"]; LSPServer`StartServer[]"))))
+(setq sci-wolfram-play nil
+      sci-wolfram-player "wolframplayer.exe"
+      sci-wolfram-kernel "/usr/local/Wolfram/WolframEngine/14.1/Executables/WolframKernel"
+      sci-wolfram-jupyter-formula-type "image"
+      org-babel-min-lines-for-block-output 100)
 
 
 (provide 'init-wolfram)

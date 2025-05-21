@@ -14,8 +14,8 @@
 (require 'init-undo)
 (require 'init-eglot)
 (require 'init-latex)
-(require 'init-wolfram)
 (require 'init-emacs-jupyter)
+(require 'init-wolfram)
 (require 'init-org)
 
 

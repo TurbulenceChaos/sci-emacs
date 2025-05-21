@@ -55,10 +55,6 @@
         (:eval . "never-export")
         (:exports . "both")))
 
-(if (setq wolfram-terminal-formula-type=latex t)
-    (setq org-babel-min-lines-for-block-output 100)
-  (setq org-babel-min-lines-for-block-output 20))
-
 (setq org-babel-default-header-args:jupyter-Wolfram-Language
       '((:async . "yes")
         (:kernel . "wolframlanguage14.1")
@@ -70,8 +66,7 @@
         (:exports . "both")))
 
 (unless (package-installed-p 'org-sliced-images)
-  (let ((package-check-signature nil))
-    (package-vc-install "https://github.com/TurbulenceChaos/org-sliced-images.git")))
+  (package-vc-install "https://github.com/TurbulenceChaos/org-sliced-images.git"))
 
 (setq org-sliced-images-consume-dummies t
       org-sliced-images-round-image-height t)
