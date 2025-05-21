@@ -39,7 +39,7 @@ Type ~C-c C-c~ to evaluate [[Test-tikz]].
 
 * Test Jupyter Wolfram Language
 #+name: Import-Wolfram-terminal-image-package
-#+begin_src jupyter-Wolfram-Language :results output silent
+#+begin_src jupyter-Wolfram-Language :results value raw
 Get["~/.emacs.d/elpa/Wolfram-terminal-image/sci-wolfram-image.wl"];
 
 (* Specify the terminal type for Wolfram terminal images (options: "vscode", "emacs") *)
@@ -67,6 +67,8 @@ wolframTerminalPlayer = "wolframplayer";
 (* To restore `$Post` to its original state, simply execute "$Post=." *)
 #+end_src
 
+#+RESULTS: Import-Wolfram-terminal-image-package
+
 #+name: Wolfram-test
 #+begin_src jupyter-Wolfram-Language
 sol1 = DSolve[{D[y[x, t], t] + 2 D[y[x, t], x] == Sin[x], y[0, t] ==
@@ -80,11 +82,11 @@ Plot3D[sol2, {x, -10, 10}, {t, -5, 5}]
 #+RESULTS: Wolfram-test
 :results:
 : Out[1]=
-[[file:tmp/wolfram/wolfram-d3eff48b-c01f-427c-b027-39f52810a2a3.png]]
+[[file:tmp/wolfram/wolfram-4cbbd371-e748-424f-83f3-182b81f5ff86.png]]
 : Out[2]=
-[[file:tmp/wolfram/wolfram-774f7cd2-4f96-4c30-9a0f-d0f09327ff54.png]]
+[[file:tmp/wolfram/wolfram-856270e6-b92d-4dcb-b3af-a806a6bd22af.png]]
 : Out[3]=
-[[file:tmp/wolfram/wolfram-2dc06b82-3cb2-45e7-913d-8cfd57a33ae6.png]]
+[[file:tmp/wolfram/wolfram-50f63b68-9a60-450a-b7d5-d51189618c2c.png]]
 :end:
 
 * Test Jupyter Python
@@ -99,6 +101,6 @@ plt.plot(x, y)
 
 #+RESULTS:
 :results:
-| <matplotlib.lines.Line2D | at | 0x7776f9604ce0> |
+| <matplotlib.lines.Line2D | at | 0x7901f6f88e60> |
 [[file:./.ob-jupyter/013803fd59e17d59903c3de9dc0a51ec2828bd13.png]]
 :end:
