@@ -5,6 +5,7 @@
 (setq org-startup-numerated t
       org-support-shift-select t
       org-confirm-babel-evaluate nil
+      org-babel-min-lines-for-block-output 100
       org-edit-src-content-indentation 0
       org-startup-with-latex-preview t
       org-startup-with-inline-images t
@@ -51,16 +52,6 @@
         (:kernel . "python3")
         (:session . "jupyter-python")
         (:results . "value drawer")
-        (:comments . "link")
-        (:eval . "never-export")
-        (:exports . "both")))
-
-(setq org-babel-default-header-args:jupyter-Wolfram-Language
-      '((:async . "yes")
-        (:kernel . "wolframlanguage14.1")
-        (:session . "jupyter-wolfram-language")
-        (:results . "value drawer")
-        (:display . "text")
         (:comments . "link")
         (:eval . "never-export")
         (:exports . "both")))

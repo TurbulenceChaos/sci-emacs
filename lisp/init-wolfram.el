@@ -2,16 +2,14 @@
 ;;; Commentary:
 ;;; Code:
 
-(unless (package-installed-p 'Wolfram-terminal-image)
+(unless (package-installed-p 'sci-wolfram)
   (package-vc-install
-   '(Wolfram-terminal-image :url "https://github.com/TurbulenceChaos/Wolfram-terminal-image.git"
-			    :branch "sci-wolfram")))
+   '(sci-wolfram :url "https://github.com/TurbulenceChaos/sci-wolfram.git"
+		 :branch "main")))
 
-(setq sci-wolfram-play nil
-      sci-wolfram-player "wolframplayer.exe"
-      sci-wolfram-kernel "/usr/local/Wolfram/WolframEngine/14.1/Executables/WolframKernel"
-      sci-wolfram-jupyter-formula-type "image"
-      org-babel-min-lines-for-block-output 100)
+;; (add-to-list 'load-path "~/.emacs.d/elpa/sci-wolfram/")
+;; (require 'sci-wolfram)
+;; (require 'sci-wolfram-jupyter)
 
 
 (provide 'init-wolfram)

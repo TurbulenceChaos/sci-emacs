@@ -19,8 +19,8 @@
 
 (unless (package-installed-p 'orderless)
   (package-install 'orderless))
-(setq completion-styles '(substring orderless basic)
-      completion-category-overrides '((file (styles basic partial-completion))))
+(setq completion-styles '(basic orderless substring )
+      completion-category-overrides '((file (basic styles partial-completion))))
 
 (global-completion-preview-mode 1)
 (add-hook 'org-mode-hook
