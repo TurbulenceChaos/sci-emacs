@@ -38,56 +38,22 @@ Type ~C-c C-c~ to evaluate [[Test-tikz]].
 :end:
 
 * Test Jupyter Wolfram Language
-#+name: Import-Wolfram-terminal-image-package
-#+begin_src jupyter-Wolfram-Language :results value raw
-Get["~/.emacs.d/elpa/Wolfram-terminal-image/sci-wolfram-image.wl"];
-
-(* Specify the terminal type for Wolfram terminal images (options: "vscode", "emacs") *)
-
-wolframTerminalType = "emacs";
-
-(* Set the resolution (in DPI) for Wolfram terminal images *)
-
-wolframTerminalImageResolution = 150;
-
-(* Specify the formula type for emacs (options: "latex", "image") *)
-
-wolframTerminalFormulaType = "image";
-
-(* Enable ("yes") or disable ("no") playback of Wolfram terminal CDF files *)
-
-wolframTerminalPlay = "no";
-
-(* Specify the player application for Wolfram terminal CDF files *)
-
-(* Options: "/path/to/wolframplayer" for Linux or WSL2, "/path/to/wolframplayer.exe" for Windows or WSL2 *)
-
-wolframTerminalPlayer = "wolframplayer";
-
-(* To restore `$Post` to its original state, simply execute "$Post=." *)
+#+name: sci-wolfram-import-pkg
+#+begin_src jupyter-Wolfram-Language
+(* Please run `M-x sci-wolfram-import-pkg` from this line *)
 #+end_src
 
-#+RESULTS: Import-Wolfram-terminal-image-package
-
-#+name: Wolfram-test
+#+name: sci-wolfram-eval-code
 #+begin_src jupyter-Wolfram-Language
-sol1 = DSolve[{D[y[x, t], t] + 2 D[y[x, t], x] == Sin[x], y[0, t] ==
-   Cos[t]}, y[x, t], {x, t}]
+sol1 = DSolve[{D[y[x, t], t] + 2 D[y[x, t], x] == Sin[x], y[0, t] == 
+    Cos[t]}, y[x, t], {x, t}]
 
 sol2 = sol1[[1, 1, 2]]
 
 Plot3D[sol2, {x, -10, 10}, {t, -5, 5}]
-#+end_src
 
-#+RESULTS: Wolfram-test
-:results:
-: Out[1]=
-[[file:tmp/wolfram/wolfram-4cbbd371-e748-424f-83f3-182b81f5ff86.png]]
-: Out[2]=
-[[file:tmp/wolfram/wolfram-856270e6-b92d-4dcb-b3af-a806a6bd22af.png]]
-: Out[3]=
-[[file:tmp/wolfram/wolfram-50f63b68-9a60-450a-b7d5-d51189618c2c.png]]
-:end:
+MatrixForm[Array[Subscript[a, ##]&, {2, 2, 2}]]
+#+end_src
 
 * Test Jupyter Python
 #+begin_src jupyter-python
