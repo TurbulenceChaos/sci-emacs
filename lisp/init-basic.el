@@ -18,6 +18,8 @@
 (setq hscroll-step 1
       scroll-conservatively 10)
 
+(add-hook 'minibuffer-setup-hook (lambda () (make-local-variable 'kill-ring)))
+
 
 (provide 'init-basic)
 ;;; init-basic.el ends here.
