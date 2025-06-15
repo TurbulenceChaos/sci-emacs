@@ -6,6 +6,7 @@
 
 (setq custom-file (expand-file-name "custom.el" user-emacs-directory))
 
+(require 'package)
 (setq package-archives '(("melpa" . "https://melpa.org/packages/")
 			 ("gnu" . "https://elpa.gnu.org/packages/")
                          ("nongnu" . "https://elpa.nongnu.org/nongnu/")))

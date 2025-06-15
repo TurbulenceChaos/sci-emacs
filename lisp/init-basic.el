@@ -3,13 +3,16 @@
 ;;; Code:
 
 (set-face-attribute 'default nil :height 240)
+<<<<<<< HEAD
 (load-theme 'sci-wolfram t)
 
+=======
+>>>>>>> parent of a37c36b (Update config)
 (global-hl-line-mode t)
 (add-hook 'prog-mode-hook #'display-line-numbers-mode)
 (add-hook 'org-src-mode-hook #'display-line-numbers-mode)
 (global-prettify-symbols-mode 1)
-;; (setq prettify-symbols-unprettify-at-point t)
+(setq prettify-symbols-unprettify-at-point t)
 (electric-pair-mode t)
 (show-paren-mode 1)
 (delete-selection-mode t)
