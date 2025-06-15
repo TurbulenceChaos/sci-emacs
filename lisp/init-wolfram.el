@@ -11,10 +11,6 @@
 ;; (require 'sci-wolfram)
 ;; (require 'sci-wolfram-jupyter)
 
-(custom-set-variables
- '(sci-wolfram-formula-type "image")
- '(sci-wolfram-play "no"))
-
 
 (provide 'init-wolfram)
 ;;; init-wolfram.el ends here
