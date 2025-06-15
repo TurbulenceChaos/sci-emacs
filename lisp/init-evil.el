@@ -14,5 +14,8 @@
 
 (add-hook 'org-mode-hook 'evil-org-mode)
 
+(evil-mode)
+
+
 (provide 'init-evil)
 ;;; init-evil.el ends here
