@@ -3,11 +3,7 @@
 ;;; Code:
 
 (set-face-attribute 'default nil :height 240)
-<<<<<<< HEAD
-(load-theme 'sci-wolfram t)
 
-=======
->>>>>>> parent of a37c36b (Update config)
 (global-hl-line-mode t)
 (add-hook 'prog-mode-hook #'display-line-numbers-mode)
 (add-hook 'org-src-mode-hook #'display-line-numbers-mode)

@@ -14,9 +14,6 @@
 
 (add-hook 'org-mode-hook 'evil-org-mode)
 
-<<<<<<< HEAD
 
-=======
->>>>>>> parent of a37c36b (Update config)
 (provide 'init-evil)
 ;;; init-evil.el ends here
