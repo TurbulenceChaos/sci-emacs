@@ -7,8 +7,7 @@
 (custom-theme-set-faces
  'sci-wolfram
  '(default ((t (:background "honeydew"))))
- '(font-lock-constant-face ((t (:foreground "black" :bold t))))
- '(font-lock-variable-name-face ((t (:foreground "red" :bold t)))))
+ '(font-lock-constant-face ((t (:foreground "black" :bold t)))))
 
 
 (provide-theme 'sci-wolfram)
