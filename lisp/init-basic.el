@@ -3,7 +3,8 @@
 ;;; Code:
 
 (set-face-attribute 'default nil :height 240)
-(load-theme 'sci-wolfram t)
+(when (display-graphic-p)
+  (load-theme 'sci-wolfram t))
 
 (global-hl-line-mode t)
 (add-hook 'prog-mode-hook #'display-line-numbers-mode)
