@@ -23,6 +23,12 @@
 
 (evil-mode)
 
+;; undo
+(unless (package-installed-p 'undo-fu-session)
+  (package-install 'undo-fu-session))
+
+(undo-fu-session-global-mode)
+
 ;; completion
 (unless (package-installed-p 'which-key)
   (package-install 'which-key))
@@ -42,7 +48,7 @@
 (unless (package-installed-p 'orderless)
   (package-install 'orderless))
 
-(setq completion-styles '(basic orderless substring )
+(setq completion-styles '(basic orderless substring)
       completion-category-overrides '((file (basic styles partial-completion))))
 
 (unless (package-installed-p 'magit)
