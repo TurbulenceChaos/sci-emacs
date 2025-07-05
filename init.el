@@ -1,7 +1,7 @@
 ;;; init.el --- Load the full configuration
 ;; Sci-Emacs
 ;; Author: Peng Peng
-;; Email:  211110103110@stu.just.edu.cn
+;; Email: 211110103110@stu.just.edu.cn
 ;; GitHub: https://github.com/TurbulenceChaos/Sci-Emacs
 ;; Environment: (emacs "30.1" in WSL2 Ubuntu 24.04)
 
@@ -13,6 +13,9 @@
 (setq hscroll-step 1
       scroll-conservatively 10
       ring-bell-function 'ignore)
+
+;; eww
+(add-hook 'eww-after-render-hook 'eww-readable)
 
 ;; vim
 (unless (package-installed-p 'evil)
@@ -126,6 +129,44 @@
 
 (unless (package-installed-p 'org-sliced-images)
   (package-vc-install "https://github.com/TurbulenceChaos/org-sliced-images.git"))
+
+;; tools for sci-emacs
+(setq sci-emacs-tools-leader-key "<f5>")
+
+(defun sci-emacs-oxford-dic-lookup ()
+  "Look up the word under cursor in oxford dictionary in web browser."
+  (interactive)
+  (let* ((word
+	  (if (region-active-p)
+	      (buffer-substring-no-properties (region-beginning) (region-end))
+	   (upcase-initials (current-word))))
+         (url (format "https://www.oxfordlearnersdictionaries.com/definition/english/%s" word word)))
+    (browse-url url)))
+
+(defun sci-emacs-wiki-lookup ()
+  (interactive)
+  (let ((word (upcase-initials (read-string "Enter word that you want to search in wiki:"))))
+    (eww (format "https://en.wikipedia.org/wiki/%s" word))))
+
+(defun sci-emacs-wsl-open-file-external ()
+  (interactive)
+  (let* ((file (buffer-file-name))
+	 (dir (file-name-directory file))
+	 (file-name (file-name-nondirectory file))
+	 (inhibit-message t))
+    (shell-command (format "cd %s && explorer.exe %s" dir file-name))))
+
+(defun sci-emacs-wsl-open-dir-external ()
+  (interactive)
+  (let* ((file (buffer-file-name))
+	 (dir (file-name-directory file))
+	 (inhibit-message t))
+    (shell-command (format "cd %s && explorer.exe ." dir))))
+
+(global-set-key (kbd (concat sci-emacs-tools-leader-key " h")) #'sci-emacs-oxford-dic-lookup)
+(global-set-key (kbd (concat sci-emacs-tools-leader-key " w")) #'sci-emacs-wiki-lookup)
+(global-set-key (kbd (concat sci-emacs-tools-leader-key " f")) #'sci-emacs-wsl-open-dir-external)
+(global-set-key (kbd (concat sci-emacs-tools-leader-key " d")) #'sci-emacs-wsl-open-file-external)
 
 
 (provide 'init)
