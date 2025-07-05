@@ -138,19 +138,28 @@
   (find-file (expand-file-name "init.el" user-emacs-directory)))
 
 (defun sci-emacs-oxford-dic-lookup ()
-  "Look up the word under cursor in oxford dictionary in web browser."
   (interactive)
-  (let* ((word
-	  (if (region-active-p)
-	      (buffer-substring-no-properties (region-beginning) (region-end))
-	   (upcase-initials (current-word))))
-         (url (format "https://www.oxfordlearnersdictionaries.com/definition/english/%s" word word)))
+  (let* ((word (read-string "Enter word that you want to search in oxford dictionary:"))
+         (url (format "https://www.oxfordlearnersdictionaries.com/definition/english/%s" word)))
     (browse-url url)))
 
 (defun sci-emacs-wiki-lookup ()
   (interactive)
-  (let ((word (upcase-initials (read-string "Enter word that you want to search in wiki:"))))
-    (eww (format "https://en.wikipedia.org/wiki/%s" word))))
+  (let* ((word (upcase-initials (read-string "Enter word that you want to search in wiki:")))
+	 (url (format "https://en.wikipedia.org/wiki/%s" word)))
+    (eww url)))
+
+(defun sci-emacs-gramma-check ()
+  (interactive)
+  (let* ((sentence
+	  (if (region-active-p)
+	      (buffer-substring-no-properties (region-beginning) (region-end))
+	    (buffer-substring-no-properties
+	     (save-excursion (backward-paragraph) (point))
+	     (save-excursion (forward-paragraph) (point)))))
+         (url "https://engnovate.com/is-this-grammatically-correct/"))
+    (kill-new sentence)
+    (browse-url url)))
 
 (defun sci-emacs-wsl-open-file-external ()
   (interactive)
@@ -170,6 +179,7 @@
 (global-set-key (kbd (concat sci-emacs-tools-leader-key " i")) #'sci-emacs-open-init-file)
 (global-set-key (kbd (concat sci-emacs-tools-leader-key " h")) #'sci-emacs-oxford-dic-lookup)
 (global-set-key (kbd (concat sci-emacs-tools-leader-key " w")) #'sci-emacs-wiki-lookup)
+(global-set-key (kbd (concat sci-emacs-tools-leader-key " g")) #'sci-emacs-gramma-check)
 (global-set-key (kbd (concat sci-emacs-tools-leader-key " d")) #'sci-emacs-wsl-open-dir-external)
 (global-set-key (kbd (concat sci-emacs-tools-leader-key " f")) #'sci-emacs-wsl-open-file-external)
 
