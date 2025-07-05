@@ -130,8 +130,12 @@
 (unless (package-installed-p 'org-sliced-images)
   (package-vc-install "https://github.com/TurbulenceChaos/org-sliced-images.git"))
 
-;; tools for sci-emacs
+;; tools
 (setq sci-emacs-tools-leader-key "<f5>")
+
+(defun sci-emacs-open-init-file()
+  (interactive)
+  (find-file (expand-file-name "init.el" user-emacs-directory)))
 
 (defun sci-emacs-oxford-dic-lookup ()
   "Look up the word under cursor in oxford dictionary in web browser."
@@ -163,10 +167,11 @@
 	 (inhibit-message t))
     (shell-command (format "cd %s && explorer.exe ." dir))))
 
+(global-set-key (kbd (concat sci-emacs-tools-leader-key " i")) #'sci-emacs-open-init-file)
 (global-set-key (kbd (concat sci-emacs-tools-leader-key " h")) #'sci-emacs-oxford-dic-lookup)
 (global-set-key (kbd (concat sci-emacs-tools-leader-key " w")) #'sci-emacs-wiki-lookup)
-(global-set-key (kbd (concat sci-emacs-tools-leader-key " f")) #'sci-emacs-wsl-open-dir-external)
-(global-set-key (kbd (concat sci-emacs-tools-leader-key " d")) #'sci-emacs-wsl-open-file-external)
+(global-set-key (kbd (concat sci-emacs-tools-leader-key " d")) #'sci-emacs-wsl-open-dir-external)
+(global-set-key (kbd (concat sci-emacs-tools-leader-key " f")) #'sci-emacs-wsl-open-file-external)
 
 
 (provide 'init)
