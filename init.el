@@ -161,27 +161,18 @@
     (kill-new sentence)
     (browse-url url)))
 
-(defun sci-emacs-wsl-open-file-external ()
+(defun sci-emacs-wsl-open-external ()
+  "Open a file or directory in Windows."
   (interactive)
-  (let* ((file (buffer-file-name))
-	 (dir (file-name-directory file))
-	 (file-name (file-name-nondirectory file))
-	 (inhibit-message t))
-    (shell-command (format "cd %s && explorer.exe %s" dir file-name))))
-
-(defun sci-emacs-wsl-open-dir-external ()
-  (interactive)
-  (let* ((file (buffer-file-name))
-	 (dir (file-name-directory file))
-	 (inhibit-message t))
-    (shell-command (format "cd %s && explorer.exe ." dir))))
+  (let* ((file (read-file-name "Select file or directory to open: "))
+         (wsl-path (shell-quote-argument (expand-file-name file))))
+    (shell-command (format "explorer.exe $(wslpath -w %s)" wsl-path))))
 
 (global-set-key (kbd (concat sci-emacs-tools-leader-key " i")) #'sci-emacs-open-init-file)
 (global-set-key (kbd (concat sci-emacs-tools-leader-key " h")) #'sci-emacs-oxford-dic-lookup)
 (global-set-key (kbd (concat sci-emacs-tools-leader-key " w")) #'sci-emacs-wiki-lookup)
 (global-set-key (kbd (concat sci-emacs-tools-leader-key " g")) #'sci-emacs-gramma-check)
-(global-set-key (kbd (concat sci-emacs-tools-leader-key " d")) #'sci-emacs-wsl-open-dir-external)
-(global-set-key (kbd (concat sci-emacs-tools-leader-key " f")) #'sci-emacs-wsl-open-file-external)
+(global-set-key (kbd (concat sci-emacs-tools-leader-key " o")) #'sci-emacs-wsl-open-external)
 
 
 (provide 'init)
