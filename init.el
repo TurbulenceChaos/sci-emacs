@@ -83,13 +83,6 @@
       org-startup-with-latex-preview t
       org-startup-with-inline-images t)
 
-(unless (package-installed-p 'org-modern)
-  (package-install 'org-modern))
-
-(setq org-modern-table nil
-      org-modern-block-fringe nil)
-(global-org-modern-mode)
-
 (org-babel-do-load-languages
  'org-babel-load-languages
  '((emacs-lisp . t)
