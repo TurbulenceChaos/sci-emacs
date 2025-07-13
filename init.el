@@ -126,7 +126,12 @@
 ;; tools
 (setq sci-emacs-tools-leader-key "<f5>")
 
-(defun sci-emacs-open-init-file()
+(defun sci-emacs-insert-date ()
+  "insert date in current buffer, equal to "
+  (interactive)
+  (shell-command "date" t))
+
+(defun sci-emacs-open-init-file ()
   (interactive)
   (find-file (expand-file-name "init.el" user-emacs-directory)))
 
@@ -166,6 +171,7 @@
 (global-set-key (kbd (concat sci-emacs-tools-leader-key " w")) #'sci-emacs-wiki-lookup)
 (global-set-key (kbd (concat sci-emacs-tools-leader-key " g")) #'sci-emacs-gramma-check)
 (global-set-key (kbd (concat sci-emacs-tools-leader-key " o")) #'sci-emacs-wsl-open-external)
+(global-set-key (kbd (concat sci-emacs-tools-leader-key " t")) #'sci-emacs-insert-date)
 
 
 (provide 'init)
