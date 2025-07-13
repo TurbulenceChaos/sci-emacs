@@ -127,7 +127,7 @@
 (setq sci-emacs-tools-leader-key "<f5>")
 
 (defun sci-emacs-insert-date ()
-  "insert date in current buffer, equal to "
+  "Insert date in current buffer, equal to `C-u M-! date RET'"
   (interactive)
   (shell-command "date" t))
 
