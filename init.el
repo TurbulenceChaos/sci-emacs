@@ -26,6 +26,8 @@
 
 (evil-mode)
 
+(evil-define-key 'normal org-mode-map (kbd "TAB") #'org-cycle)
+
 ;; undo
 (unless (package-installed-p 'undo-fu-session)
   (package-install 'undo-fu-session))
@@ -54,6 +56,17 @@
 (setq completion-styles '(basic orderless substring)
       completion-category-overrides '((file (basic styles partial-completion))))
 
+(global-completion-preview-mode 1)
+(add-hook 'org-mode-hook
+	  (lambda ()
+	    (setq-local completion-preview-commands
+			'(org-self-insert-command
+			  completion-preview-complete))))
+(add-hook 'completion-at-point-functions #'comint-filename-completion)
+(define-key completion-preview-active-mode-map (kbd "M-n") 'completion-preview-next-candidate)
+(define-key completion-preview-active-mode-map (kbd "M-p") 'completion-preview-prev-candidate)
+
+;; magit
 (unless (package-installed-p 'magit)
   (package-install 'magit))
 
